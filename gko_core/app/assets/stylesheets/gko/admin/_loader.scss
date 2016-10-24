@@ -1,0 +1,12 @@
+/* LOADER
+================================================== */
+.gko-loader{
+	position:fixed;
+	z-index: $zindexModal + 1;
+	bottom: 0;
+	width:100%;
+	background-color:rgba(0,0,0,.7);
+	.progress{
+		margin: 18px;
+	}
+}

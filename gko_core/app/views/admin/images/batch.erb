@@ -1,0 +1,7 @@
+<% if @attachable && @image_assignment %>
+  var imageAssignmentList = $("#<%= @attachable.class.name.underscore %>-image-assignment-list");
+  $("<%= escape_javascript(render '/admin/image_assignments/image_assignment', :image_assignment => @image_assignment) %>").appendTo(imageAssignmentList);
+  make_sortable(imageAssignmentList);
+<% elsif  @image.persisted? %>
+	$('#images-list').prepend("<%= escape_javascript(render @image) %>");
+<% end %>

@@ -1,0 +1,18 @@
+<%# cache(["admin", site, record, 'dialog', from_dialog?]) do %>
+	<%= content_tag_for(:li, record) do %>
+		<%= link_to(admin_site_image_folder_path(current_site, record, :dialog => from_dialog?), :remote => true) do %>
+			<%= raw %(<i class="icon-folder-open"></i>&nbsp;#{record.name}&nbsp;(#{record.images.count})) -%> 
+		<% end %>
+		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+			<li><%= link_to(t(:"admin.image_folders.actions.edit"), edit_admin_site_image_folder_path(current_site, record), :remote => true) %></li>
+			<li><%= link_to_destroy(admin_site_image_folder_path(current_site, record), :remote => true, :title => t(:"admin.image_folders.actions.destroy")) %></li>
+		</ul>
+		<%= child %>
+	<% end %>
+<%# end %> 
+
+
+ 

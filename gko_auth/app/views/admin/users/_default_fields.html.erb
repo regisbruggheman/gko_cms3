@@ -1,0 +1,21 @@
+<%# TODO : SECURITY Why do you want change the account of an user ???? %>
+<%
+   roles = Role.all
+   roles.reject { |i| i.name == "master" } unless user_master?
+%>
+
+<%#= render :partial => 'admin/accounts/picker', :locals => {:f => f} %>
+<%# FIXME : Hack to avoid send confirmation email %>
+<%= f.input :confirmed_at, :as => :hidden unless f.object.persisted? %>
+<%= f.input :email, :input_html => {:placeholder => 'user@domain.com', :autocomplete => "off"} %>
+
+<%# Do not render passwords fields if user is already created.
+    # As passwords fields are required and blank in all case,
+    # you cannot register modifications if they are present. %>
+<% unless f.object.persisted? %>
+    <%= render :partial => 'admin/users/password_fields', :locals => {:f => f} %>
+<% end %>
+<%# TODO : SECURITY - Do not display all roles for all users %>
+<%= f.association :roles,
+                  :collection => roles,
+                  :as => :check_boxes %>

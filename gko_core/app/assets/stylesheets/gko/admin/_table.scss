@@ -1,0 +1,19 @@
+table {
+  p {
+    padding: 0;
+    margin: 0;
+    line-height: $baseLineHeight;
+  }
+  td.actions {
+    text-align: center;
+    vertical-align: middle;
+  }
+  th.handle,
+  td.handle,
+  th.bulk-actions,
+  td.bulk-actions {
+    width: 48px;
+    text-align: center;
+    vertical-align: middle;
+  }
+}

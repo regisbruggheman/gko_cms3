@@ -1,0 +1,11 @@
+<%= render_page_title(@restricted_page_title) %>
+<%= simple_form_for :user, :url =>"/user/sign_in", :html => {:class => "form-horizontal"} do |f| %>
+    <%= f.input :email, :hint => false %>
+    <%= f.input :password, :hint => false %>
+    <%= f.input :remember_me, :hint => false, :as => :boolean %>
+	<div class="form-actions">
+		<%= f.button :submit, t(:log_in), :class => 'btn-large btn-primary submit' %>
+		
+	</div>
+<% end %>
+<%#= mail_to "#{site.preferred_contact_email}", t(:request_password), :subject => t(:request_password_subject, :page_name => @restricted_page_title), :encode => "javascript" %>

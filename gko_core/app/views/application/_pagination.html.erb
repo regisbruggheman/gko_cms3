@@ -1,0 +1,7 @@
+<% if local_assigns.has_key?(:entries) && entries.respond_to?(:total_entries) %>
+    <div class="row-fluid pagination-container">
+      <div class="span12">
+        <%= will_paginate(entries) %>
+      </div>
+    </div>
+<% end %>

@@ -1,0 +1,66 @@
+/* MAIN NAVIGATION
+   ================================================== */
+.navbar-static-top .container, 
+.navbar-fixed-top .container, 
+.navbar-fixed-bottom .container {
+  width: auto;
+}
+.navbar-fixed-top .navbar-inner, 
+.navbar-fixed-bottom .navbar-inner {
+  padding-left: 20px;
+  padding-right: 20px;  
+}  
+
+.navbar-inner {
+  @include reset-filter;
+}
+
+.main-nav {
+  @include gradient-vertical(#333, #222);
+  @include border-radius(0 0 6px 6px);
+  @include box-shadow("0 1px 3px rgba(0, 0, 0, .25), inset 0 -1px 0 rgba(0, 0, 0, .1)");
+  @include reset-filter;
+  display: block;
+  .nav {
+    text-align:center;
+    margin: 0;
+    width: 100%;
+    background-color: #000;
+    li [class^="icon-"], li [class*=" icon-"] {
+      display: block;
+      width: auto;
+    }
+    > li {
+      text-align:left;
+      float:none;
+      display:inline-block;
+      @include ie7-inline-block();
+       > a {
+        display: inline-block;
+        text-align: center;
+        color: #fff;
+        border: 0 !important;
+        border-bottom-color: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+        @include reset-filter;
+        width: 82px !important;
+        height: 82px !important;
+        padding: 16px 0 0 0 !important;
+        margin: 0px !important;
+        @include box-shadow(none !important);
+        @include border-radius(none !important);
+        @include box-sizing(border-box);
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+        i {
+          font-size: 32px;
+          margin-right: 0;
+        }
+        &:hover {
+          color: $linkColor;
+        }
+      }
+    }
+  }
+}
+

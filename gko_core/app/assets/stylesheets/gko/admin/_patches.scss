@@ -1,0 +1,46 @@
+/* MEDIA GRID
+================================================== */
+.thumbnails {
+  li {
+    .actions {
+		.btn {
+			padding: 4px 8px;
+			i {
+				margin: 0;
+			}
+			&.show {
+				display: inline-block;// conflict with bootstrap 2.2.1 utilies
+			}
+		}
+    }
+  }
+}
+table {
+  td.actions {
+	.btn {
+		padding: 4px 8px;
+		//i {
+		//	margin: 0;
+		//}
+		&.show {
+			display: inline-block;// conflict with bootstrap 2.2.1 utilies
+		}
+	}
+  }
+}
+li:focus,
+.btn:focus,
+a:focus {
+  outline: 0;
+}
+//.btn {
+	//i {
+	//	margin-right: 8px;
+	//}	
+//}
+
+//.btn-icon {
+	//i {
+	//	margin-right: 0;
+	//}	
+//}

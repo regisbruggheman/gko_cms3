@@ -1,0 +1,11 @@
+<% collection_row_cache(post) do %>
+	<%= grid_item_tag_for(post) do %>
+		<%= render_record_thumb(post) %>
+		<%= grid_item_caption_tag do %>
+			<%= render_record_title(post) %>
+			<%= render_publication_date(post) %>
+			<%= render_record_description(post) %>
+			<%= render_record_link(post) %>
+		<% end %>
+	<% end %>
+<% end if post %>

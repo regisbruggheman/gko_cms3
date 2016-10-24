@@ -1,0 +1,13 @@
+<div id="page_selection_modal" class="modal fade">
+  <div class='modal-header'>
+    <a class="close" data-dismiss="modal">×</a>
+    <h3><%= "Sélection d'une page".html_safe %></h3>
+  </div>
+  <div class='modal-body'>
+    <p><%= t(:'admin.pages_dialogs.pages.help') %></p>
+	<%= render "admin/sections/selectable_list" %>
+  </div>
+  <div class='modal-footer'>
+    <%= btn_to t(:'admin.pages_dialogs.links.validate'), "#", :id => "validate_page_selection_btn" %>
+  </div>
+</div>     

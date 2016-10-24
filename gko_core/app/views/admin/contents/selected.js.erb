@@ -1,0 +1,3 @@
+$("#selectable-list-container").html("<%= escape_javascript(render('admin/contents/selected')) %>");
+$(".pagination > li > a").attr("data-remote", true);
+removeLoading("body");

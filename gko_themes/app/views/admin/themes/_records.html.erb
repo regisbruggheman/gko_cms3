@@ -1,0 +1,7 @@
+<div class="well">
+  <p><%= "Here are the designs you have added to your website. Click a design for more options. To add more designs, you can visit the design gallery or upload your own design".html_safe %></p>
+</div>
+<%= render "table", :headers => [:name, :theme_id, :active] %>
+<% content_for(:jquery_ready) do %>
+    <%= raw("images_dialog.init();\n") %>
+<% end %> 

@@ -1,0 +1,9 @@
+<%= render_pagination(collection, true) %>
+<ul id="selectable_contents" class="selection">
+  <% collection.each do |record| %>
+      <li id="<%= dom_id(record) %>" data-type="<%= record.class.name %>">
+        <%= link_to(record.title || "!(#{record.read_attribute(:title, default_locale)})".html_safe, record.public_url(@resource_locale), :class => "btn selectable") %>
+      </li>
+  <% end %>
+</ul>
+<%= render_pagination(collection, true) %>

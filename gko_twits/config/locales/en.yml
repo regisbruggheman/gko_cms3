@@ -1,0 +1,41 @@
+en:
+  time:
+    formats:
+      twit: "%a, %d %b %Y"
+
+  twits:
+    no_record_found: "There is no news."
+    meta:
+      info_html: "twited on %{date}"
+
+  admin:
+    twit_lists:
+      actions:
+        edit: Configuration 
+      tooltips:
+        edit: Modifier la page du listing des twits
+      titles:
+        edit: Modification de la configuration de la liste des twits
+             
+    twits:
+      select_blank: Sélectionner un twit
+      menu_tab: Articles
+      collection:
+        empty: "Aucun twit n'a été trouvé. %{link}"
+        create_item: "Créer un nouvel twit maintenant."
+      actions:
+        new: Ajouter un twit
+        destroy: Supprimer cet twit
+        edit: Modifier cet twit
+        index: Articles
+        view: Voir la page publique de cet twit
+        previous: Previous
+        next: Next
+      tooltips:
+        index: Lister les twits
+      titles:
+        new: Ajout d'un twit
+        index: Liste des twits
+        edit: Modification d'un twit
+      columns:
+        twit: Article

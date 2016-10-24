@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="<%= I18n.locale.to_s.downcase %>">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <style type="text/css">
+      body {
+          color: #000;
+          margin: 0;
+          padding: 0;
+          font: normal 14px Helvetica, Arial, sans-serif;
+          line-height: 20px;
+      }
+
+      h1 {
+          font-size: 18px;
+          margin: 0;
+          padding: 0;
+          line-height: 34px;
+      }
+  </style>
+</head>
+<body>
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+  <tr>
+    <td align="left">
+      <h1><%= t('inquiry_mailer.notification.greeting') %></h1>
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+      <p><%= t('inquiry_mailer.notification.you_recieved_new_inquiry') %></p>
+
+      <p><%= t('inquiry_mailer.notification.inquiry_starts') %></p>
+
+      <p><%= t('inquiry_mailer.notification.from') %>: <%= @inquiry.name %></p>
+
+      <p><%= t('inquiry_mailer.notification.email') %>: <%= @inquiry.email %></p>
+
+      <p><%= t('inquiry_mailer.notification.phone') %>: <%= @inquiry.phone %></p>
+
+      <p><%= t('inquiry_mailer.notification.message') %>:</p>
+
+      <p><%= @inquiry.message %></p>
+
+      <p><%= t('inquiry_mailer.notification.inquiry_ends') %></p>
+
+      <p><%= t('inquiry_mailer.notification.closing_line') %></p>
+
+      <p><%= @inquiry.site.title %></p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

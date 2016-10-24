@@ -1,0 +1,20 @@
+@import "variables";
+@import "mixin";
+@import "default";
+@import "navbar";
+@import "tree";
+@import "grid";
+@import "footer";
+@import "copyright";
+
+// Patches for botstrap
+a:focus,
+.btn:focus {
+  outline: 0;
+}
+
+abbr[title], abbr[data-original-title] {
+cursor: pointer;
+border-bottom: none;
+color: red;
+}

@@ -1,0 +1,40 @@
+en:
+  form:
+    hotel:
+      title: Book a table
+  inquiry_sent: Your inquiry has been sent 
+  simple_form:
+    labels:
+      table_inquiry:
+        dinner: Dinner
+        lunch: Lunch
+        name: Name
+        email: Email
+        message: Message
+        date: Date
+        guest_count: Guest count 
+        service: Time
+      hotel_inquiry:
+        name: Name
+        email: Email
+        message: Message
+        start_date: Checkin
+        end_date: Checkout 
+        person_count: Guest count
+  helpers:
+    submit: 
+      table_inquiry:
+        create: "Send inquiry"
+      hotel_inquiry:
+        create: "Send inquiry"
+  inquiry_mailer:
+    hotel_notification:
+      subject: Hotel Booking Request 
+      start_date: Check-in date 
+      end_date: Check-out date 
+      person_count: Person count 
+    table_notification:
+      subject: Table Booking Request
+      person_count: Person count
+      date: Date
+      service: Service

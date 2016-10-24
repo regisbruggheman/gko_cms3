@@ -1,0 +1,8 @@
+<ul id='images_list' class="thumbnails js-selectable">
+  <% if @images.count == 0 %>
+    <%= render "admin/shared/empty" %>
+  <% else %>
+    <%= render :partial => "admin/images/selectable_record", :collection => @images, :as => :record %>
+  <% end %>
+</ul>
+<%= render_pagination(@images) %>

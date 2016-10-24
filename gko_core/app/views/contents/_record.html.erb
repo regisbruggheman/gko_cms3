@@ -1,0 +1,8 @@
+<%= grid_item_tag_for(record) do %>
+	<%= render_record_thumb(record) %>
+	<%= grid_item_caption_tag do %>
+		<%= render_record_title(record) %>
+		<%= render_record_description(record) %>
+		<%= render_record_link(record) %>
+	<% end %>
+<% end if record %>  

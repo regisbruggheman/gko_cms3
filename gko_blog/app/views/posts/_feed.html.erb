@@ -1,0 +1,6 @@
+<% content_for :head do %>
+    <%= auto_discovery_link_tag :atom, blog_feed_url(parent) %>
+<% end %>
+<section class="blog-feed">
+  <%= link_to t('posts.links.feed_subscribe'), blog_feed_url(parent, :format => :atom), :id => "blog-atom-feed", :class => 'btn' %>
+</section> 

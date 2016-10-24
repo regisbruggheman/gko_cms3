@@ -1,0 +1,34 @@
+<nav class='main-nav'>
+  <ul class="nav">
+  <%= yield :main_navigation %>
+	<% if current_site %>
+	  <li><%= btn_to(t("admin.pages.menu_tab"), globalize_url(admin_site_sections_path(current_site)), :icon => "sitemap") %></li>
+    <li><%= btn_to(t("admin.images.menu_tab"), globalize_url(admin_site_images_path(current_site)), :icon => "camera") %></li>
+    <% ::Gko::Plugins.registered.in_menu.each do |plugin| -%>
+    <li><%= btn_to(t("admin.#{plugin.name}.menu_tab"), globalize_url(plugin.url), :icon => plugin.icon) %></li>
+    <% end -%>
+  <% end -%>
+  <%# Let analytics to master for now!!!!! work in progress %>
+  <% if current_site.has_plugin?(:analytics) and user_master? %>
+  <li><%= btn_to(t(:'admin.analytics.menu_tab'), gurl_for([:admin, current_site, :analytics]), :icon => "reports") %></li>
+  <% end %>
+  <% if user_master? %>
+    <li class='dropdown'>
+        <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">
+            <i class='icon-cog'></i>
+            <%= t(:'admin.menu_tab_settings') %>
+            <span class='caret'></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><%= link_to(t(:'admin.users.menu_tab'), admin_site_users_path(current_site)) %></li>
+          <li><%= link_to(t(:'admin.sites.site_menu_tab'), edit_admin_site_path(current_site)) %></li>
+          <li><%= link_to(t(:'admin.languages.menu_tab'), admin_site_languages_path(current_site)) %></li>
+          <%= content_tag(:li) do %>
+            <%= link_to(t(:'admin.mail_methods.menu_tab'), admin_site_mail_methods_path(current_site)) %>
+          <% end if site.has_plugin?("inquiries") %>
+        </ul>
+    </li>
+    <% end %>
+  </ul>
+</nav>
+

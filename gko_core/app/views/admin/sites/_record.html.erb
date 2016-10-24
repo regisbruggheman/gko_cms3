@@ -1,0 +1,7 @@
+<td><%= glink_to(record.labelize, admin_site_sections_path(record)) %></td>
+<td><%= link_to(record.host, "http://#{record.host}/admin", :target => "_blank") %></td>
+<td><%= glink_to(record.account.reference, edit_admin_account_path(record.account)) %></td>
+<%= content_tag_for_actions do  %>
+	<%= icon_to_edit(edit_admin_account_site_path(record.account, record)) if user_master? %>
+  	<%= icon_to_destroy(admin_account_site_path(record.account, record)) if record.account.sites.count > 1 %>
+<% end %>

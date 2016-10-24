@@ -1,0 +1,25 @@
+en:
+  admin:
+    fieldset:
+      stickers: Select one or more sticker
+    stickers:
+      select_blank: Select a sticker
+      menu_tab: Stickers
+      collection:
+        empty: "No stickers was found %{link}"
+        create_item: "Create one now."
+      actions:
+        new: Add a new sticker
+        destroy: Delete this sticker
+        edit: Edit this sticker
+        index: Stickers
+        previous: Previous
+        next: Next
+      tooltips:
+        index: Stickers list
+      titles:
+        new: Add a new sticker
+        index: Stickers list
+        edit: Edit this sticker
+      columns:
+        sticker: Etiquette

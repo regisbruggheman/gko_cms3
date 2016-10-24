@@ -1,0 +1,8 @@
+<div id="flash">
+  <% controller.flash.each do |name, value| %>
+      <div id="flash-<%= name %>" class="flash alert alert-<%= name %>">
+        <a class="close" data-dismiss="alert" href="#">&times;</a>
+        <%= value.html_safe %>
+      </div>
+  <% end %>
+</div>

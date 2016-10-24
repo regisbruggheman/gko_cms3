@@ -1,0 +1,30 @@
+<% if f.object.section.categorizable? %>
+<ul class="nav nav-tabs">
+  <%= li_tab_for("#content-basic-tab", t(:'admin.fieldset.general_informations'), 'active') %>
+  <%= li_tab_for("#content-categories-tab", t(:'admin.fieldset.categories')) if f.object.section.categorizable? %>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane active" id="content-basic-tab">
+    <%= f.input :section_id, :as => :hidden %>
+    <%= f.input :title %>
+    <%= f.input :body, :input_html => {:rows => 8} %>
+    <%= f.input :link %>
+    <%= render :partial => 'form_file_field',
+               :locals => {
+                 :f => f,
+                 :thumb_size => f.object.section.children_thumb_size,
+                 :hint => t("simple_form.hints.partner.image",
+                 :size => f.object.section.children_thumb_size)} %>
+  </div>
+	<div class="tab-pane" id="content-categories-tab">
+		<%= render 'form_categories_checkboxes', :f => f %>
+	</div>
+</div>
+<% else %>
+<%= f.input :section_id, :as => :hidden %>
+<%= f.input :title %>
+<%= f.input :body, :input_html => {:rows => 8} %>
+<%= f.input :link %>
+<%= render :partial => 'form_file_field',
+           :locals => {:f => f, :thumb_size => f.object.section.children_thumb_size, :hint => t("simple_form.hints.partner.image", :size => f.object.section.children_thumb_size)} %>
+<% end %>

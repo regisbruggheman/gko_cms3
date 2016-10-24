@@ -1,0 +1,17 @@
+.menu-left {
+  #main-container {
+    margin: 0 0 0 120px; 
+  	max-width: none;
+  }
+}
+
+.menu-left {
+  .main-nav {
+    position: absolute;
+    left: 0;
+    top: $navbarHeight;
+    bottom: 0;
+    width: 120px;
+    height: 100%;
+  }
+}

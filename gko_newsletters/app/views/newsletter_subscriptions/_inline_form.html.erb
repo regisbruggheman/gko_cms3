@@ -1,0 +1,28 @@
+<%= simple_form_for(:newsletter_subscription, 
+					:url => newsletter_subscription_path, 
+					:method => :post, 
+					:html => {:class => [:newsletter_subscription],
+						:data => { 	:type => :json, 
+									:remote => true }}) do |f| %>
+	<div class="input-append">
+		<input class="string email required" id="newsletter_subscription_email" name="newsletter_subscription[email]" placeholder="Votre email" size="50" type="email">
+		<div class="btn-group">
+			<button class="btn" tabindex="-1">Recevoir la newsletter</button>
+		</div>
+	</div>
+<% end -%>
+<%= content_for :after_javascript_libraries do %>
+	<%= javascript_tag do %>
+	 	$('form.newsletter_subscription')
+		.on("ajax:beforeSend", function(evt, xhr, settings) {
+			console.log("Site.beforeSend")
+		}).on("ajax:success", function(evt, data, status, xhr) {
+			var flash = $.parseJSON(xhr.getResponseHeader('X-Flash-Messages'));
+			alert(flash.success);
+		}).on('ajax:complete', function(evt, xhr, status) {
+		}).on("ajax:error", function(evt, xhr, status, error) {
+			var errors = $.parseJSON(xhr.responseText).errors;
+			alert(errors.email);
+		});
+	<% end %>
+<% end -%>

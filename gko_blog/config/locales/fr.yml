@@ -1,0 +1,80 @@
+fr:
+  time:
+    formats:
+      post: "%a, %d %b %Y"
+      
+  activerecord:
+    models:
+      blog: Blog
+      post: Article
+
+  posts:
+    posted_at: "Posté le %{when}"
+    filed_in: "dans"
+    read_more: "Lire la suite"
+    posted_by: "par"
+    no_record_found: "Aucun n'article n'a été trouvé"
+    no_archives_found_in_month: "Aucun n'article n'a été trouvé pour le mois de %{month} en %{year}"
+    no_archives_found_in_year: "Aucun n'article n'a été trouvé pour l'année %{year}"
+    collection:
+      continue: "Lire"
+    links:
+      continue_reading: "Lire l'article"
+      feed_subscribe: "S'abonner au flux"
+      next: Article suivant
+      previous: Article précédent
+    titles:
+      in_categories: "Articles dans la catégorie %{name}"
+      tagged: "Articles étiquettés avec %{name}"
+    archived: Archives
+    recent: Articles récents
+  
+  simple_form:
+    labels:
+      blog:
+        title: "Titre de la page"
+        body: "Introduction"
+
+  admin:
+    blogs:
+      help: "Le blog est comme un journal qui vous permet de poster des articles. Ces articles - présentés du plus récent au plus ancien - peuvent être organisés en catégories et/ou marqués par des mots clés." 
+      no_stickers: "Aucun mot-clé n'a été trouvé pour ce blog."
+      no_categories: "Aucun type d'article n'a été trouvé pour ce blog." 
+      actions:
+        edit: Blog 
+        new: Nouveau blog
+        destroy: Supprimer ce blog
+        show: Lister les articles
+        view: Voir le blog
+        titles:
+          index: Liste des articles
+      tooltips:
+        edit: Modifier la page du listing des articles
+        show: Voir la
+      titles:
+        edit: Modification de la configuration du blog
+             
+    posts: 
+      untranslated_message: 
+        one: "Attention: 1 article n'est pas traduit."
+        many: "Attention: %{count} articles ne sont pas traduits."
+      select_blank: Sélectionner un article
+      menu_tab: Articles
+      collection:
+        empty: "Aucun article n'a été trouvé."
+      actions:
+        new: Ajouter un article
+        destroy: Supprimer cet article
+        edit: Modifier cet article
+        index: Articles
+        view: Voir la page publique de cet article
+        previous: Previous
+        next: Next
+      tooltips:
+        index: Lister les articles
+      titles:
+        new: Ajout d'un article
+        index: Liste des articles
+        edit: Modification d'un article
+      columns:
+        post: Article

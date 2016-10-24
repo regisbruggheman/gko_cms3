@@ -1,0 +1,29 @@
+<% content_for :actions do %>
+	<% if (action_name =~ /^(edit|new)$/) %>
+       	<%= btn_to("Liste des pages", gurl_for([:admin, current_site, :sections]), :class => 'btn-inverse', :icon => 'th-list icon-white') %>
+    <% end %>
+	<% if resource.persisted? %>
+		<% unless (action_name =~ /^(index)$/) || resource.content_type.nil? %>
+			<%= btn_to(t("admin.#{resource.content_type.tableize}.actions.index"), gurl_for([:admin, current_site, resource, resource.content_type.tableize.to_sym])) %>
+		<% end %>
+		<% if resource.categorizable? %>
+			<%= btn_to(t(:'admin.categories.actions.index'), gurl_for([:admin, current_site, resource, :categories])) %>
+		<% end %>
+		<% if resource.stickable? %>
+			<%= btn_to(t(:'admin.stickers.actions.index'), gurl_for([:admin, current_site, resource, :stickers])) %>
+		<% end %>
+		<% unless resource.content_type.nil? %>
+		<%= btn_to(t("admin.#{resource.content_type.tableize}.actions.new"), gurl_for([:new, :admin, current_site, resource, resource.content_type.underscore.to_sym]), :class => 'btn-primary', :icon => 'plus icon-white', :title => t("admin.#{resource.content_type.tableize}.titles.new")) %>
+		<% end %>
+	<% end %>
+	
+	<% if (action_name =~ /^(index)$/) || (resource.persisted? && resource.is_a?(Page)) %>
+		<%= btn_to("Ajouter une page", "#add-page-modal", 
+			:role => 'button',
+			:id => 'add-page-btn', 
+			:class => 'btn-primary', 
+			:icon => 'plus icon-white',
+			:data => { :toggle => 'modal' } ) %>
+	<% end %>
+<% end %>
+<%= render 'modal_page_types' %>

@@ -1,0 +1,45 @@
+<% is_sortable = local_assigns.has_key?(:sortable) %>
+<div id="<%= resource_collection_name %>_container" class="list_container">
+	<%= render_pagination(collection) %>
+	<table id="<%= resource_collection_name %>" class="<%= Gko::Core.admin_table_css %>">
+		<thead>
+    		<tr>
+			<% if is_sortable %>
+			<th></th>
+			<% end %>
+      <%- headers.each do |field| -%>
+        <%= content_tag(:th, t(:"simple_form.labels.#{resource_collection_name.to_s.singularize}.#{field.to_s}", :default => :"simple_form.labels.defaults.#{field.to_s}")) %>
+      <%- end -%>
+      <th></th>
+			</tr>
+		</thead>
+		<tbody <%= "data-sortable-url=#{admin_move_path(:model_name => resource_class.name)} data-sortable-handle=td.handle" if is_sortable %>>
+		<% if collection.empty? %>
+      <%= render "admin/shared/empty" %>
+     <% else %>
+			<% collection.all.each do |r| %>
+				<%= content_tag_for(:tr, r) do %>
+					<% if is_sortable %>
+					<td class='handle'><i class='icon-move'></i></td>
+					<% end %>
+					<%= render "record", :record => r %>
+				<% end %>
+			<% end %>
+		<% end %>
+ 		</tbody>
+	</table>
+	<%= render_pagination(collection) %>
+</div>
+<% if is_sortable %>
+<% content_for :after_javascript_libraries do %>
+<script type="text/javascript">
+	$(document).ready(function() {
+		make_sortable($("#<%= resource_collection_name %> tbody"));
+	});
+</script>
+<% end %>
+<% end %>
+   
+
+
+

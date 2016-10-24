@@ -1,0 +1,17 @@
+<td><%= link_to(record.name, url_for([:admin, current_site, record])) %></td>
+<td><%= record.email %></td>
+<td><%= l(record.created_at, :format => :short) %></td>
+<%= content_tag_for_actions do %>
+	<% if record.spam? %>
+		<%= icon_link_to(url_for([:toggle_spam, :admin, current_site, record]),
+			:icon => 'thumbs-down',
+			:title => :mark_as_ham) %>
+	<% else %>
+		<%= icon_link_to(url_for([:toggle_spam, :admin, current_site, record]),
+			:icon => 'thumbs-up',
+			:title => :mark_as_spam) %>
+	<% end %>
+	<%= icon_to_show(record, :icon => "eye-open") %>
+	<%= icons_to_actions([:destroy], record) %>
+<% end %>
+

@@ -1,0 +1,16 @@
+<%= t('inquiry_mailer.notification.greeting') %>,
+
+<%= t('inquiry_mailer.notification.you_recieved_new_inquiry') %>
+
+<%= t('inquiry_mailer.notification.inquiry_starts') %>
+
+<%= t('inquiry_mailer.notification.from') %>: <%= @inquiry.name %>
+<%= t('inquiry_mailer.notification.email') %>: <%= @inquiry.email %>
+<%= t('inquiry_mailer.notification.phone') %>: <%= @inquiry.phone %>
+<%= t('inquiry_mailer.notification.message') %>:
+<%= @inquiry.message %>
+
+<%= t('inquiry_mailer.notification.inquiry_ends') %>
+
+<%= t('inquiry_mailer.notification.closing_line') %>,
+<%= @inquiry.site.title %>         

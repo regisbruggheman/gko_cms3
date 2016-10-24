@@ -1,0 +1,13 @@
+<%= grid_item_tag_for(event) do %>
+	<%= render_record_thumb(event) %>
+	<%= grid_item_caption_tag do %>
+		<%= content_tag(:abbr, :class => 'dates') do %>
+			<span class="day"><%= event.start_date.strftime("%a") %></span>
+			<span class="day_num"><%= event.start_date.strftime("%d") %></span>
+			<span class="month"><%= event.start_date.strftime("%b") %></span>
+		<% end %>
+		<%= render_record_title(event) %>
+		<%= render_html_text(event.body) %>
+	<% end %>
+<% end if event %>
+   

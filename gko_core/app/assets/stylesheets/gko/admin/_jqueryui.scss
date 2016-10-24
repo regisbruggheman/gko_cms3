@@ -1,0 +1,15 @@
+.ui-selected > .thumbnail {
+  background-color: $green;
+  color: $white;
+  a {
+    color: inherit; 
+  }
+}
+.ui-selecting > .thumbnail {
+  background-color:  lighten($green, 15%);
+  color: $white;
+  a {
+    color: inherit; 
+  }
+}
+ 

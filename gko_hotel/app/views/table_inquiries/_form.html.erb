@@ -1,0 +1,20 @@
+<%= simple_form_for(:table_inquiry, :url => table_inquiries_path,
+                    :html => {:method => :post, :class => [:table_inquiry]}) do |form| %>
+    <%= hidden_field_tag(:return_to, request.url) %>
+    <%= form.hidden_field :site_id %>
+    <%= form.error_notification %>
+    <%= form.input :name, :hint => '' %>
+    <%= form.input :email, :hint => false %>
+    <%= form.input :phone, :hint => false %>
+    <%= form.input :person_count, :hint => false %>
+    <%= form.input :date, :wrapper => :append, :hint => false do %>
+      <%= form.text_field :date, :class => 'date', :maxLength => 10 %>
+	    <%= content_tag :span, :class => "add-on" do %>
+	      <i class="icon-calendar"></i>
+	    <% end %>
+	  <% end %>
+    <%= form.input :message, :as => :text, :hint => false, :input_html => {:rows => 6} %>
+    <div class='buttons'>
+      <%= form.button :submit, t("send_inquiry"), :class => "btn submit" %>
+    </div>
+<% end %>

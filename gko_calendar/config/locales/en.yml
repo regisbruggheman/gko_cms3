@@ -1,0 +1,81 @@
+en:
+  time:
+    formats:
+      event: "%a, %d %b %Y"
+
+  activerecord:
+    models:
+      event: Evènement
+      calendar: Calendrier
+          
+  events:
+    links:
+      continue_reading: Read the rest of this event
+      next: Next event
+      previous: Previous event
+      
+  simple_form:
+    labels:
+      event:
+        account: "account"
+        title: "title"
+        body: "body"
+        all_day: "all_day"
+        start_date: "start_date"
+        end_date: "end_date"
+        slug: "slug"
+        published_at: "published_at"
+        location: "location"
+        contact_email: "contact_email"
+        more_info_url: "more_info_url"
+        registration_url: "registration_url"
+        image: "image"
+    hints:
+      event:
+        account: ""
+        title: ""
+        body: ""
+        all_day: ""
+        start_date: ""
+        end_date: ""
+        slug: ""
+        published_at: ""
+        location: ""
+        contact_email: ""
+        more_info_url: ""
+        registration_url: ""
+        image: "" 
+
+  admin:
+    calendars:
+      actions:
+        edit: Configuration 
+      tooltips:
+        edit: Modifier la page du listing des évènements
+      titles:
+        edit: Modification de la configuration du calendrier
+             
+    events: 
+      untranslated_message: 
+        one: "Attention: 1 évènement n'est pas traduit."
+        many: "Attention: %{count} évènements ne sont pas traduits."
+      select_blank: Sélectionner un évènement
+      menu_tab: Articles
+      empty: "Aucun évènement n'a été trouvé. %{link}"
+      create_item: "Créer un nouvel évènement maintenant."
+      actions:
+        new: Ajouter un évènement
+        destroy: Supprimer cet évènement
+        edit: Modifier cet évènement
+        index: Liste
+        view: Voir la page publique de cet évènement
+        previous: Previous
+        next: Next
+      tooltips:
+        index: Lister les évènements
+      titles:
+        new: Ajout d'un évènement
+        index: Liste des évènements
+        edit: Modification d'un évènement
+      columns:
+        post: Article

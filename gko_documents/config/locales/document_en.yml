@@ -1,0 +1,29 @@
+en:
+  download_file: "Download file"
+
+  activerecord:
+    models:
+      document: document
+    errors:
+      models:
+        document:
+          blank: You must specify document for upload
+          too_long: File should be smaller than %{count} in size
+          incorrect_document_type: 'Your document must be a PDF'
+          
+  admin:
+
+    menu:
+      documents:
+        index: "Documents"
+        new: "Add a new document"
+
+    documents:
+      index:
+        title: "Documents List"
+        empty: "No documents was found %{link}"
+        create_item: "Create one now &raquo;"
+      new:
+        title: "Add a new document"
+      edit:
+        title: "Edit Document"

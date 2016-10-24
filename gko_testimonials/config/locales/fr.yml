@@ -1,0 +1,70 @@
+fr:
+  activerecord:
+    models:
+      testimonial: Service
+      testimonial_list: "Liste de testimonials"
+  helpers:
+    submit:
+      testimonial:
+        create: "Ajouter le testimonial"
+
+  testimonials:
+    price: Tarifs
+    duration: Durée
+    collection:
+      continue: Voir le projet
+    no_record_found: "Aucun testimonial n'a été trouvée"
+    links:
+      continue_reading: "Voir le testimonial"
+      previous: "Précédent"
+      next: "Suivant"
+    titles:
+      in_categories: "Services dans la catégorie %{name}"
+      tagged: "Services étiquettées avec %{name}"
+
+  confirmations:
+    destroy:
+      testimonial: "Voulez-vous réellement supprimer définitivement ce testimonial ? <br/>Cette action est irréversible."
+
+  simple_form:
+    labels:
+      testimonial:
+        price: Tarif
+        duration: Durée
+    hints:
+      testimonial:
+        price: "Indiquer le tarif de la prestation (ex: 100.00$/heure)."
+        duration: "Indiquer la durée de la prestation."
+
+  admin:
+    testimonial_lists:
+      actions:
+        edit: Configuration 
+      tooltips:
+        edit: Modifier l'index des testimonials
+        show: Voir le testimonial
+      titles:
+        edit: Modifier l'index des testimonials
+             
+    testimonials: 
+      untranslated_message: 
+        one: "Attention: 1 testimonial n'est pas traduit."
+        many: "Attention: %{count} testimonials ne sont pas traduits."
+      select_blank: Sélectionner un testimonial
+      collection:
+        empty: "Aucun testimonial n'a été trouvé. %{link}"
+        create_item: "Créer un nouveau testimonial maintenant."
+      actions:
+        new: Ajouter un testimonial
+        destroy: Supprimer ce testimonial
+        edit: Modifier ce testimonial
+        index: Services
+        view: Voir la page publique de ce testimonial
+      tooltips:
+        index: Lister les testimonials
+      titles:
+        new: Ajout d'un testimonial
+        index: Liste des testimonials
+        edit: Modification d'un testimonial
+      columns:
+        post: Service

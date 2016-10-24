@@ -1,0 +1,33 @@
+<%
+  if local_assigns.has_key?(:form_arguments)
+    form_arguments = local_assigns[:form_arguments]
+  else
+    models = local_assigns.has_key?(:models) ? local_assigns[:models] : resources
+    multipart = local_assigns.has_key?(:multipart) ? local_assigns[:multipart] : true
+    html_arguments = {:multipart => multipart, :class => "form-horizontal"  }
+    html_arguments[:data] = {:remote => true } if local_assigns.has_key?(:remote)
+    form_arguments = [models,  {:html => html_arguments}]
+  end
+%>
+<%= simple_form_for(*form_arguments) do |f| %>
+  <%= f.error_notification %>
+  <%= display_base_errors(f.object) %>
+  <%= hidden_field_tag :cl, @resource_locale.to_s if @resource_locale.present? %>
+  <% if params[:return_to].present? %>
+    <%= hidden_field_tag(:return_to, return_to) %>
+  <% elsif local_assigns[:return_here].present? %>
+    <%= hidden_field_tag(:return_to, request.url) %>
+  <% end %>
+  <% if local_assigns[:fields_path].present? %>
+    <%= render fields_path, :f => f %>
+  <% else %>
+    <%= render "fields", :f => f %>
+  <% end %>
+  <div class='form-actions'>
+    <% if local_assigns[:submit_path].present? %>
+      <%= render submit_path, :f => f %>
+    <% else %>
+      <%= render "model_form_buttons", :f => f, :wymeditor => local_assigns[:wymeditor] %>
+    <% end %>
+  </div>
+<% end %>

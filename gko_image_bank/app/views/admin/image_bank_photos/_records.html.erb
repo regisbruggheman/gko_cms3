@@ -1,0 +1,11 @@
+<ul id='<%= resource_collection_name %>-list' class='thumbnails' data-toggle="modal-gallery" data-target="#modal-gallery" data-selector="a.gallery-item" data-sortable-url="<%= admin_move_path(:model_name => 'ImageBankPhoto') %>">
+  <%= render(@image_bank_photos) || render("admin/shared/empty") %>
+</ul>
+<%= render_pagination(@image_bank_photos) %>
+<% content_for :after_javascript_libraries do %>
+<script type="text/javascript">
+	$(document).ready(function() {
+		make_sortable($("#<%= resource_collection_name %>-list"));
+	});
+</script>
+<% end %>

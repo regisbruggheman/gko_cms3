@@ -1,0 +1,48 @@
+<table>
+  <% @visits_by_language.each do |v| %>
+      <tbody>
+      <tr>
+        <td><p><%= v.language %></p></td>
+        <td><h5>Nombre total de pages vues</h5></td>
+        <td><p><%= v.pageviews %></p></td>
+      </tr>
+      <tr>
+        <td><p><%= v.language %></p></td>
+        <td><h5>Nombre total de pages uniques vues</h5></td>
+        <td><p><%= v.unique_pageviews %></p></td>
+      </tr>
+
+      <tr>
+        <td><p><%= v.language %></p></td>
+        <td><h5>Nombre total de visites</h5></td>
+        <td><p><%= v.visits %></p></td>
+      </tr>
+      <tr>
+        <td><p><%= v.language %></p></td>
+        <td><h5>Nombre total de visiteurs</h5></td>
+        <td><p><%= v.visitors %></p></td>
+      </tr>
+
+      <tr>
+        <td><p><%= v.language %></p></td>
+        <td><h5>Nombre total de nouveaux visiteurs</h5></td>
+        <td><p><%= "#{v.new_visits} (soit #{((v.new_visits.to_f/v.visits.to_f)*100)}%)".html_safe %></p></td>
+      </tr>
+      <tr>
+        <td><p><%= v.language %></p></td>
+        <td><h5>Durée moyenne d'une visite</h5></td>
+        <td><p><%= "#{(v.time_on_site.to_f/360)/1000} minutes" %></p></td>
+      </tr>
+      <tr>
+        <td><p><%= v.language %></p></td>
+        <td><h5>Nombre total de rebonds</h5></td>
+        <td><p><%= v.bounces %></p></td>
+      </tr>
+      <tr>
+        <td><p><%= v.language %></p></td>
+        <td><h5>Nombre de pages vues par visiste</h5></td>
+        <td><p><%= v.pageviews.to_f/v.visits.to_f %></p></td>
+      </tr>
+      </tbody>
+  <% end %>
+</table>

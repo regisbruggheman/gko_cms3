@@ -1,0 +1,17 @@
+<% if images.try(:any?) %>
+<%
+   image_geometry = local_assigns.has_key?(:image_style) ? image_style : "980x654#"
+   thumb_geometry = local_assigns.has_key?(:thumb_style) ? thumb_style : "110x73#"
+%>
+
+<% if images.length == 1 %>
+	<%= image_fu(images.first, image_geometry) %>
+<% else %>
+	<div class='galleria'>
+  		<% images.each do |img| %>
+      		<%= link_to(image_fu(img, thumb_geometry), img.thumbnail(image_geometry).url) %>
+  		<% end %>
+	</div>
+<% end %>
+
+<% end %>

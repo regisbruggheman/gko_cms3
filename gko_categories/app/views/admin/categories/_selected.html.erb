@@ -1,0 +1,11 @@
+<% cache [controller_name, action_name, @resource_locale, site, "category-selectable-list2"] do %>
+	<div id="selectable-list-container">
+	    <div id="categories-container" class='list-container'>
+		<%= render_tree @categories, 
+			:id => "selectable-categories", 
+			:class => 'nav nav-list tree selection' do |node, child| %>
+			<%= render("admin/categories/selectable_category", :node => node, :child => child) %>
+	       <% end %>
+	    </div>
+	</div>
+<% end %>

@@ -1,0 +1,19 @@
+<%# cache(["admin", document_assignment.document, document_assignment]) do %>
+	<%= content_tag_for(:li, document_assignment) do %>
+	  <div class="thumbnail">
+  		<%= link_to(document_assignment.url, :class=> "preview") do %>
+  		  <i class="icon-file-alt"></i><%= raw document_assignment.title %>
+  		<% end %>
+	    <a href="#" title="<%= document_infos(document_assignment.document) %>" rel='tooltip' class="info-tooltip"><i class="icon-info-sign"></i></a>
+
+	    <div class='btn-group actions'>
+	      <%= icon_to_view("#{document_assignment.document.document.url}", :title => "Voir") %>
+	      <%= icon_to_destroy(url_for([:admin, document_assignment]),
+	                          :remote => true,
+	                          :rel => 'tooltip',
+	                          :title => t("admin.document_assignments.actions.destroy"),
+	                          :confirm => t("confirmations.destroy.document_assignment")) %>
+	    </div>
+	  </div>
+	<% end %>  
+<%# end %>

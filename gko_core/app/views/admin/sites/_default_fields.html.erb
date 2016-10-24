@@ -1,0 +1,7 @@
+<%= f.input :public, :as => :boolean %>
+<%= f.input :title %>
+<%= f.input :host %>
+<% if current_site.has_plugin?(:inquiries) %>
+  <%= f.input :inquiry_save_in_database, :as => :boolean %>
+  <%= f.input :inquiry_recipients %>
+<% end %> 

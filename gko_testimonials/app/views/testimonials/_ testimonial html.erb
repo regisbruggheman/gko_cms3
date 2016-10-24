@@ -1,0 +1,9 @@
+<% cache [action_name, testimonial.site, I18n.locale, testimonial.section, testimonial] do %>
+	<%= grid_item_tag_for(testimonial) do %>
+		<%= render_record_thumb(testimonial) %>
+		<%= grid_item_caption_tag do %>
+			<%= render_record_title(testimonial) %>
+			<%= render_record_link(testimonial) %>
+		<% end %>
+	<% end %>
+<% end if testimonial %>

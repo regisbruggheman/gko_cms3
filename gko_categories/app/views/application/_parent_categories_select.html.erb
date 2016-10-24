@@ -1,0 +1,12 @@
+<% if @parent_categories.try(:any?) %>
+    <%= f.input :with_category,
+                :collection => @parent_categories,
+                :selected => params[:search].present? ? params[:search][:with_category] : nil,
+                :label_method => :title,
+                :as => :select,
+                :label => false,
+                :required => false,
+                :include_blank => false,
+                :prompt => t(:"helpers.select.prompt.category",
+                :input_html => { :class => "form-control" }) %>
+<% end %>

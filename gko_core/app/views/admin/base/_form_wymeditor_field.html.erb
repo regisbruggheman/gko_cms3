@@ -1,0 +1,4 @@
+<% property_name = local_assigns[:field_name].try(:to_sym) || :body %>
+<%= f.input property_name,
+  :input_html => {:class => 'wymeditor'},
+  :wrapper_html => {:class => 'field'} %>

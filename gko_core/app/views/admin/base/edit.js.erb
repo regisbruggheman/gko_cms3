@@ -1,0 +1,4 @@
+var edit_modal = $("<div id='edit_modal' class='modal fade'><div class='modal-header'><a class='close' data-dismiss='modal'>&times;</a><h3 class='modal-title'><%= escape_javascript(t(:"admin.#{controller_name}.titles.edit")) %></h3></div><div class='modal-body'><%= escape_javascript(render('model_form', :remote => true)) %></div></div>");
+edit_modal.appendTo('body').modal({backdrop:'static', show:true}).bind('hidden', function (e) {
+    $(this).remove();
+});

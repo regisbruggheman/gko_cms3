@@ -1,0 +1,24 @@
+<%
+   image_geometry = local_assigns.has_key?(:image_style) ? image_style : site.preferred_image_carousel_size
+   rand_id = "carousel_#{rand(10000)}"
+%>
+<div class="carousel slide" id="<%= rand_id %>">
+  <!-- Carousel indicator --> 
+  <ol class="carousel-indicators">
+    <% images.each_with_index do |img, index| %>
+      <li data-target="#<%= rand_id %>" data-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
+    <% end %>
+  </ol>
+  <div class="carousel-inner">
+  <% images.each_with_index do |img, index| %>
+    <div class="item <%= 'active' if index == 0 %>">
+      <%= image_fu(img, image_geometry, :rel => "external") %>
+    </div>
+  <% end %>
+  </div>
+  <!-- Carousel nav -->
+  <a class="left carousel-control" href="#<%= rand_id %>" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+  <a class="right carousel-control" href="#<%= rand_id %>" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></i></a>
+</div>
+
+

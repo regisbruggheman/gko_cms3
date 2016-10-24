@@ -1,0 +1,39 @@
+<h2>Vue d'ensemble</h2>
+<%= render 'chart_total_visitors' %>
+<table class="<%= Gko::Core.admin_table_css %>">
+  <tbody>
+  <tr>
+    <td><h5>Nombre total de pages vues</h5></td>
+    <td><p><%= @visits.pageviews %></p></td>
+  </tr>
+  <tr>
+    <td><h5>Nombre total de pages uniques vues</h5></td>
+    <td><p><%= @visits.unique_pageviews %></p></td>
+  </tr>
+  <tr>
+    <td><h5>Nombre total de visites</h5></td>
+    <td><p><%= @visits.visits %></p></td>
+  </tr>
+  <tr>
+    <td><h5>Nombre total de visiteurs</h5></td>
+    <td><p><%= @visits.visitors %></p></td>
+  </tr>
+  <tr>
+    <td><h5>Nombre total de nouveaux visiteurs</h5></td>
+    <td><p><%= "#{@visits.new_visits} (soit #{((@visits.new_visits.to_f/@visits.visits.to_f)*100)}%)".html_safe %></p>
+    </td>
+  </tr>
+  <tr>
+    <td><h5>Durée moyenne d'une visite</h5></td>
+    <td><p><%= "#{(@visits.time_on_site.to_f/360)/1000} minutes" %></p></td>
+  </tr>
+  <tr>
+    <td><h5>Nombre total de rebonds</h5></td>
+    <td><p><%= @visits.bounces %></p></td>
+  </tr>
+  <tr>
+    <td><h5>Nombre de pages vues par visiste</h5></td>
+    <td><p><%= @visits.pageviews.to_f/@visits.visits.to_f %></p></td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,63 @@
+//http://johanbrook.com/design/css/debugging-css-media-queries/
+@mixin debugmessage($message, $color: rgba(255, 255, 0, 0.9)){
+  &::before {
+    content: $message;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    background: #{$color};
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 99;
+  }
+}
+
+body::before {
+  content: "Tablet media query (768 < 979) fired";
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  background: rgba(255, 255, 0, 0.9); /* Semi-transparent yellow */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+// UP TO LANDSCAPE PHONE
+// ---------------------
+
+@media (max-width: 480px) {
+  body {
+    @include debugmessage("max-width: 480px");
+  }
+}
+
+// LANDSCAPE PHONE TO SMALL DESKTOP & PORTRAIT TABLET
+// --------------------------------------------------
+
+@media (max-width: 767px) {
+  body {
+    @include debugmessage("max-width: 767px");
+  }
+}
+
+// TABLETS AND BELOW
+// -----------------
+@media (max-width: 979px) {
+  body {
+    @include debugmessage("max-width: 979px");
+  }
+}
+
+// LARGE DESKTOP & UP
+// ------------------
+
+@media (min-width: 1200px) {
+  body {
+    @include debugmessage("min-width: 1200px");
+  }
+}

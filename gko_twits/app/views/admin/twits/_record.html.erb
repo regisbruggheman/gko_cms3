@@ -1,0 +1,12 @@
+<%
+   body = "<span class='warning'>!</span>(#{truncate_html(record.body || record.read_attribute(:body, default_locale), :length => 25, :omission => "[...]")})".html_safe
+%>
+<td>
+    <%= link_to(gurl_for([:edit, :admin, current_site, record.section, record])) do %>
+        <span class='status published' title="<%= t(:'admin.published') %>"><%= t(:'admin.published') %></span>
+        <%= body %>
+    <% end %>
+</td>
+<%= content_tag_for_actions do  %>
+	<%= icons_to_actions([:destroy, :edit], record) %>
+<% end  %>

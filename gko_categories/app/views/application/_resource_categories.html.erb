@@ -1,0 +1,6 @@
+<% if @resource_categories.try(:any?) %>
+    <div class="resource-categories">
+	<%= content_tag(:h4, title.html_safe) unless title.blank? %>
+	<ul class="nav"><%= render :partial => "resource_category", :collection => @resource_categories, :as => :category %></ul>
+    </div>
+<% end %>

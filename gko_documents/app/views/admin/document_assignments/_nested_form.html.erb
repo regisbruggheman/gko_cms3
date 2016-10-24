@@ -1,0 +1,32 @@
+<div class="control-group optional">
+  <label class="control-label" for="document_assignments">Menus</label>
+  <div class="controls">
+    <table class="<%= Gko::Core.admin_table_css %>">
+      <thead>
+        <tr>
+          <th><%= t(:"name") %></th>
+			    <th><%= t(:"presentation") %></th>
+			    <th></th>
+		    </tr>
+      </thead>
+      <tbody id="document_assignments">
+        <%= f.simple_fields_for(:document_assignments) do |d_form| %>
+          <%= render 'fields', :f => po_form %>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to_add_fields2 t(:add_option_value), "tbody#document_assignments", :class => 'btn icon-plus' %>
+    <%#= link_to_add_fields2("add fields",
+		  'tbody#product_document_assignments', f, :document_assignments, :id => "add_document_assignment_btn", :style => 'display:none;', :path => 'admin') %>
+    <div class="well"> 
+      <%= t(:'admin.products.help.option_type_short') %>
+      <%= btn_to(t("admin.products.actions.add_option_type"), insert_admin_site_images_url(
+               current_site,
+               :dialog => "true",
+               :dialog_type => "image",
+               :attachable_type => "#{resource.class}",
+               :attachable_id => "#{resource.id}"), :id => "get_available_option_types_btn", :remote => :true, :icon => 'plus', :inline => false) %>
+    </div>
+    <div id="available_option_types_container"></div>
+  </div>
+</div>

@@ -1,0 +1,98 @@
+/* TREE LIST
+used by section model and category model. 
+These models can be nested and sortable
+================================================== */
+.nav.nav-list.nav-tree {  // ul
+  ul {
+    margin: 0 0 0 34px;
+    list-style: none;
+  }
+  li {
+    position: relative;
+  }
+  .inner {
+    margin-top: -1px;
+    min-height: 32px;
+    padding: 4px 4px 4px 14px;
+    @include clearfix();
+    border: 1px solid $grayLighter;
+    background-color: $white;
+  }
+  i.icon-folder-open,
+  i.icon-move {
+    position: absolute;
+    left: 4px;
+    top: 0;
+    height: 50px;
+    width: 28px;
+    text-align: center;
+    border-right: 1px solid $grayLighter;
+    padding-top: 14px;
+    @include opacity(50);
+  }
+  i.icon-move {
+    cursor: move;
+    &:hover {
+      @include opacity(100);
+    };
+  }
+  .btn-toolbar {
+    float: right;
+    height: auto !important;
+    overflow: visible !important;
+    position: relative;
+    margin-top: 6px;
+    margin-bottom: 0;
+}
+  span.path {
+    font-size: 11px;
+  }
+  .text {
+    zoom: 1;
+    padding-left: 26px;
+    float: left;
+  }
+}
+
+
+// image-folders-tree
+
+aside {
+  h4 {
+    margin: 0;
+    line-height: 30px;
+  }
+  .nav-list.tree {
+    padding-left: 0;
+    padding-right: 0;
+     li { 
+      position: relative;
+      border-top: 1px solid whiteSmoke;
+      border-left: 1px solid #E5E5E5;
+      .dropdown-menu {
+        top: 0;
+        left: 101%;
+      }
+      a {
+        margin: 0;
+        position: relative;
+        font-size: 11px;
+        line-height: 16px;
+        &.dropdown-toggle {
+          position: absolute;
+          right: 0px;
+          top: 0px; 
+          display: inline-block;
+          .caret {
+            margin-top: 7px;
+            margin-left: 0;
+          }
+        } 
+      }
+    }	
+  }
+
+  ul {
+    list-style: none;
+  }
+}

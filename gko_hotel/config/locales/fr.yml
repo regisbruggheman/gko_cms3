@@ -1,0 +1,44 @@
+fr:
+  form:
+    hotel:
+      title: Réserver une table
+  inquiry_sent: Votre demande a été envoyée.
+  simple_form:
+    labels:
+      table_inquiry:
+        dinner: Diner
+        lunch: Déjeuner
+        name: Nom
+        email: Email
+        message: Message
+        newsletter_registration: Recevoir la newsletter
+        date: Date
+        person_count: Nb de personnes
+        service: Heure 
+      hotel_inquiry:
+        name: Nom
+        email: Email
+        message: Message
+        newsletter_registration: Recevoir la newsletter
+        start_date: Date d'arrivée
+        end_date: Date de départ 
+        person_count: Nb de personnes 
+  helpers:
+    submit: 
+      table_inquiry:
+        create: "Envoyer la demande"
+      hotel_inquiry:
+        create: "Envoyer la demande"
+  inquiry_mailer:
+    hotel_notification:
+      subject: Demande de réservation 
+      start_date: Date d'arrivée 
+      end_date: Date de départ 
+      person_count: Nb Personnes 
+    table_notification:
+      subject: Demande de réservation au Restaurant
+      person_count: Nb Personnes
+      date: Date
+      service: Horaire de service 
+    
+      

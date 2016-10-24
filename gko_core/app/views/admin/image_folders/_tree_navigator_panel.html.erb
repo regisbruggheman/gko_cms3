@@ -1,0 +1,22 @@
+<div class="panel">
+	<div class="header">
+    	<h4 class="pull-left"><%= "Dossiers" %></h4>
+		<div class="btn-group pull-right">
+			<a href="#" class="btn dropdown-toggle" data-toggle="dropdown">
+				<i class='icon-cog'></i>&nbsp;<span class='caret'></span>
+			</a>
+			<ul class='dropdown-menu'>
+				<li><%= link_to("Ajouter un dossier", new_admin_site_image_folder_path(current_site), :remote => true) %></li>
+				<li><%= link_to("Tout voir", admin_site_images_path(current_site, :dialog => from_dialog?), :remote => true) %></li>
+			</ul>
+		</div>
+  	</div><!-- end header -->
+
+<%# cache(['admin', ImageFolder.cached_key, 'from_dialog', from_dialog?]) do %>
+	<div class="body">
+		<div id="image-folders-tree-container" class='list-container'>
+			<%= render "admin/image_folders/records" %>
+		</div><!-- end list-container -->	
+  	</div><!-- end body -->
+<%# end %>
+</div>

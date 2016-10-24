@@ -1,0 +1,62 @@
+a .text {
+	display:inline-block;
+	@include ie7-inline-block();
+}
+.html-text {
+	table {
+		width: 100%;
+		margin-bottom: 18px;
+		th, td {
+		padding: 8px;
+		line-height: 18px;
+		text-align: left;
+		vertical-align: top;
+		border-top: 1px solid #DDD;
+		}
+	}
+	img {
+		margin-bottom: $baseLineHeight / 2; //like <p> tag
+	}
+	ul {
+    	list-style-position: inside;
+	}
+}
+.thumbnail {
+	line-height: 1.4;
+}
+
+.navbar .nav > li > a {
+	background-color: $navbarLinkBackground;
+}
+.navbar {
+	.brand {
+		margin: 0;
+		line-height: $baseLineHeight;
+		text-shadow: none;
+		a {
+			color: $navbarBrandColor;
+			&:hover {
+				color: $navbarBrandColor;
+				text-decoration: none;
+			};
+		}
+		
+	}
+}
+
+aside>section {
+	margin-top: $baseLineHeight;
+}
+#site_by {
+	font-size: $baseFontSize - 2;
+}
+.missing-document-preview {
+	background: transparent asset-url("gko/icon_pdf_grey_light_x110.png", 'image') left center no-repeat;
+	min-height: 110px;
+}
+
+li .thumbnail {
+	img.default_image {
+		max-width: none;
+	}
+}

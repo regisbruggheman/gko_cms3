@@ -1,0 +1,11 @@
+<% if local_assigns.has_key?(:record) %>
+    <%
+       scope = record.class.name.tableize
+       next_record = record.next
+       previous_record = record.previous
+    %>
+    <div class="next-previous hide-on-print">
+      <%= link_to("&lsaquo;".html_safe, url_for([previous_record.section, previous_record]), :class => "previous") if previous_record.present? %>
+      <%= link_to("&rsaquo;".html_safe, url_for([next_record.section, next_record]), :class => "next") if next_record.present? %>
+    </div>
+<% end %>

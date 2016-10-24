@@ -1,0 +1,38 @@
+<div class="btn-group dropup">
+  <button class="btn">Dropup</button>
+  <button class="btn dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li class="active"><a href="#button-default" data-toggle="tab">default</a></li>
+    <li><a href="#button-primary" data-toggle="tab">primary</a></li>
+    <li><a href="#button-warning" data-toggle="tab">warning</a></li>
+    <li><a href="#button-danger" data-toggle="tab">danger</a></li>
+    <li><a href="#button-success" data-toggle="tab">success</a></li>
+    <li><a href="#button-info" data-toggle="tab">info</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div><!-- btn-group -->
+
+
+<div class="tab-content">
+  <div class="tab-pane active" id="button-default">
+    <%= render "themes/shared/button_fields", :f => f, :prefix => "default" %>
+  </div>
+  <div class="tab-pane" id="button-primary">
+    <%= render "themes/shared/button_fields", :f => f, :prefix => "primary" %>
+  </div>
+  <div class="tab-pane" id="button-warning">
+    <%= render "themes/shared/button_fields", :f => f, :prefix => "warning" %>
+  </div>
+  <div class="tab-pane" id="button-danger">
+    <%= render "themes/shared/button_fields", :f => f, :prefix => "danger" %>
+  </div>
+  <div class="tab-pane" id="button-success">
+    <%= render "themes/shared/button_fields", :f => f, :prefix => "success" %>
+  </div>
+  <div class="tab-pane" id="button-info">
+    <%= render "themes/shared/button_fields", :f => f, :prefix => "info" %>
+  </div>
+</div>

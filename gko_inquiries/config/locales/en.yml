@@ -1,0 +1,114 @@
+en:
+  gko:
+    inquiry_error: Please fill in all data correctly.
+    inquiry_thanks: Thanks. We'll get back to you as soon as possible.
+    inquiry_connection_time_out: The connection to the server timed out.
+    inquiry_submit: Send
+    
+  send_inquiry: "Send inquiry"
+  form:
+    inquiry:
+      title: "Contact us"
+  activerecord:
+    models:
+      inquiry: "inquiry"
+    attributes:
+      inquiry:
+        name: Name
+        email: Email
+        phone: Phone
+        message: Message
+            
+  inquiry_mailer:
+    confirmation:
+      subject: Receipt
+      title: "Thank you for your inquiry %{name}"
+      body: "This email is a receipt to confirm we have received your inquiry and we'll be in touch shortly. Thanks."
+    notification:
+      greeting: Hi there
+      you_recieved_new_inquiry: "You just received a new inquiry on your website."
+      inquiry_starts: "--- inquiry starts ---"
+      inquiry_ends: "--- inquiry ends ---"
+      subject: "Support"
+      from: "From"
+      email: "Email"
+      phone: "Phone"
+      message: "Message"
+      closing_line: "Kind Regards"
+      ps: "P.S. All your inquiries are stored in the 'Inquiries' section of your CMS should you ever want to view it later there."
+
+  flash:
+    inquiries:
+      create:
+        notice: "Your inquiry has been sent!."
+        alert:  "Something wrong happens. Please try to send your inquiry later."
+        alert_with_email: "Something wrong happens. Thanks to send your inquiry directly at the following email address: %{email}"
+
+  helpers:
+    submit:
+      inquiry:
+        create: "Send %{model}"
+        submit: "Save this %{model}"
+                 
+  inquiries:
+    new:
+      title: Contact us
+    form:
+      privacy_policy: ""
+
+  simple_form:
+    labels:
+      site:
+        inquiry_recipients: Email(s) de notification
+      inquiry:
+        name: Name
+        first_name: First Name
+        last_name: Last Name
+        email: Email
+        phone: Phone number
+        message: Message 
+            
+  admin:
+    inquiries:
+      menu_tab: Requêtes
+      empty: "Aucune requête n'a été trouvée. %{link}"
+      create_item: "Ajouter une nouvelle requête maintenant."
+      actions:
+        new: Ajouter une nouvelle requête
+        destroy: Supprimer cette requête
+        edit: Modifier cette requête
+        index: Liste des requêtes
+      titles:
+        new: Ajout d'une nouvelle requête
+        index: Liste des requêtes
+        edit: Modification d'une requête
+      columns:
+        inquiry: Name
+        email: Email
+      spam:
+        title: Inquiries marked as Spam
+          
+      delete: Remove this inquiry forever
+      inquiry:
+        read_inquiry: Read the inquiry
+        said: said
+        mark_as_spam: Mark as spam
+        mark_as_ham: Move to inbox
+      index:
+        no_inquiries: You have not received any inquiries yet.
+        no_spam: Hooray! You don't have any spam.
+        title: Inquiries
+      show:
+        details: Details
+        age: Age
+        actions: Actions
+        back_to_all_inquiries: Back to all Inquiries
+        spam: Spam
+        spam_yes: 'yes'
+        inquiry: Inquiry
+        to: To
+        from: From
+        click_to_email: Click to email this address
+        phone: Phone
+        date: Date
+        message: Message

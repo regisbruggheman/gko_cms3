@@ -1,0 +1,22 @@
+// Navbar (gko addon)
+// -------------------------
+$navbarLinkBackground:            transparent !default;	
+// Footer (gko addon)
+// -------------------------
+$footerHeight:                    40px !default;
+$footerBackground:                $navbarBackground !default;
+$footerText:                      $navbarText !default;
+$footerLinkColor:                 $navbarLinkColor !default;
+$footerLinkBackground:       	  $navbarLinkBackground !default;
+$footerLinkColorHover:            $navbarLinkColorHover !default;
+$footerLinkBackgroundHover:       $navbarLinkBackgroundHover !default;
+// Copyright (gko addon)
+// -------------------------
+$copyrightHeight:                    40px !default;
+$copyrightBackground:                $footerBackground !default;
+$copyrightFontSize:                  $baseFontSize - 2 !default;
+$copyrightText:                      $footerText !default;
+$copyrightLinkColor:                 $footerLinkColor !default;
+$copyrightLinkBackground:            $footerLinkBackground !default;
+$copyrightLinkColorHover:            $footerLinkColorHover !default;
+$copyrightLinkBackgroundHover:       $footerLinkBackgroundHover !default;

@@ -1,0 +1,41 @@
+// footer
+.outer-container-footer,
+#footer {
+  background-color: $footerBackground;
+   min-height: $footerHeight;
+
+	// NAVIGATION
+	// ----------
+	.nav {
+    position: relative;
+    left: 0;
+    display: block;
+    float: left;
+    margin: 0 10px 0 0;
+	}
+	.nav > li {
+    display: block;
+    float: left;
+	}
+
+	// Links
+	.nav > li > a {
+	  float: none;
+	  // Vertically center the text given @footerHeight
+	  $elementHeight: 20px;
+	  padding: (($footerHeight - $elementHeight) / 2 - 1) 10px (($footerHeight - $elementHeight) / 2 + 1);
+	  line-height: 19px;
+	  color: $footerLinkColor;
+	  text-decoration: none;
+	  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    background-color: $footerLinkBackground;
+	}
+
+	// Hover
+	.nav > li > a:hover {
+	  background-color: $footerLinkBackgroundHover;
+	  color: $footerLinkColorHover;
+	  text-decoration: none;
+	}
+
+}

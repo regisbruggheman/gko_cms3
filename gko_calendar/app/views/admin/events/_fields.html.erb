@@ -1,0 +1,24 @@
+<%= f.hidden_field :section_id %>
+<div class='accordion' id="event_accordion">
+  <%= accordion_group(t(:'admin.fieldset.general_informations'), 'general_informations_group', 'event_accordion', :open => true) do %>
+      <%= render :partial => 'admin/accounts/picker', :locals => {:f => f} %>
+      <%= f.input :image, :as => :file, :hint => t(:'admin.images.maximum_image_size', :size => Image::MAX_SIZE_IN_MB) %>
+      <%= f.input :title %>
+      <%= f.input :start_date, :required => true, :input_html => {:class => :date}, :as => :string %>
+      <%= f.input :end_date, :required => true, :input_html => {:class => :date}, :as => :string %>
+      <%= render :partial => 'gko/admin/form_redactor_field', :locals => {:f => f} %>
+  <% end %>
+  <%= accordion_group(t(:'admin.fieldset.options'), 'options_group', 'event_accordion') do %>
+      <%= render :partial => 'form_pages_picker', :locals => {:f => f, :owner_attribute => 'owner', :owner_title => f.object.owner_name} %>
+      <%= f.input :location %>
+      <%= f.input :contact_email %>
+      <%= f.input :more_info_url %>
+      <%= f.input :registration_url %>
+      <%= f.input :slug %>
+  <% end %>
+
+  <%= render_category_accordion_group(parent, f, 'content_accordion') if current_site.has_plugin?(:categories) %>
+  <%= render_sticker_accordion_group(parent, f, 'content_accordion') if current_site.has_plugin?(:stickers) %>
+  <%#= render_seo_accordion_group(f, 'content_accordion') %>
+</div>
+<%= render :partial => 'form_publish_fields', :locals => {:f => f} %>

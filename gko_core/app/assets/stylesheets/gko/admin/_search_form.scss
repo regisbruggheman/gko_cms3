@@ -1,0 +1,9 @@
+.form-search {
+ 	margin: 0;
+}
+.search-container,
+.advanced-search-container {
+	@extend .smooth_gradient_container;
+	border-bottom: 1px solid #ddd; 
+} 
+

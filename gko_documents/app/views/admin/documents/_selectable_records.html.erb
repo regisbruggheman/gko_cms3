@@ -1,0 +1,8 @@
+<ul id='documents_list' class="thumbnails js-selectable">
+  <% if @documents.count == 0 %>
+    <%= render "admin/shared/empty" %>
+  <% else %>
+    <%= render :partial => "admin/documents/selectable_record", :collection => @documents, :as => :record %>
+  <% end %>
+</ul>
+<%= render_pagination(@documents) %>

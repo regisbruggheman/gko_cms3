@@ -1,0 +1,59 @@
+fr:    
+  activerecord:
+    models:
+      album: "Album photo"
+      album_list: "Liste d'albums photo"
+  helpers:
+    submit:
+      album:
+        create: "Ajouter l'album"
+
+  albums:
+    collection:
+      continue: "Voir l'album "
+    no_record_found: "Aucun album n'a été trouvé"
+    links:
+      continue_reading: "Voir l'album photo"
+      feed_subscribe: "Souscrire au flux"
+      previous: "Suivant"
+      next: "Précédent"
+    titles:
+      in_categories: "Albums photo dans la catégorie %{name}"
+      tagged: "Albums étiquettées avec %{name}"
+    archives: Archives
+
+  admin:
+    album_lists:
+      actions:
+        edit: Configuration 
+      tooltips:
+        edit: "Modifier la page d'index des albums"
+        show: "Voir l'album"
+      titles:
+        edit: "Modifier la page d'index des galeries"
+             
+    albums: 
+      untranslated_message: 
+        one: "Attention: 1 album n'est pas traduit."
+        many: "Attention: %{count} albums ne sont pas traduits."
+      select_blank: Sélectionner un album
+      menu_tab: Albums
+      collection:
+        empty: "Aucun album n'a été trouvé. %{link}"
+        create_item: "Créer un nouvel album maintenant."
+      actions:
+        new: Ajouter un album
+        destroy: Supprimer cet album
+        edit: Modifier cet album
+        index: Albums
+        view: Voir la page publique de cette album
+        previous: Previous
+        next: Next
+      tooltips:
+        index: Lister les albums
+      titles:
+        new: Ajout d'un album
+        index: Liste des albums
+        edit: Modification d'un album
+      columns:
+        post: Album

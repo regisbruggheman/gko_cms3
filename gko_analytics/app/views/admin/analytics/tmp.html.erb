@@ -1,0 +1,34 @@
+<table id="analytics-pageviews" class="<%= Gko::Core.admin_table_css %>">
+  <th><%= "pageviews".html_safe %></th>
+  <th><%= "page_path".html_safe %></th>
+  <tbody>
+
+  <% @pageviews.each do |result| %>
+      <%= "<tr><td>#{result.pageviews}</td><td>#{result.page_path}</td></tr>".html_safe %>
+  <% end %>
+
+  </tbody>
+</table>
+<table id="analytics-exits" class="<%= Gko::Core.admin_table_css %>">
+  <th><%= "exits".html_safe %></th>
+  <th><%= "page_path".html_safe %></th>
+  <tbody>
+
+  <% @report_exits.each do |result| %>
+      <%= "<tr><td>#{result.exits}</td><td>#{result.page_path}</td></tr>".html_safe %>
+  <% end %>
+
+  </tbody>
+</table>
+<table id="analytics-visits" class="<%= Gko::Core.admin_table_css %>">
+  <th><%= "keyword".html_safe %></th>
+  <th><%= "visits".html_safe %></th>
+  <tbody>
+
+  <% @total_visits.each do |result| %>
+      <%= "<tr><td>#{result.inspect()}</td><td>#{result.visits}</td></tr>".html_safe %>
+      <%= "<tr><td>#{result.keyword}</td><td>#{result.visits}</td></tr>".html_safe %>
+  <% end %>
+
+  </tbody>
+</table>

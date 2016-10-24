@@ -1,0 +1,9 @@
+if ($("#selectable_users_list_container").length) {
+    $("#selectable_users_list_container").html('<%= escape_javascript(render :partial => "admin/users/selectable_list") %>');
+}
+else {
+    $('html, body').animate({scrollTop:0}, 'slow');
+    $("<%= escape_javascript(render(:partial => 'admin/users/availables')) %>").appendTo('body').modal({backdrop:'static', show:true}).bind('hidden', function (e) {
+        $(this).remove();
+    });
+}

@@ -1,0 +1,15 @@
+<%
+   resource_namespace = "/admin/#{resource.class.name.underscore.pluralize}".html_safe
+   has_meta_association = !resource.class.reflect_on_association(:meta).nil?
+   has_extensions = lookup_context.find_all("#{resource_namespace}/_associations_fields").any?
+   has_options = lookup_context.find_all("#{resource_namespace}/_option_fields").any?
+%>
+<%= f.input :title %>
+<%= render :partial => 'form_wymeditor_field', :locals => {:f => f} %>
+<% if has_meta_association %>
+	<%= f.simple_fields_for :meta do |meta_form| %>
+		<%= render "meta_fields", :f => meta_form %>
+	<% end %>
+<% end %>
+<%= render "#{resource_namespace}/option_fields", :f => f if has_options %>
+<%= render "#{resource_namespace}/associations_fields", :f => f if has_extensions %>

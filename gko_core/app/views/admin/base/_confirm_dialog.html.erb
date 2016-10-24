@@ -1,0 +1,17 @@
+<div id="page-confirm-dialog" class="modal fade">
+  <div class="modal-header">
+    <h3><%= "Attention".html_safe %></h3>
+  </div>
+  <div class="modal-body">
+    <p id="confirm-dialog-message"></p>
+  </div>
+  <div class="modal-footer">
+    <%= btn_to("Non annuler", "javascript:void(0)",
+               :id => "confirm-dialog-false",
+               :icon => 'back') %>
+    <%= btn_to("Oui supprimer", "javascript:void(0)",
+               :id => "confirm-dialog-true",
+               :icon => 'trash icon-white',
+               :class => 'btn-danger') %>
+  </div>
+</div>

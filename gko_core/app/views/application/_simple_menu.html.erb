@@ -1,0 +1,10 @@
+<% if sections.try(:any?) %>
+	<ul class="nav <%= menu_name if local_assigns.key?(:menu_name) %>">
+		<% sections.each do |section| %>
+		<li id="<%= dom_id(section) %>">
+		<%= menu_link(section) -%>
+		</li>
+		<% end %> 
+    </ul>
+<% end %> 
+

@@ -1,0 +1,18 @@
+<ul class="nav nav-menu <%= menu_name if local_assigns.key?(:menu_name) %>">
+  <% sections.each do |section| %>
+    <% if section %>
+    <%
+      has_dropdown = section.children.in_menu.try(:any?)
+      li_classes = []
+      li_classes << "active" if !section.is_a?(Redirect) and active_paths.include?(section.public_url)
+      li_classes << "dropdown" if has_dropdown
+      #li_classes << section.menu_css_class if section.menu_css_class.present?
+      li_classes = li_classes.join(" ")
+    %>
+    <li id="<%= dom_id(section) %>" class="<%= li_classes unless li_classes.blank? %>">
+      <%= menu_link(section, :dropdown => has_dropdown) -%>
+      <%= render "dropdown_menu", :sections => section.children.in_menu if has_dropdown %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>

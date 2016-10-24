@@ -1,0 +1,10 @@
+<%= f.input :performing_plain_text %>
+<%= f.input :source %>
+<% if resource.new_record? %>
+	<%= f.input :plain_text_name %>
+	<%= f.input :plain_text_type, :as => 'select', :collection => %w(stylesheet javascript scss coffeescript), :include_blank => false %>
+	<%= f.input :plain_text, :type => plain_text_type(@theme_asset) %>
+	<%= link_to t('locomotive.theme_assets.form.choose_file'), '#', :class => 'alt' %>
+<% end %>
+<%= f.input :folder %>
+<%= f.input :compile %>

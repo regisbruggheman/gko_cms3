@@ -1,0 +1,9 @@
+<p class='empty_collection'>
+  <% if params[:month].present? %>
+      <%= t("posts.no_archives_found_in_month", :month => params[:month], :year => params[:year]) %>
+  <% elsif params[:year].present? %>
+      <%= t("posts.no_archives_found_in_year", :year => params[:year]) %>
+  <% else %>
+      <%= t("posts.no_record_found") %>
+  <% end %>
+<p>

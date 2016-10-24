@@ -1,0 +1,20 @@
+<% cache(["admin", @resource_locale.to_s, image_bank_photo]) do %>
+	<%= content_tag_for(:li, image_bank_photo, :class => "span3") do %>
+	  <div class="thumbnail">
+		<%= image_tag(image_bank_photo.source_url(:thumb),:title => image_bank_photo.title,:class => "thumb") if image_bank_photo.source? %>
+
+		<div class="caption">
+	    <div class='btn-group actions'>
+		 <%= icon_to_edit(url_for([:edit, :admin, current_site, image_bank_photo.image_bank, image_bank_photo])) %>
+	      <%= icon_to_view("#{image_bank_photo.source_url}", :class => 'gallery-item', :title => "Voir en grand", :rel => "images_list") %>
+	      <%= icon_to_destroy(url_for([:admin, current_site, image_bank_photo.image_bank, image_bank_photo]),
+	                          :remote => true,
+	                          :rel => 'tooltip',
+	                          :title => t("admin.image_assignments.actions.destroy"),
+	                          :confirm => t("confirmations.destroy.image_assignment")) %>
+	    </div>
+	    </div>
+	  </div>
+	<% end %>
+<% end %>
+

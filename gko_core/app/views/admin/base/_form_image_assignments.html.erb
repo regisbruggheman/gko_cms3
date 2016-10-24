@@ -1,0 +1,39 @@
+<div class='control-group'>
+    <% if f.object.new_record? %>
+        <span><%= t(:'admin.images.save_before_attach').html_safe %></span>
+    <% else %>
+        <div class="well">
+          <%= btn_to(t(:'admin.images.actions.create_and_attach'),
+                     new_admin_site_image_url(
+                             current_site,
+                             :multiple => true,
+                             :attachable_type => "#{resource.class}",
+                             :attachable_id => "#{resource.id}"),
+                     :remote => true,
+                     :icon => 'upload',
+                     :'data-dialog-title' => "Images") %>
+          <%= btn_to(t(:'admin.images.actions.browse_for_attach'),
+                     insert_admin_site_images_url(
+                             current_site,
+                             :dialog => "true",
+                             :dialog_type => "image",
+                             :attachable_type => "#{resource.class}",
+                             :attachable_id => "#{resource.id}"),
+                     :remote => true,
+                     :icon => 'search',
+                     :'data-dialog-type' => "images",
+                     :'data-dialog-title' => "Images") %>
+        </div>
+        <ul id='<%= resource_instance_name %>-image-assignment-list' class='thumbnails sortable' data-toggle="modal-gallery" data-target="#modal-gallery" data-selector="a.gallery-item" data-sortable-url="<%= admin_move_path(:model_name => 'ImageAssignment') %>">
+          <%= render f.object.image_assignments %>
+        </ul>
+    <% end %>
+</div>
+<%= render "admin/images/modal_gallery" %>
+<% content_for :after_javascript_libraries do %>
+<script type="text/javascript">
+	$(document).ready(function() {
+		make_sortable($("#<%= f.object.class.name.underscore %>-image-assignment-list"));
+	});
+</script>
+<% end %>

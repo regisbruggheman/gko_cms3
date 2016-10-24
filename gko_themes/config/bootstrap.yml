@@ -1,0 +1,285 @@
+theme:
+    bootstrap:
+        links: &links
+            linkColor:
+                default: "#08c"
+                type: "color"
+            linkColorHover:
+                default: "darken(@linkColor 15%)"
+                type: color
+        colors:
+            grays:
+                black: "#000"
+                grayDarker: "#222"
+                grayDark: "#333"
+                gray: "#555"
+                grayLight: "#999"
+                grayLighter: "#eee"
+                white: "#fff"
+            accent_colors:
+                blue: "#049cdb"
+                blueDark: "#0064cd"
+                green: "#46a546"
+                red: "#9d261d"
+                yellow: "#ffc40d"
+                orange: "#f89406"
+                pink: "#c3325f"
+                purple: "#7a43b6"
+
+        typography: &typography
+            baseFontSize:
+                default: "13px"
+            baseFontFamily:
+                default: "Helvetica Neue, Helvetica, Arial, sans-serif"
+            baseLineHeight:
+                default: "18px"
+            textColor:
+                default: "@grayDark"
+
+        buttons:
+            primaryButtonBackground:
+                default: "@linkColor"
+
+        placeholderText:
+            default: "@grayLight"
+        hrBorder:
+            default: "@grayLighter"
+      
+        navbar:
+            navbarHeight:
+                default:"40px"
+            navbarBackground:
+                default:"@grayDarker"
+            navbarBackgroundHighlight:
+                default:"@grayDark"
+            navbarLinkBackgroundHover:
+                default:"transparent"
+            navbarText:
+                default:"@grayLight"
+            navbarLinkColor:
+                default:"@grayLight"
+            navbarLinkColorHover:
+                default:"@white"
+
+        alert:
+            warningText:
+                default:"#c09853"
+            warningBackground:
+                default:"#fcf8e3"
+            warningBorder:
+                default:"darken(spin(@warningBackground -10) 3%)"
+            errorText:
+                default:"#b94a48"
+            errorBackground:
+                default:"#f2dede"
+            errorBorder:
+                default:"darken(spin(@errorBackground -10) 3%)"
+            successText:
+                default:"#468847"
+            successBackground:
+                default:"#dff0d8"
+            successBorder:
+                default:"darken(spin(@successBackground -10) 5%)"
+            infoText:
+                default:"#3a87ad"
+            infoBackground:
+                default:"#d9edf7"
+            infoBorder:
+                default:"darken(spin(@infoBackground -10) 7%)"
+
+        grid:
+            gridColumns:
+                default:"12"
+            gridColumnWidth:
+                default:"60px"
+            gridGutterWidth:
+                default:"20px"
+            gridRowWidth:
+                default:"(@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1))"
+            fluidGridColumnWidth:
+                default:"6.382978723%"
+            fluidGridGutterWidth:
+                default:"2.127659574%"
+                
+    global:
+        global-radii-blocks:
+            default: "4px"
+            type: size
+        containerMaxWidth:
+            default: 0
+            type: size
+        rowMaxWidth:
+            default: 980px
+            type: size
+        bodyBackgroundColor:
+            default:  white
+            type: background-color
+        contentContainerBackgroundColor:
+            default:  transparent
+            type: background-color
+        contentBackgroundColor:
+            default: transparent
+            type: background-color
+        mainBackgroundColor:
+            default: transparent
+            type: background-color
+        sidebarBackgroundColor:
+            default: transparent
+            type: background-color
+        baseFontFamily:
+            default: "Helvetica Neue, Helvetica, Arial, sans-serif"
+        baseFontSize:
+            default: 12px
+        baseLineHeight:
+            default: 20px
+        textColor:
+            default: "#333"
+        headingFontFamily:
+            default: $baseFontFamily
+            type: font-family
+        headingTextColor:
+            default: $textColor
+        headingBaseFontSize:
+            default: 26px
+        <<: *typography
+        <<: *links
+
+        navbar:
+            navLinkColor: 
+                default: $linkColor
+            navLinkColorHover: 
+                default: $linkColorHover
+            navLinkColorActive: 
+                default: $navLinkColorHover
+            navBackgroundColor: 
+                default: transparent
+            navBackgroundColorHover: 
+                default: $navBackgroundColor
+            navBackgroundColorActive: 
+                default: $navBackgroundColor
+            navbarBackgroundHighlight: 
+                default: $bodyBackgroundColor
+            navbarBackground: 
+                default: $bodyBackgroundColor
+            navbarText: 
+                default: $textColor
+            navbarLinkColor: 
+                default: $linkColor
+            navbarLinkColorHover: 
+                default: $linkColorHover
+            navbarLinkColorActive: 
+                default: $linkColorHover
+            navbarLinkSpace: 
+                default: 0
+            navbarLinkBackgroundColor: 
+                default: transparent
+            navbarLinkBackgroundColorHover: 
+                default: $navbarLinkBackgroundColor
+            navbarLinkBackgroundColorActive: 
+                default: $navbarLinkBackgroundColor
+            navbarLinkCorner: 
+                default: none 
+            navbarButtonBackgroundHighlight: 
+                default: $navbarBackgroundHighlight
+            navbarButtonBackground: 
+                default: $navbarBackground
+            navbarButtonIconBarColor: 
+                default: white
+            navbarResponsiveLinkBorder: 
+                default: lighter($navbarLinkColor, 15%)
+            navbarDropdownBackground: 
+                default: $navbarBackground
+            navbarDropdownLinkColor: 
+                default: $navbarLinkColor
+            navbarDropdownLinkColorHover: 
+                default: $navbarLinkColorHover
+            navbarDropdownLinkColorActive: 
+                default: $navbarLinkColorActive
+
+        footer:
+            footerContainerBackgroundColor:
+                default: transparent
+                type: background-color
+            footerBackgroundColor    :
+                    default: transparent
+                    type: background-color
+            footerLinkColor:
+                default: $linkColor
+                type: color
+            footerLinkColorHover:
+                default: $linkColorHover
+                type: color
+            footerLinkColorActive:
+                default: $linkColorActive
+                type: color
+            footerResponsiveLinkBorder: 
+                default: lighter($footerLinkColor, 15%)
+                type: border-color 
+
+        copyright:
+            copyrightContainerBackgroundColor:
+                default: transparent
+                type: background-color
+            copyrightBackgroundColor:
+                default: transparent
+                type: background-color
+            linkColor:
+                default: $linkColor
+                type: color    
+                hover: $linkColorHover
+                active: $linkColorActive   
+            copyrightLogo:
+                default: "gko/logo_gecko_black.png"
+                type: url
+
+        form:
+            inputTextColor:
+                default: $textColor
+                type: color
+            inputBackgroundColor:
+                default: $bodyBackgroundColor
+                type: background-color
+            inputBorderColor: 
+                default: $textColor
+                type: border-color    
+            inputFocusBorderColor: 
+                default: rgba(82, 168, 236, 0.8)
+                type: color
+                color_type: rgba
+            inputBorderRadius:
+                default: 3
+                type: border-radius 
+
+        grid:
+            blockGridBorder:
+                default: none
+                type: border
+            blockGridBackgroundColor: 
+                default: transparent
+                type: background-color 
+            blockGridCorner: 
+                default: 0
+                type: border-radius    
+            blockGridShadow:
+                default: none
+                type: shadow
+        grid_image:
+            blockGridImageBorder:
+                default: none
+                type: border
+            blockGridImageBackgroundColor:
+                default: transparent
+                type: background-color
+                default: 
+            blockGridImageCorner:
+                default: 0
+                type: corner
+                default:
+            blockGridImageShadow:
+                default: none
+                type: shadow
+
+        icon:
+            pdfIcon: 
+                default: shadow'gko/icon_pdf_grey_light_x1
+                type: url

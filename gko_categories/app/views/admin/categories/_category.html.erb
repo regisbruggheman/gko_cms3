@@ -1,0 +1,17 @@
+<% cache ['admin', Globalize.locale, 'record1', node.site, node.section, node] do %>
+	<%= content_tag_for(:li, node) do %>
+		<div class="inner <%= 'root' if node.root? %>">
+		<i class='icon-move'></i>
+		  <div class='text'>
+			<%= glink_to_edit("#{node.labelize}<span class='count'> (#{node.categorizations.size.to_s})</span>".html_safe, node) %>
+			<%= "<br/><span class='path'>#{node.path}</span>".html_safe if node.path.present? %>
+		  </div>
+		<div class='btn-toolbar'>
+			<div class='btn-group'>
+				<%= icons_to_actions([:destroy, :edit], node) %>
+			</div>
+		</div>
+		</div>
+		<%= child %>
+	<% end %>
+<% end %>

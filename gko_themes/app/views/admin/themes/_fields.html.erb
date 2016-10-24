@@ -1,0 +1,17 @@
+<%= f.input :name %>
+<%#= f.input :author %>
+<%#= f.input :homepage %>
+<%#= f.input :theme_id %>
+<%#= f.input :version %>
+<%#= f.input :summary %>
+
+<% if f.object.persisted? %>
+    <%= f.input :color %>
+	<%= f.input :menu_type %>
+
+<% else %>
+    <div class='well alert-info'>
+      <p><%= "Créer un nouveau thème ou télécharger un thème existant.".html_safe %></p>
+    </div>
+    <%= render :partial => 'form_document_field', :locals => {:f => f} %>
+<% end %>

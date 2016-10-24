@@ -1,0 +1,3 @@
+<%= f.association :parent, 
+				  :collection => nested_set_options(current_site.image_folders.roots.all) {|i, level| "#{'-' * level} #{i.name}" } %>
+<%= f.input :name %>

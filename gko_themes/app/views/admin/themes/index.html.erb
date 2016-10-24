@@ -1,0 +1,42 @@
+<% content_for(:sidebar) do %>
+    <div class="alert alert-info">
+      <h4><%= "Tip".html_safe %></h4>
+
+      <p><%= "For designers who want to create their own designs, our barebones templates provide a convenient starting point. There are several HTML layouts to choose from as well as stylesheets with all of the basic CSS for modifying the look of content elements.
+	Download EF_Barebones.zip (56KB).".html_safe %></p>
+    </div>
+<% end %>
+
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#design-home" data-toggle="tab">Home</a></li>
+  <li><a href="#my-designs" data-toggle="tab">My designs</a></li>
+  <li><a href="#design-gallery" data-toggle="tab">Design Gallery</a></li>
+  <li><a href="#add-design" data-toggle="tab">Upload a design</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="design-home">
+    <%= "Welcome to the Design Manager
+	The design manager is the place to take care of everything related to the design and templates for your website.
+	Learn about making custom design templates for your website
+	Change which design your website uses
+	Make changes to an existing design
+	Design support topics
+	Here are the most popular articles about design in the help section of our website.
+	Creating Designs
+	The token reference guide
+	Design FAQ
+	Visit www.lightcms.com/support for a complete list of help topics about designs and other account-related actions.".html_safe %>
+  </div>
+  <div class="tab-pane" id="my-designs">
+    <%= render "records" %>
+  </div>
+
+  <div class="tab-pane" id="design-gallery">...</div>
+  <div class="tab-pane" id="add-design">
+    <div class="well">
+      <p><%= "Already have a design created? Upload your .zip file here. To find out more about creating and uploading your own designs, please see our tutorials below.".html_safe %></p>
+    </div>
+    <%#= render "model_form", :models => [:admin, @theme] %>
+  </div>
+</div>

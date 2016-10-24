@@ -1,0 +1,22 @@
+<% cache(["admin", current_site, image]) do %>
+	<%= content_tag_for(:li, image, :class => "span3") do %>
+	<div class="thumbnail">
+	    <%= image_fu(image, "160x120", :title => image.title) %>
+	    <!--
+	    <a href="#" title="<%= image_infos(image) %>" rel='tooltip' data-html="true" class="info-tooltip">
+	        <i class="icon-info-sign"></i>
+	    </a> -->
+	    <div class='btn-group actions'>
+	        <%= icon_to_view("#{image.image.url}", 
+	        :class => 'gallery-item', 
+	        :title => "Voir en grand", 
+	        :rel => "images_list") %>
+	        <%= icon_to_edit(edit_admin_site_image_path(current_site, image)) %>
+	        <a href="<%= image.image.url %>" class="btn" target="_blank" rel="tooltip" title="<%= t('admin.images.actions.download') %>">
+	            <i class="icon-download"></i>
+	        </a>
+	        <%= icon_to_destroy(admin_site_image_path(current_site, image), :remote => true) %>
+	    </div>
+	</div>
+	<% end %>  
+<% end %>            

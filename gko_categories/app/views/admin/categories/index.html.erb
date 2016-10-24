@@ -1,0 +1,16 @@
+<% content_for :after_javascript_libraries do %>
+<%= javascript_include_tag("gko/admin/tree-reorder") %>
+<script type="text/javascript">
+	$(document).ready(function() {
+		list_reorder.init($(".nav-tree"), "<%= restructure_admin_site_section_categories_path %>");
+	});
+</script>
+<% end %>
+<%= render "actions" %>
+<% cache [controller_name, @timestamp] do %>
+<div id="categories-container" class='list-container'>
+  <%= render_tree @categories, :id => "categories-tree", :class => 'nav nav-list nav-tree' do |node, child| %>
+    <%= render("admin/categories/category", :node => node, :child => child) %>
+  <% end %>
+</div>
+<% end %>

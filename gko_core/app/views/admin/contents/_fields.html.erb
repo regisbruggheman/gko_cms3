@@ -1,0 +1,30 @@
+<ul class="nav nav-tabs">
+  <%= li_tab_for("#content-basic-tab", t(:'admin.fieldset.general_informations'), 'active') %>
+  <%= li_tab_for("#content-images-tab", t(:'admin.fieldset.images')) %>
+  <%= li_tab_for("#content-categories-tab", t(:'admin.fieldset.categories')) if f.object.section.categorizable? %>
+  <%= li_tab_for("#content-stickers-tab", t(:'admin.fieldset.stickers')) if f.object.section.stickable? %>
+  <%= li_tab_for("#content-seo-tab", t(:'admin.fieldset.seo')) %>
+</ul>
+
+<div class="tab-content">
+	<div class="tab-pane active" id="content-basic-tab">
+		<%= render 'admin/contents/default_fields', :f => f %>
+		<%= render 'form_publish_fields', :f => f %>
+  </div>
+  <div class="tab-pane" id="content-images-tab">
+		<%= render 'form_image_assignments', :f => f %>
+  </div>
+	<% if f.object.section.categorizable? %>
+	<div class="tab-pane" id="content-categories-tab">
+		<%= render 'form_categories_checkboxes', :f => f %>
+  	</div>
+	<% end %>
+  <% if f.object.section.stickable? %>
+	<div class="tab-pane" id="content-stickers-tab">
+		<%= render 'form_stickers_checkboxes', :f => f %>
+  </div>
+	<% end %>
+  <div class="tab-pane" id="content-seo-tab">
+		<%= render 'form_seo_fields', :f => f %>
+  </div>
+</div>    

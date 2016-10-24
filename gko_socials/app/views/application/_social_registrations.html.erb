@@ -1,0 +1,13 @@
+<%# if (!current_user || !current_user.authentications) && AuthenticationMethod.active_authentication_methods? %>
+<% if !current_user && AuthenticationMethod.active_authentication_methods? %>
+  <h2><%= t(:sign_in_through_one_of_these_services) %>:</h2>
+<% end %>
+dasssssss
+<% AuthenticationMethod.active.each do |method| %>
+  <% img = "store/#{method.provider}_32.png" %>
+  <%= link_to(	user_omniauth_authorize_url(method.provider.to_sym), 
+				:title => t(:sign_in_with, :provider => method.provider)) do %>
+		<i class='icon-<%= method.provider.downcase %> icon-large' ></i>
+  <% end %>
+
+<% end %>

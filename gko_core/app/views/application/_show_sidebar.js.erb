@@ -1,0 +1,6 @@
+<%# !! KEEP ORDER to be able to include sidebar in _resource %>
+<%= escape_javascript(render('secondary_menu')) %>
+<% content_for :sidebar do %>
+	<%= escape_javascript(render "sidebar") %>
+<% end %>
+<%= escape_javascript(render_resource) %>

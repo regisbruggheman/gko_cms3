@@ -1,0 +1,44 @@
+fr:
+  stickers:
+    title: Etiquettes
+    meta_title: Etiquettes
+  confirmations:
+    destroy:
+      sticker: "Voulez-vous réellement supprimer définitivement cette étiquette ? <br/>Cette action est irréversible et supprimera cette étiquette de toutes les pages l'utilisant!"
+  simple_form:
+    labels:
+      sticker:
+        name: "Nom"
+      section:
+        accept_stickers: Etiquettable
+    hints:
+      section:
+        accept_stickers: Indiquer si les pages filles peuvent être étiquettées par des mots clés.
+      
+  admin:
+    untranslated_message: 
+      one: "Attention: 1 étiquette n'est pas traduite."
+      many: "Attention: %{count} étiquettes ne sont pas traduites."
+    fieldset:
+      stickers: Etiquettes
+    stickers:
+      select_blank: Sélectionner une étiquette
+      menu_tab: Etiquettes
+      collection:
+        empty: "Aucune étiquette n'a été trouvée. %{link}"
+        create_item: "Ajouter une nouvelle étiquette maintenant."
+      actions:
+        new: Ajouter une nouvelle étiquette
+        destroy: Supprimer cette étiquette
+        edit: Modifier cette étiquette
+        index: Etiquettes
+        previous: Previous
+        next: Next
+      tooltips:
+        index: Liste des étiquettes
+      titles:
+        new: Ajout d'une nouvelle étiquette
+        index: Liste des étiquettes
+        edit: Modification d'une étiquette
+      columns:
+        sticker: Etiquette

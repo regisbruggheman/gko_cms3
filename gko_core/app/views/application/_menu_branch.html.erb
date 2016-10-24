@@ -1,0 +1,12 @@
+<% if section %>
+    <%
+       children = section.children.in_menu
+       has_dropdown = children.try(:any?)
+    %>
+    <li "<%= "class='dropdown-submenu'" if has_dropdown  %>" ><%= menu_link(section) -%></li>
+    <% if has_dropdown %>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+          <%= render(:partial => 'menu_branch', :collection => children, :as => 'section') %>
+        </ul>
+    <% end %>
+<% end %>

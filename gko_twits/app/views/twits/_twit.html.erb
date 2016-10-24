@@ -1,0 +1,10 @@
+<%= grid_item_tag_for(twit) do %>
+<div class='caption'>
+    <h5 class='thumbnail-title'>
+      <%= l(twit.published_at, :format => :long) %>
+    </h5>
+    <div class='thumbnail-description'>
+      <%= twit.body.html_safe %>
+    </div>  
+</div> 
+<% end if twit %>

@@ -1,0 +1,25 @@
+<%# Selectable grid used to insert image in a page or in a page text(Wymeditor)%>
+<%# Render an hidden form ta attach image to polymorphic @attachable record %>
+<div class='image-size'>
+<% if @attachable %>
+  <%= render "admin/image_assignments/form", :attachable => @attachable %>
+<% else %>
+<% cache(["admin", @resource_locale, site, "image_dialog_sizes"]) do %>
+  <div id="image_dialog_size_container" class="well">
+  <span><%= t("admin.images.select_image_size") %></span>
+  <ul class="nav nav-pills">
+  <% current_site.image_sizes.sort_by { |k, geom| geom }.each_with_index do |(size, pixels), ind| %>
+    <li id="image_dialog_size_<%= ind %>" class="image_dialog_size <%= 'active' if size.to_s == 'medium' %>">
+    <%= link_to size.to_s, "##{size}",
+      :'data-geometry' => pixels,
+      :'data-size' => size.to_s.parameterize,
+      :title => "#{size} image (#{pixels.to_s.gsub(/[<>=]/, '')})",
+      :rel => 'tooltip' %>
+    </li>
+  <% end %>
+  </ul>
+  </div>
+<% end %>
+<% end %>
+</div><!-- /image-size -->
+                                

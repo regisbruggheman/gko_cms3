@@ -1,0 +1,24 @@
+<%
+   image_geometry = local_assigns.has_key?(:image_style) ? image_style : site.preferred_image_carousel_size
+   thumb_geometry = local_assigns.has_key?(:thumb_style) ? thumb_style : site.preferred_image_thumb_size
+%>
+<% if images.any? %>
+        <div class='images'>
+          <div class='image-large-wrapper'>
+            <div class='image-large'></div>
+            <a href="#" class='carousel-control image-large-nav image-large-nav-prev'>&lsaquo;</a>
+            <a href="#" class='carousel-control image-large-nav image-large-nav-next right'>&rsaquo;</a>
+
+            <div class='image-large-loader'></div>
+          </div>
+          <div class='images-thumbnails-container'>
+            <div class='images-thumbnails'>
+              <ul>
+                <% images.each do |img| %>
+                    <li><%= link_to(image_fu(img, thumb_geometry), img.thumbnail(image_geometry).url) %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+<% end %>

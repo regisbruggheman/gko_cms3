@@ -1,0 +1,7 @@
+<%# !! KEEP ORDER to be able to include sidebar in _resource %>
+<%= render('secondary_menu') %>
+<% content_for :sidebar do %>
+    <%= render "sidebar" %>
+<% end %>
+<%= render_resource %>
+

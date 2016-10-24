@@ -1,0 +1,10 @@
+<%= render 'error_messages', :target => @user %>
+
+<h1><%= t(:editing_user) %></h1>
+
+<%= simple_form_for @user, :html => {:method => :put} do |f| %>
+    <%= render 'fields', :f => f %>
+    <%= f.button 'submit', t(:"helpers.submit.update"), :class => " btn-large btn-primary" %>
+<% end %>
+
+

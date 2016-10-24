@@ -1,0 +1,22 @@
+<%
+   attribute_name = local_assigns.has_key?(:owner_attribute) ? owner_attribute.to_s : "owner"
+%>
+
+<div class='control-group'>
+	<label class="control-label">Choisissez une page de votre site</label>
+    <div class='controls'>
+      <%= f.input :"#{attribute_name}_id", :input_html => {:id => "owner_id"}, :as => :hidden %>
+      <%= f.input :"#{attribute_name}_type", :input_html => {:id => "owner_type"}, :as => :hidden %>
+      <div class="input-append picker">
+	
+        <span id="owner_name" class="uneditable-input"><%= owner_title %></span>
+        <%= link_to("Choisir",
+                    admin_site_sections_path(@site),
+                    :icon => 'popup',
+                    :inline => true,
+                    :remote => true,
+                    :class => "btn",
+                    :id => 'select_page_btn') %>
+      </div>
+    </div>
+</div>

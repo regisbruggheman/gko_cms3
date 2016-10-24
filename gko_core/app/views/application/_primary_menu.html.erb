@@ -1,0 +1,15 @@
+<%# cache([ I18n.locale, site, site.home, 'primary_menu' ]) do %> 
+<%
+  sections = site.primary_menu
+  groups_count = sections.length
+  if (site.preferred_navigation_columns.to_i > 1 || groups_count == 0)
+    groups_count = site.preferred_navigation_columns.to_i
+  end
+  return if groups_count == 0
+%>
+<nav id="primary-menu" class="primary-menu-container">
+  <% sections.in_groups_of(groups_count) do |section_group| %>
+    <%= render 'menu', :sections => section_group if section_group %>
+  <% end %>
+</nav>
+<%# end %>

@@ -1,0 +1,8 @@
+<%
+   count = record.stickings.size.to_s
+   title = "#{record.labelize}<span class='count'> (#{count})</span>".html_safe
+%>
+<td><%= glink_to_edit(title, record, :title => "Utiliser #{count} fois".html_safe) %></td>
+<%= content_tag_for_actions do  %>
+	<%= icons_to_actions([:edit, :destroy], record) %>
+<% end  %>

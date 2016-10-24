@@ -1,0 +1,7 @@
+<% messages.each do |name, value| %>
+	<div class="alert alert-<%= name %>">
+		<a class="close" data-dismiss="alert" href="#">&times;</a>
+		<%= value.html_safe %>
+	</div>
+<% end %>
+

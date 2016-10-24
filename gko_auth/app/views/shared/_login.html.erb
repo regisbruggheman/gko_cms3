@@ -1,0 +1,11 @@
+<%= simple_form_for :user, :url => user_session_path, :html => {:class => "signin-form"} do |f| %>
+  <%= f.error_notification %>
+  <%= display_base_errors(f.object) %>
+  <%= f.input :email, :hint => false, :label => false, :placeholder => t("simple_form.labels.user.email") %>
+  <%= f.input :password, :hint => false, :label => false, :placeholder => t("simple_form.labels.user.password") %>
+  <%= f.input :remember_me, :hint => false, :as => :boolean %>
+	<%= f.button :submit, t(:log_in), :class => 'btn-block btn-large btn-primary submit' %>
+  <hr>
+	<p><%= link_to t('user.links.forgot_password'), new_user_password_path, :rel => 'nofollow' %></p>
+<% end %>
+

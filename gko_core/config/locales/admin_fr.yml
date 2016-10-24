@@ -1,0 +1,23 @@
+fr:
+  gko:
+    plugins:
+      gko_core:
+        title: "Pages"
+    image-browser-modal:
+      tab_upload: "Téléverser"
+      tab_choose: "Choisir"
+      tab_link: "Lien"
+      image_web_link: "Adresse URL de l'image"
+      cancel: "Annuler"
+      insert: "Insérer"
+    admin:
+      site:
+        fieldset:
+          basic: Généralités
+          options: Options
+          design: Apparence
+          templates: Modèles
+          code_injection: Style
+          advanced: Avancé
+          plugins: Composants
+          page_types: Types de page

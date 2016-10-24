@@ -1,0 +1,38 @@
+<%
+	parent_sections = current_site.sections.nested_set.all.collect do |s|
+		s == resource ? nil : ["#{"..." * s.level} #{s.labelize}".chomp, s.id]
+	end.compact
+%>
+<%= f.input :title %>
+<%= f.association :parent, 
+	  :collection => parent_sections,
+	  :label => t('simple_form.labels.section.parent'),
+	  :hint => t('simple_form.hints.section.parent').html_safe %>
+<div class="control-group string optional">
+	<label class="string optional control-label" for="redirect_redirect_url"><%= t('simple_form.labels.section.redirect_url') %></label>
+	<div class="controls">
+		<%= f.text_field :redirect_url %>
+		<p class="help-block"><%= t('simple_form.hints.section.redirect_url').html_safe %></p>
+	</div>
+	<div class='controls'>
+      <%= f.input :link_id, :input_html => {:id => "owner_id"}, :as => :hidden %>
+      <%= f.input :link_type, :input_html => {:id => "owner_type"}, :as => :hidden %>
+      <div class="input-append picker">
+		<input class="span2 uneditable-input" id="owner_name" type="text" value="<%= f.object.link.try(:labelize) %>">
+        <%= link_to("Choisir",
+                    admin_site_sections_path(@site),
+                    :icon => 'popup',
+                    :inline => true,
+                    :remote => true,
+                    :class => "btn",
+                    :id => 'select_page_btn') %>
+      </div>
+	  <p class="help-block"><%= t('simple_form.hints.section.redirect_url').html_safe %></p>
+    </div>
+</div>
+<%#= f.input :redirect_url, :as => :string,
+            :label => t('simple_form.labels.section.redirect_url'),
+            :hint => t('simple_form.hints.section.redirect_url').html_safe %>
+<%#= render :partial => 'form_pages_picker', :locals => {:f => f, :owner_attribute => "link", :owner_title => f.object.link.try(:labelize)} %>                        
+<%= f.input :name %>
+<%= f.input :menu_css_class %>

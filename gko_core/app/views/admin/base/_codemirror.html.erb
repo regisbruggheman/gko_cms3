@@ -1,0 +1,9 @@
+<% content_for :after_javascript_libraries do %>
+  <%= javascript_include_tag("gko-codemirror-all") %>
+<% end %>
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag("gko-codemirror-all") %>
+<% end %>
+<% content_for :jquery_ready do %>
+  <%= raw("var editor = CodeMirror.fromTextArea(document.getElementById('#{dom_element_id}'), {'theme':'night', 'mode': '#{mode}', 'lineNumbers': 'true'});") %>
+<% end %>

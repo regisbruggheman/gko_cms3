@@ -1,0 +1,80 @@
+<ul class='nav nav-tabs tabs'>
+  <li id='tab_link_to_page' class="active">
+    <a href='#link_to_page' data-toggle='tab'><%= t(:'admin.pages_dialogs.pages.tab_name').html_safe %></a></li>
+  <li id='tab_link_to_web_address'>
+    <a href='#link_to_web_address' data-toggle='tab'><%= t(:'admin.pages_dialogs.web_address.tab_name').html_safe %></a>
+  </li>
+  <li id='tab_link_to_email_address'>
+    <a href='#link_to_email_address' data-toggle='tab'><%= t(:'admin.pages_dialogs.email_address.tab_name').html_safe %></a>
+  </li>
+  <% if current_site.has_plugin?(:documents) %>
+      <li id='tab_link_to_document'>
+        <a href='#link_to_document' data-toggle='tab'><%= t(:'admin.pages_dialogs.documents.tab_name').html_safe %></a>
+      </li>
+  <% end %>
+</ul>
+<div class="tab-content modal-body">
+  <div id='link_to_page' class='tab-pane active'>
+    <div class="well"><%= t(:'admin.pages_dialogs.pages.help') %></div>
+    <div id="selectable-list-container">
+      <%= render :partial => "admin/sections/selectable_list" %>
+    </div>
+  </div>
+  <div id='link_to_web_address' class='tab-pane'>
+    <div class='control-group'>
+        <%= label_tag(:web_address_text, t(:'admin.pages_dialogs.web_address.location')) %>
+        <div class='input'><%= text_field_tag :web_address_text, @web_address_text %></div>
+    </div>
+
+    <div class="well">
+      <h3><%= t(:'admin.pages_dialogs.web_address.not_sure') %></h3>
+      <ol style="padding-left:20px;">
+        <li><%= t(:'admin.pages_dialogs.web_address.step1') %></li>
+        <li><%= t(:'admin.pages_dialogs.web_address.step2') %></li>
+      </ol>
+    </div>
+  </div>
+  <div id='link_to_email_address' class='tab-pane'>
+    <div class='control-group'>
+        <%= label_tag(:email_address_text, t(:'admin.pages_dialogs.email_address.tab_name')) %>
+        <div class='input'><%= text_field_tag :email_address_text, @email_address_text %></div>
+    </div>
+
+    <div class='control-group'>
+        <%= label_tag(:email_default_subject_text, t(:'admin.pages_dialogs.email_address.subject_line_optional')) %>
+        <div class='input'><%= text_field_tag :email_default_subject_text, @email_default_subject_text %></div>
+    </div>
+
+    <div class='control-group'>
+        <%= label_tag(:email_default_body_text, t(:'admin.pages_dialogs.email_address.body_optional')) %>
+        <div class='input'><%= text_area_tag :email_default_body_text, @email_default_body_text, :class => :small %> </div>
+    </div>
+
+    <div class="well">
+      <h3><%= t(:'admin.pages_dialogs.email_address.not_sure') %></h3>
+      <ol style="padding-left:20px;">
+        <li><%= t(:'admin.pages_dialogs.email_address.step1_html') %></li>
+        <li><%= t(:'admin.pages_dialogs.email_address.step1_htm2') %></li>
+        <li><%= t(:'admin.pages_dialogs.email_address.step1_htm3') %></li>
+      </ol>
+    </div>
+  </div>
+  <% if current_site.has_plugin?(:documents) %>
+      <div id='link_to_document' class='tab-pane'>
+        <div class="well"><%= t(:'admin.pages_dialogs.documents.help') %></div>
+        <%= render :partial => "admin/documents/selectable_records" %>
+      </div>
+  <% end %>
+
+</div>
+<div class='modal-footer'>
+  <%= submit_tag t(:'admin.pages_dialogs.links.validate'), :name => nil, :id => "insert_link_submit", :class => "wymupdate button btn submit" %>
+</div>
+<% content_for :after_javascript_libraries do %>
+<script type="text/javascript">
+	$(document).ready(function() {
+		link_dialog.init();
+	});
+</script>
+<% end %>
+

@@ -1,0 +1,5 @@
+<% content_for :actions do %>
+	<% if !(action_name =~ /^(index)$/) %>
+    	<%= button_to_index(:class => 'btn-inverse') %>
+	<% end %>
+<% end %>

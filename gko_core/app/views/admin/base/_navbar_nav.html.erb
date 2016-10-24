@@ -1,0 +1,24 @@
+<div class="nav-collapse">
+  <ul class="nav pull-right">
+    <% if user_master? && Site.multi_sites_enabled %>
+      <li id="admin_accounts" class="dropdown">
+        <%= link_to("#admin_accounts", :class => "dropdown-toggle", :data => {:toggle => "dropdown"}) do %>
+          <%= "Gestion <b class='caret'></b>".html_safe %>
+        <% end %>
+        <ul class="dropdown-menu">
+          <% if Site.multi_sites_enabled %>
+            <li><%= link_to("Tous les sites", gurl_for([:admin, :sites])) %></li>
+          <% end %>
+          <% if current_site.has_plugin?(:themes) %>
+            <li><%= link_to("Tous les thèmes", gurl_for([:admin, :themes])) %></li>
+          <% end %>
+          <% if current_site.has_plugin?(:whm) %>
+            <li><%= link_to("whm", admin_whm_subdomains_path) %></li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+    <li><%= link_to(raw("<i class='icon-dashboard'></i>&nbsp;Dashboard"), admin_root_path) %></li>
+    <li><%= link_to(raw("<i class='icon-signout'></i>&nbsp;#{t(:'user.links.sign_out')}"), destroy_user_session_path) %></li>
+  </ul>
+</div>

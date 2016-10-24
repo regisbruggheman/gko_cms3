@@ -1,0 +1,78 @@
+<%# http://blog.plataformatec.com.br/2010/04/quick-tip-search-forms/ %>
+<%
+   if local_assigns.has_key?(:order_by)
+     @order_by_options ||= begin
+       order_by.map do |u|
+         [t("admin.filters.order_by.#{u.to_s}"), u]
+       end
+     end
+     @selected_order_by_options = params[:search] ? params[:search][:order] : @order_by_options.first
+   end
+
+   @per_page_options ||= begin
+     [100, 50, 20, 10].map do |u|
+       ["#{u.to_s} #{t('admin.filters.per_page')}", u]
+     end
+   end
+   @selected_per_page_options = params[:search] ? params[:search][:per_page] : @per_page_options.first
+%>
+<div class="panel panel-filter">
+  <div class="header">
+    <h3><%= t(:search) %></h3>
+    <ul class="nav nav-tabs tabs filter">
+      <li class='active'>
+        <%= link_to("<", '#default_filter_fields', :data => {:toggle => "tab"}) %>
+      </li>
+      <li>
+        <%= link_to(">", '#advanced_filter_fields', :rel => "tooltip", :title => "Afficher plus d'options", :data => {:toggle => "tab"}) %>
+      </li>
+    </ul>
+  </div>
+  <%= simple_form_for(:search,
+                      :html => {
+                              :method => :get,
+                              :remote => true}) do |form| %>
+      <%= hidden_field_tag :cl, @resource_locale.to_s if @resource_locale.present? %>
+      <%= hidden_field_tag :dialog, true if from_dialog? %>
+      <div class="body tab-content">
+        <div id="default_filter_fields" class='tab-pane active'>
+
+          <% if local_assigns.has_key?(:scopes) %>
+              <% scopes.each do |scope| %>
+                  <%= form.input scope,
+                                 :label => t("admin.filters.#{scope}"),
+                                 :required => false %>
+              <% end %>
+          <% end %>
+
+          <%= form.input :per_page,
+                         :required => false,
+                         :collection => @per_page_options,
+                         :selected => @selected_per_page_options,
+                         :label => t("admin.filters.per_page"),
+                         :include_blank => false %>
+          <% if @order_by_options %>
+              <%= form.input :order,
+                             :required => false,
+                             :collection => @order_by_options,
+                             :selected => @selected_order_by_options,
+                             :label => t("admin.filters.order"),
+                             :include_blank => false %>
+          <% end %>
+          <%= render(fields_path, :form => form) if local_assigns.has_key?(:fields_path) %>
+        </div>
+        <div id="advanced_filter_fields" class='tab-pane'>
+          <%= render(advanced_fields_path, :form => form) if local_assigns.has_key?(:advanced_fields_path) %>
+        </div>
+      </div>
+      <!-- end body -->
+      <div class='form-actions'>
+        <%= form.button :submit, :class => 'inline' %>
+        <%# Call in html format to reset the form %>
+        <%= link_to(t("admin.actions.clear_filter"),
+                    url_for([resources]),
+                    :class => "btn inline",
+                    :"data-remote" => true) %>
+      </div>
+  <% end %>
+</div>                

@@ -1,0 +1,41 @@
+<%#=
+	WARN: dom_id generation must be manual as sections are polymorphics
+%>
+<%# cache([node.admin_cache_key]) do %>
+<li id="<%= node.id %>_page" class="clearfix <%= 'no-nest' unless accept_child_section?(node) %>">
+  <div class="inner <%= 'root' if node.root? %>">
+    <i class="<%= node.root? ? 'icon-folder-open' : 'icon-move' %> pull-left"></i>
+    <div class='text pull-left'>
+      <%= glink_to_edit(node.labelize.try(:html_safe), url_for([:edit, :admin, @current_site, node])) %>
+      <%= "<br/><span class='path'>#{node.path}</span>".html_safe if node.path.present? %>
+    </div>
+    <%
+    # Show link redirect to content index. So use it only for page that have contents (like blog...)
+    actions = if node.root?
+      user_master? ? [:destroy] : []
+    elsif node.is_a?(Home)
+      [:view]
+    elsif node.is_a?(Page)
+      if !user_master?
+        node.deletable ? [:destroy, :view] : [:view]
+      else
+        [:destroy, :view]
+      end
+    elsif node.is_a?(Redirect)
+      [:destroy]
+    else
+      [:destroy, :view]
+    end
+    %>
+    <div class='btn-toolbar pull-right'>
+      <div class='btn-group'>
+        <%= icons_to_actions(actions, node) %>
+        <%= icon_to_edit(url_for([:edit, :admin, @current_site, node])) %>
+        <%= icon_to_index(url_for([:admin, @current_site, node, node.content_type.tableize.to_sym]), :icon => 'th-list', :title => t(:"admin.#{node.content_type.tableize}.tooltips.index")) if node.content_type %>
+        <%= icon_to_new(url_for([:admin, @current_site, node, node.content_type.tableize.to_sym]), :icon => 'plus', :title => t(:"admin.#{node.content_type.tableize}.tooltips.index")) if node.content_type %>
+      </div>
+    </div>                                                                                       
+  </div>
+	<%= child if local_assigns.key?(:child) %>
+</li>
+<%# end %>

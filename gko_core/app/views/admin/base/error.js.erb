@@ -1,0 +1,19 @@
+var el = $('.page');
+
+<% if resource.errors.any? %>
+
+// Create a list of errors
+var errors = $('<ul />');
+
+<% resource.errors.full_messages.each do |error| %>
+errors.append('<li><%= escape_javascript( error ) %></li>');
+<% end %>
+alert(errors)
+// Display errors on form
+el.find('.errors').html(errors);
+
+<% else %>
+
+el.find('.errors').empty();
+alert("oops");
+<% end %>

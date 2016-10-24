@@ -1,0 +1,5 @@
+<% cache(["admin", @resource_locale.to_s, record]) do %>
+	<td><%= link_to(record.name, gurl_for([:edit, :admin, current_site, record.section, record])) %></td>
+	<td><%= record.language %></td>
+	<td class="actions"><p><%= icons_to_actions([:destroy, :edit], record) %></p></td>
+<% end %>

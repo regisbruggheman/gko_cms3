@@ -1,0 +1,10 @@
+<%
+   title = record.title || "!(#{record.read_attribute(:title, I18n.default_locale)})"
+%>
+
+<td><%= published_status(record) %></td>
+<td><%= image_tag(record.thumbnail("120x").url) if record.image.present? %></td>
+<td><%= record.link %></td>
+<%= content_tag_for_actions do %>
+	<%= icons_to_actions([:destroy, :edit], record) %>
+<% end %>

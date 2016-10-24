@@ -1,0 +1,51 @@
+fr: 
+  activerecord:
+    models:
+      newsletter_list: "Liste de newsletter" 
+      newsletter: "Newsletter"  
+  
+  newsletters:
+    register_you: "Courriel occasionnel, pas de spam"
+    thank_you: "Merci - nous serons en contact bientôt !"
+    links:
+      previous: Précédente
+      next: Suivante
+       
+  confirmations:
+    destroy:
+      newsletter: "Voulez-vous réellement supprimer définitivement cette newsletter ?<br/>Cette action est irréversible!" 
+       
+  admin:
+    newsletter_lists:
+      actions:
+        edit: Configuration 
+        new: Ajouter
+        index: Liste
+      tooltips:
+        edit: Modifier la liste des newsletters
+      titles:
+        edit: Modifier la liste des newsletters
+
+    newsletters: 
+      untranslated_message: 
+        one: "Attention: 1 newsletter n'est pas traduite."
+        many: "Attention: %{count} newsletters ne sont pas traduites."
+      select_blank: Sélectionner une newsletter
+      collection:
+        empty: "Aucune newsletter n'a été trouvée. %{link}"
+        create_item: "Créer une nouvelle newsletter maintenant."
+      actions:
+        new: Ajouter une newsletter
+        destroy: Supprimer cette newsletter
+        edit: Modifier cette newsletter
+        index: Newsletters
+        view: Voir la page publique
+      tooltips:
+        index: Lister les newsletters
+      titles:
+        new: Ajout d'une newsletter
+        index: Liste des newsletters
+        edit: Modification d'une newsletter
+      columns:
+        title: Nom
+        actions: Actions   

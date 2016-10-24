@@ -1,0 +1,21 @@
+<div class="row-fluid">
+  <div class="span12">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#overview" data-toggle="tab">Vue d'ensemble</a></li>
+      <li><a href="#visits_by_language" data-toggle="tab">Visites par langue</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="overview">
+        <%= render 'overview' %>
+      </div>
+      <div class="tab-pane" id="visits_by_language">
+        <table>
+          <% @visits_by_language.each do |v| %>
+              <%= render 'visits_report', :record => v %>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

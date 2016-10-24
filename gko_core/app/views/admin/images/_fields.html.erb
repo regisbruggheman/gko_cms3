@@ -1,0 +1,43 @@
+<%= f.input :site_id, :as => :hidden %>
+<% if from_dialog? %>
+    <%= hidden_field_tag :dialog, true %>
+    <%= hidden_field_tag :insert, true %>
+    <%# Use in dialog to attach image to polymorphic resource like Page %>
+    <% if @attachable %>
+        <%= hidden_field_tag :attachable_id, @attachable.id %>
+        <%= hidden_field_tag :attachable_type, @attachable.class.name %>
+    <% end %>
+<% end %>
+<%= render :partial => 'form_file_field',
+           :locals => {
+                   :f => f,
+                   :hint => t(:'admin.images.maximum_image_size', :size => Image::MAX_SIZE_IN_MB)}
+%>
+
+<% if Gko::Core.allow_video_on_images %>
+  <% has_video = !(f.object.new_record? || f.object.video_url.blank?) %>
+  <div class='control-group'>
+    <label class="string control-label"><%= "Vidéo".html_safe %></label>
+    <div class='controls upload_file_preview'>
+        <div class="js-video-preview">
+          <div class='js-video-field' style="display:<%= has_video ? 'none' : 'block' %>">
+            <%= f.text_field :video_url, :class => 'video' %>
+          </div>
+          <% if has_video %>
+          <iframe src="//player.vimeo.com/video/<%= f.object.video_url %>?autopause=1&amp;autoplay=0&amp;byline=0&amp;loop=0&amp;portrait=0&amp;title=0&amp;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          <% end %>
+        </div>
+        <% if has_video %>
+        <div class="btn-group">
+          <%= btn_to("Supprimer la vidéo", "#", :class => "delete-video-btn") %>
+          <%= btn_to("Remplacer la vidéo", "#", :class => "change-upload-video-btn") %>
+        </div>
+        <% end %>
+
+    </div>
+  </div>
+<% end %>
+<%= f.input :author if current_site.images_author_enabled %>
+<%= f.association :image_folders,
+	:collection => current_site.cached_image_folders,
+	:include_blank => "Aucun" if site.use_image_folders %>

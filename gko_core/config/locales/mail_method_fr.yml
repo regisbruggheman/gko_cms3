@@ -1,0 +1,30 @@
+fr:
+  simple_form:
+    labels:
+      mail_method:
+        environment: "Environnement"
+        enable_mail_delivery: "Actif"
+        mails_from: "Mail de"
+        mail_bcc: "Faire suivre à"
+        mail_domain: "Domaine"
+        mail_host: "Host"
+        mail_port: "Port"
+        secure_connection_type: "Type de connexion" 
+        mail_auth_type: "Type d'authentification"
+        smtp_username: "Nom d'utilisateur"
+        smtp_password: "Mot de passe"
+        
+  admin:
+    mail_methods:
+      menu_tab: Comptes Email
+      collection:
+        empty: "Aucun template n'a été trouvé."
+      actions:   
+        new: Ajouter un compte email
+        destroy: Supprimer ce compte email
+        edit: Modifier ce compte email
+        index: Liste des comptes email
+      titles:
+        new: Création d'un compte email
+        index: Liste des comptes email
+        edit: Modification du compte email

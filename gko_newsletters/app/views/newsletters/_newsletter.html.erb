@@ -1,0 +1,8 @@
+<%= grid_item_tag_for(newsletter) do %>
+	<%= render_record_thumb(newsletter) %>
+	<%= grid_item_caption_tag do %>
+		<%= render_record_title(newsletter) %>
+		<%= render_record_description(newsletter) %>
+		<%= render_record_link(newsletter) %>
+	<% end %>
+<% end if newsletter %>

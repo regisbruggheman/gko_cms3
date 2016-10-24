@@ -1,0 +1,9 @@
+<% if @parent_categories.try(:any?) %>
+  <div class="parent-categories">
+	<%= content_tag(:h4, title.html_safe) unless title.blank? %>
+	<ul id="parent-categories-filter" class="nav">
+		<li data-categories="*"><%= link_to(t(:"categories.all"), parent.public_url) %></li>
+		<%= render :partial => "parent_category", :collection => @parent_categories, :as => :category %>
+	</ul>
+    </div>
+<% end %> 

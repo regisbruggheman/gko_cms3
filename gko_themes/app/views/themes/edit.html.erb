@@ -1,0 +1,13 @@
+<% content_for :head do %>
+    <%= stylesheet_link_tag 'gko_theme_roller_all' %>
+<% end %>
+<% content_for :after_javascript_libraries do %>
+    <%= javascript_tag do -%>
+        less = { env: 'development' };
+    <% end -%>
+    <%= javascript_include_tag("gko_theme_roller_all.js") -%>
+<% end %>
+<iframe id="frame" src="<%= default_theme_path(@theme) %>" onload="init_theme()"></iframe>
+
+<%= render "themes/shared/bootstrap_panel" %>
+<a class="btn" id="toogle-panel-btn" href="#"><%= "+".html_safe %></a>

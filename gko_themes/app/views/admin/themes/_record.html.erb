@@ -1,0 +1,6 @@
+<td><%= glink_to(record.name, edit_admin_theme_path(record)) %></td>
+<td><%= link_to(record.theme_id) %></td>
+<%= content_tag_for_actions do  %>
+	<%= link_to("select", select_admin_theme_path(record)) %>
+	<%= icons_to_actions([:edit, :destroy], record) %>
+<% end  %>

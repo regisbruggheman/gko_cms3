@@ -1,0 +1,9 @@
+<%= f.input :section_id, :as => :hidden %>
+<%= f.input :title %>
+<%= render :partial => 'form_document_field', :locals => {:f => f} %>
+<%= f.input :language, :collection => ['en', 'fr'], :as => :radio_buttons %>
+<%= render :partial => 'form_file_field', :locals => {:f => f, :thumb_size => "x120"} %>
+<%= render "associations_fields", :f => f %>
+<%= f.input :body, :input_html => { :rows => 6 } if f.object.section.use_description %>
+<%= f.input :country, :as => :country, :priority_countries => nil if f.object.section.use_country %>
+<%= f.input :published_at, :as => :string, :input_html => {:class => "date"} if f.object.section.use_publication_date %> <%# !Jquery  %>

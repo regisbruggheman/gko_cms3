@@ -1,0 +1,180 @@
+#########################################################################################################
+# I18n French translation for Devise (http://github.com/plataformatec/devise)
+# I18n traduction française pour Devise
+#
+# Mise à jour par Yabo-concept http://www.yabo-concept.ch  pour refléter les dernières clés utilisées par devise 
+# dans la branche "translated-views"
+# basé sur https://github.com/davidw/devise/blob/translated-views/config/locales/en.yml
+# 15.3.2011
+#########################################################################################################
+
+
+en:
+  log_in: Se connecter
+  logged_in_succesfully: 'Vous êtes maintenant connecté à votre compte'
+  activerecord:
+    models:
+      user: Utilisateur
+
+  errors:
+    messages:
+      expired: "has expired, please request a new one"
+      not_found: "not found"
+      already_confirmed: "was already confirmed, please try signing in"
+      not_locked: "was not locked"
+      not_saved:
+        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} errors prohibited this %{resource} from being saved:"
+           
+  devise:
+    failure:
+      already_authenticated: 'You are already signed in.'
+      unauthenticated: 'You need to sign in or sign up before continuing.'
+      unconfirmed: 'You have to confirm your account before continuing.'
+      locked: 'Your account is locked.'
+      invalid: 'Invalid email or password.'
+      invalid_token: 'Invalid authentication token.'
+      timeout: 'Your session expired, please sign in again to continue.'
+      inactive: 'Your account was not activated yet.'
+    user_sessions:
+      signed_in: 'Signed in successfully.'
+      signed_out: 'Signed out successfully.'
+    user_passwords:
+      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
+      updated: 'Your password was changed successfully. You are now signed in.'
+      updated_not_active: 'Your password was changed successfully.'
+      send_paranoid_instructions: "If your e-mail exists on our database, you will receive a password recovery link on your e-mail"
+    user_confirmations:
+      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
+      send_paranoid_instructions: 'If your e-mail exists on our database, you will receive an email with instructions about how to confirm your account in a few minutes.'
+      confirmed: 'Your account was successfully confirmed. You are now signed in.'
+    user_registrations:
+      signed_up: 'Welcome! You have signed up successfully.'
+      signed_up_but_unconfirmed: 'A message with a confirmation link has been sent to your email address. Please open the link to activate your account.'
+      signed_up_but_inactive: 'You have signed up successfully. However, we could not sign you in because your account is not yet activated.'
+      signed_up_but_locked: 'You have signed up successfully. However, we could not sign you in because your account is locked.'
+      updated: 'You updated your account successfully.'
+      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
+      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+    user_unlocks:
+      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      unlocked: 'Your account has been unlocked successfully. Please sign in to continue.'
+      send_paranoid_instructions: 'If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.'
+    omniauth_callbacks:
+      success: 'Successfully authenticated from %{kind} account.'
+      failure: 'Could not authenticate you from %{kind} because "%{reason}".'
+    mailer:
+      confirmation_instructions:
+        subject: 'Confirmation instructions'
+      reset_password_instructions:
+        subject: 'Reset password instructions'
+      unlock_instructions:
+        subject: 'Unlock Instructions'  
+
+      
+  simple_form:
+    labels:
+      user:
+        email: "Email"
+        password: "Password"
+        account: "Account"
+        username: Nom public
+        password_confirmation: "Password comfirmation"
+        preferred_language: Language
+        remember_me: "Remember me"
+      site:
+        allow_user_registration: Enregistrement public?
+    hints:
+      site:
+        allow_user_registration: Permet aux internautes de s'enregistrer.
+    
+  user:
+    links:
+      view_profile: Mon profil
+      edit_profile: Editer mon profil
+      sign_in: Se connecter
+      sign_up: S'enregistrer
+      forgot_password: "Mot de passe oublié ?"
+      resend_confirmation: Renvoyer la confirmation d'enregistrement
+      resend_unlock: Resend unlock
+      sign_out: Se déconnecter
+    sessions:
+      new:
+        title: Se connecter
+        submit: Se connecter
+    registrations:
+      new:
+        title: S'enregistrer
+        submit: S'enregistrer
+      edit:
+        title: Edit account
+        submit: Update account
+        current_password_required: "We need your current password to confirm your changes."
+    confirmations:
+      new:
+        title: Resend confirmation instructions
+        submit: Resend instructions
+    passwords:
+      new:
+        instructions_to_reset_password: "Remplissez le formulaire pour recevoir par email les instructions de réinitialisation de votre mot de passe:" 
+        title: Forgot your password?
+        submit: Send instructions
+      edit:
+        title: Change your password
+        submit: Change password
+    unlocks:
+      new:
+        title: Resend unlock instructions
+        submit: Send instructions
+  admin:
+    configuration_menu_tab: Configuration
+    filters:
+      with_reference: Référence
+      with_email: Email
+      order_by:
+        reference: Référence
+        email: Email
+        
+    fieldset:
+      users: Utilisateurs
+      
+    sessions:
+      titles:
+        new: Se connecter 
+  
+    users:
+      not_confirmed: Non comfirmé
+      select_blank: Choisissez un utilisateur
+      menu_tab: Utilisateurs
+      admin_menu_tab: "Administrateurs"
+      member_menu_tab: "Membres"
+      collection:
+          empty: "Aucun utilisateur n'a été trouvé. %{link}"
+          create_item: "Ajouter un nouvel utilisateur maintenant."
+      actions:
+        new: Ajouter un nouvel utilisateur
+        destroy: Supprimer cet utilisateur
+        edit: Modifier cet utilisateur
+        index: Liste des utilisateurs
+        previous: Previous
+        next: Next
+        change_password: Changer le mot de passe
+      columns:
+        user: Utilisateur
+        group: Role
+        confirmed_at: Date confirmation
+      titles:
+        new: Ajout d'un nouvel utilisateur
+        index: Liste des utilisateurs
+        edit: Modification d'un utilisateur
+        change_password: Changement de mot de passe
+    ../stylesheet/:
+      titles:
+        new: Authentification
+    user_passwords:
+      titles:
+        new: Changement de mot de passe
+
+
+
+

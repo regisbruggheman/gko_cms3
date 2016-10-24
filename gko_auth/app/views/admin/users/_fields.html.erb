@@ -1,0 +1,10 @@
+<%= render :partial => "admin/users/default_fields", :locals => {:f => f} %>
+<%= f.input :username %>
+<%= f.input :firstname %>
+<%= f.input :lastname %>
+<% unless current_site.language_codes.empty? %>
+    <%= f.input :preferred_language,
+                :collection => current_site.language_codes,
+                :as => :radio_buttons %>
+<% end %> 
+ 

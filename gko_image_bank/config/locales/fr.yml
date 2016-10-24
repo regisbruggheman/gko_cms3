@@ -1,0 +1,43 @@
+fr:
+  activerecord:
+    models:
+      image_bank: Banque d'image
+      image_bank_photo: Photo
+      
+  image_bank_photos:
+    no_record_found: "Aucune photo n'a été trouvée"
+    links:
+      previous: "Précédente"
+      next: "Suivante"
+    titles:
+      in_categories: "Photos dans la catégorie %{name}"
+      tagged: "Photos étiquettées avec %{name}"
+
+  admin:
+    image_banks:
+      help: "La banque d'image vous permet de présenter une liste de photos en téléchargement. Ces photos -  en haute définition pour la presse ou l'impression papier - sont présentés dans l'ordre que vous souhaitez. Ils peuvent également être organisés en catégories."   
+      no_stickers: "Aucun mot-clé n'a été trouvé pour cette banque d'image."
+      no_categories: "Aucun type de project n'a été trouvé pour cette banque d'image." 
+      actions:
+        edit: Banque d'image
+      tooltips:
+        edit: Modifier cette banque d'image
+        show: Voir la page publique de cette banque d'image
+      titles:
+        edit: Modifier la banque d'image
+             
+    image_bank_photos: 
+      collection:
+        empty: "Aucune photo n'a été trouvée pour cette banque d'image."
+      actions:
+        new: Ajouter une photo
+        destroy: Supprimer cette photo
+        edit: Modifier cette photo
+        index: Photos
+        view: Voir la page publique de cette photo
+      tooltips:
+        index: Lister les photos
+      titles:
+        new: Ajout d'une photo
+        index: Liste des photos
+        edit: Modification d'une photo

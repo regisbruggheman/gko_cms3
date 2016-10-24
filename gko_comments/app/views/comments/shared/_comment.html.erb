@@ -1,0 +1,13 @@
+<div class="media">
+  <%= link_to(new_comment_path, :class => "media-object") do %>
+  <a class="pull-left" href="#">
+    <%= image_tag() %>
+    <img class="media-object" src="..." alt="...">
+  </a>
+  <% end %>
+  <div class="media-body">
+    <h4 class="media-heading"><%= comment.name %></h4>
+    <%= comment.body.html_safe %>
+    <%= link_to("Reply", new_comment_path, :class => "btn") %>
+  </div>
+</div>

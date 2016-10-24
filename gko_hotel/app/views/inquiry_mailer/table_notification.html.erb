@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+</head>
+<body>
+<p>
+  <%= t('inquiry_mailer.notification.greeting') %>,<br/>
+
+  <%= t('inquiry_mailer.notification.you_received_new_inquiry') %><br/>
+
+  <%= t('inquiry_mailer.notification.inquiry_starts') %><br/>
+
+  <%= t('inquiry_mailer.notification.from') %>: <%= @inquiry.name %><br/>
+  <%= t('inquiry_mailer.notification.email') %>: <%= @inquiry.email %><br/>
+  <%= t('inquiry_mailer.notification.phone') %>: <%= @inquiry.phone %><br/>
+  <%= t('.person_count') %>: <%= @inquiry.person_count %><br/>
+  <%= t('.date') %>: <%= @inquiry.date %><br/>
+  <%= t('.service') %>: <%= @inquiry.service %><br/>
+  <%= t('inquiry_mailer.notification.message') %>:<br/>
+  <%= @inquiry.message %><br/>
+
+  <%= t('inquiry_mailer.notification.inquiry_ends') %><br/>
+
+  <%= t('inquiry_mailer.notification.closing_line') %>,
+  <%= @inquiry.site.title %><br/>
+
+  <%= t('inquiry_mailer.notification.ps') %>
+</p>
+</body>
+</html>

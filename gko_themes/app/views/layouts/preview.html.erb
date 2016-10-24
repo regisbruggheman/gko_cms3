@@ -1,0 +1,37 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<title>Live Preview - <%= @theme.name %></title>
+	<meta name="robots" content="noindex,nofollow">
+	<meta name="viewport" content="width=1024">
+	<%= stylesheet_link_tag "theme_preview" %>
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+	 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<%= javascript_include_tag "theme_preview" %>
+</head>
+<body>
+
+<div id="main">
+	<div id="tray" class="topbar" sty1le="width: auto;">
+		<div class="fill">
+			<div class="container">
+				
+				
+				<h1 id="item_name" class="pull-left"><%= @theme.name %></h1>
+				<select id="themes-list" class="pull-right" style="display: inline-block; float: left;">
+				<% Theme.all.each do |t| %>
+					<option value="<%= t.name.downcase %>" <%= 'selected' if t == @theme %> ><%= t.name %></option>
+				<% end %>
+				</select>
+			</div>
+		</div>
+	</div>
+	<iframe id="preview" src="<%= add_url_param('theme', @theme.name, root_url) %>" name="frame" frameborder="0" noresize="noresize" style="height: 880px; " onload="init_theme_preview()"></iframe>
+
+</div>
+</body>
+
+
+</html>

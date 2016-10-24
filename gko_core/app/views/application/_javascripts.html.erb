@@ -1,0 +1,13 @@
+<!-- Le javascript
+================================================== -->
+<%= yield :before_javascript_libraries -%>
+<!-- Placed at the end of the document so the pages load faster -->
+<% if site.has_plugin?(:themes) and site.has_theme? %>
+  <%= theme_javascript_include_tag "public" %>
+<% else %>
+  <%= javascript_include_tag "public" %>
+<% end %>
+<%= yield :after_javascript_libraries -%>
+<!-- Analytics
+================================================== -->
+<%= render 'google_analytics' %>

@@ -1,0 +1,21 @@
+<% cache(["admin", current_site, record, 'selectable-record']) do %>
+<%
+image_options = {}
+image_options[:title] = record.title
+image_options[:class] = "thumb"
+image_options[:'data-original'] = record.url
+current_site.image_sizes.each do |key, geometry|
+	image_options[:"data-#{key.to_s.parameterize}"] = record.thumbnail(geometry).url
+end
+%>
+<li id="<%= dom_id(record) %>" class="span3">
+	<div class="thumbnail">
+		<a href="#"><%= image_fu(record, '160x120', image_options) %></a>
+		<a href="#" title="<%= image_infos(record) %>" rel='tooltip' class="info-tooltip" data-html="true">
+			<i class="icon-info-sign"></i>
+		</a>
+	</div>
+</li>
+<% end %>
+
+

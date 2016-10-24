@@ -1,0 +1,186 @@
+html, body {
+  height: 100%;
+  margin:0;
+  padding:0;
+}
+body {
+  background: #333;//#2b1b2c;//
+}
+
+// patch to resolve and remove
+.error_notification {
+  @extend .alert-error;
+  padding: 12px;
+  margin-bottom: 24px;
+}
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ ADMIN SHARED -->
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+// Used for header, footer in Contents and Modal
+.smooth_gradient_container {
+  background-color: #f5f5f5;
+  padding: 14px 15px 15px;
+  @include box-shadow("inset 0 1px 0 #ffffff");
+  zoom: 1;
+  &:before, &:after {
+    display: table;
+    content: "";
+    zoom: 1;
+  }
+  &:after {
+    clear: both;
+  }
+}
+/* JQUERY OVERWRITE
+   ================================================== */
+.ui-widget {
+  font-family: $baseFontFamily;
+  font-size: $baseFontSize;
+}
+
+/* LAYOUT
+================================================== */
+#main-container { 
+  min-height:100%;
+  position:relative;
+	max-width: 980px;
+	@include center-block;
+}
+
+.navbar .brand {
+  font-size: 16px;
+}
+
+.body {
+  background-color: #ffffff;
+  padding: 4px 0;
+  @include border-radius(0 0 6px 6px);
+	> .form-horizontal {
+		margin: 0 !important;
+	}
+}
+.header {
+  @extend .smooth_gradient_container;
+  border-bottom: 1px solid #ddd;
+  @include border-radius(6px 6px 0 0);
+  line-height: 26px;
+  // same as h1 to center verticaly all element
+	h4 {
+		line-height : 27px;
+	}
+	.actions {
+	  padding-top: 8px;
+	}
+}
+.footer {
+  @extend .smooth_gradient_container;
+  border-top: 1px solid #ddd;
+  @include border-radius(0 0 6px 6px);
+}
+section.translating {
+  position: relative;
+  margin-top: 36px;
+  @include border-radius(0 6px 6px 6px);
+}
+aside {
+  .panel .header {
+    padding: $baseLineHeight / 4 $baseLineHeight / 2;
+	@include border-radius(0);
+	border-bottom: none;
+  }
+}
+h1.page-title {
+  font-size: 11px;
+  font-size: 1.1rem;
+  line-height: 26px;
+  width: auto;
+  float: left;
+}
+/* SORTABLE LIST AND TABLE
+================================================== */
+.sortable-placeholder {
+	background-color: $green;
+	min-height: 60px;
+}
+.sortable-dragging {
+	min-height: 60px;
+	width: 250px;
+	background-color: $blue;
+}
+.handle {
+	@include opacity(50);
+	text-align: center;
+}
+/* TREE LIST
+================================================== */
+ul.selection li {
+  list-style-type: none;
+  position: relative;
+  margin: 0 0 5px 0;
+  min-height: 32px;
+  padding: 4px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #ccc;
+  border-bottom-color: #bbb;
+  @include border-radius(4px);
+  @include box-shadow("inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05)");
+  &.ui-selected,
+  &.ui-selecting {
+    @include gradient-vertical($blue, $blueDark);
+  }
+}
+
+ul.selection li {
+  .actions {
+    position: absolute;
+    right: 8px;
+    margin: 4px 8px;
+    min-height: 28px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 5px 14px 6px;
+  }
+}
+/* VARIOUS
+================================================== */
+.thumbnails-container,
+.list_container {
+	padding: $baseLineHeight;
+}
+
+#add-page-modal ul {
+	li {
+		border-top: 1px solid $grayLighter;
+		padding: $baseLineHeight 0;
+		&:first-child {
+			border-top: none;
+		};
+	}
+}
+// sortable grid need a fixed size, or drag and drop does not work
+#image-assignment-list {
+	@include user-select(none);
+	li {
+		width: 200px;
+		height: 120px;
+	}
+}
+.empty-collection {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 27px;
+	color: $grayLight;
+	padding: 24px;
+	text-align: center;
+	text-shadow: -1px -1px 0 $grayLighter;
+}
+/* RESPONSIVE
+================================================== */
+@media (min-width: 980px) {
+  #main-container {
+    padding-top: 148px;
+  }
+}

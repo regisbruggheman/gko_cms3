@@ -1,0 +1,22 @@
+<%
+   help = t("simple_form.hints.document.document")
+   help << "<br/>#{hint}" if local_assigns.has_key?(:hint)
+%>
+
+<div class='control-group'>
+    <label class="string control-label"><%= "Document".html_safe %></label>
+    <div class='controls upload_file_preview'>
+      <% if f.object.document.present? %>
+          <p class='js-file-preview'><%= f.object.document_name %></p>
+      <% end %>
+      <div class='file-field' style="display:<%= f.object.document.present? ? 'none' : 'block' %>">
+        <%= f.file_field :document, :class => 'file' %>
+        <div class="help-block"><%= help.html_safe %></div>
+      </div>
+      <br class='clearfix'\>
+      <%= btn_to(t(:"admin.documents.replace_file"), "",
+                 :class => "small change-upload-file-btn",
+                 :inline => true,
+                 :data => {:toggle => "toggle", :text => t(:'admin.documents.cancel_replace_file')}) if f.object.document.present? %>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+
+<%= f.input :value_type,
+            :collection => TextElement::VALUE_TYPES,
+            :as => :radio_buttons %>
+<%= f.input :key %> 
+<%= render('form_wymeditor_field', :f => f, :field_name => "value") %>

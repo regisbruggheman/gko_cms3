@@ -1,0 +1,35 @@
+<%
+   privacy_text = t(:'.privacy_policy', :default => '')
+%>
+
+<%= simple_form_for(:hotel_inquiry, :url => hotel_inquiries_path,
+                    :html => {:method => :post, :class => [:'form-horizontal', :hotel_inquiry]}) do |form| %>
+    <%= hidden_field_tag(:return_to, request.url) %>
+    <%= form.hidden_field :site_id %>
+    <%= form.error_notification %>
+    <%= form.input :name, :hint => '' %>
+    <%= form.input :email, :hint => false %>
+    <%= form.input :phone, :hint => false %>
+    <%= form.input :person_count, :hint => false %>
+    <%= form.input :start_date, :as => :date,
+                   :start_year => Date.today.year,
+                   :end_year => Date.today.year + 2,
+                   :order => [:day, :month, :year] %>
+    <%= form.input :end_date, :as => :date,
+                   :start_year => Date.today.year,
+                   :end_year => Date.today.year + 2,
+                   :discard_day => false,
+                   :order => [:day, :month, :year] %>
+    <%= form.input :message, :as => :text, :hint => false, :input_html => {:rows => 6} %>
+    <%# if site.newsletter_registration %>
+    <%#= form.input :newsletter_registration, :as => :boolean, :hint => false %>
+    <%# end %>
+    <% if privacy_text.present? -%>
+        <div class='controls policy'>
+          <%= privacy_text.html_safe %>
+        </div>
+    <% end %>
+    <div class='controls'>
+      <%= form.button :submit, t("send_inquiry"), :class => "btn submit" %>
+    </div>
+<% end %>  

@@ -1,0 +1,44 @@
+<tbody>
+<tr>
+  <td><p><%= record.language || "All" %></p></td>
+  <td><h5>Nombre total de pages vues</h5></td>
+  <td><p><%= record.pageviews %></p></td>
+</tr>
+<tr>
+  <td><p><%= record.language || "All" %></p></td>
+  <td><h5>Nombre total de pages uniques vues</h5></td>
+  <td><p><%= record.unique_pageviews %></p></td>
+</tr>
+
+<tr>
+  <td><p><%= record.language || "All" %></p></td>
+  <td><h5>Nombre total de visites</h5></td>
+  <td><p><%= record.visits %></p></td>
+</tr>
+<tr>
+  <td><p><%= record.language || "All" %></p></td>
+  <td><h5>Nombre total de visiteurs</h5></td>
+  <td><p><%= record.visitors %></p></td>
+</tr>
+
+<tr>
+  <td><p><%= record.language || "All" %></p></td>
+  <td><h5>Nombre total de nouveaux visiteurs</h5></td>
+  <td><p><%= "#{record.new_visits} (soit #{((record.new_visits.to_f/record.visits.to_f)*100)}%)".html_safe %></p></td>
+</tr>
+<tr>
+  <td><p><%= record.language || "All" %></p></td>
+  <td><h5>Durée moyenne d'une visite</h5></td>
+  <td><p><%= "#{(record.time_on_site.to_f/360)/1000} minutes" %></p></td>
+</tr>
+<tr>
+  <td><p><%= record.language || "All" %></p></td>
+  <td><h5>Nombre total de rebonds</h5></td>
+  <td><p><%= record.bounces %></p></td>
+</tr>
+<tr>
+  <td><p><%= record.language || "All" %></p></td>
+  <td><h5>Nombre de pages vues par visiste</h5></td>
+  <td><p><%= record.pageviews.to_f/record.visits.to_f %></p></td>
+</tr>
+</tbody>

@@ -1,0 +1,6 @@
+$('#<%= dom_id(@document_assignment.document) %>').fadeOut(500, function () {
+    $(this).remove();
+});
+var documentAssignmentList = self.parent.$("#<%= @document_assignment.attachable.class.name.underscore %>-document-assignment-list");
+$("<%= escape_javascript(render 'document_assignment', :document_assignment => @document_assignment) %>").appendTo(documentAssignmentList);
+make_sortable(documentAssignmentList);

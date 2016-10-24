@@ -1,0 +1,26 @@
+<form class="well form-inline">
+  <label class="control-label" for="theme[:<%= name %>]"><%= tname.to_s %></label>
+  <input class="input-small" data-type="text-shadow" data-name="<%= name.to_s %>" data-var="shadow-x" value="0px">
+  <input class="input-small" data-type="text-shadow" data-name="<%= name.to_s %>" data-var="shadow-y" value="1px">
+  <input title="Controls the blur of text shadow" data-type="text-shadow" data-name="<%= name.to_s %>" data-var="shadow-radius" value="0px">
+
+  <div class="control-group">
+    <div class="controls">
+      <div class="input-append input-small shadow-color"
+           data-name="<%= name.to_s %>"
+           data-type="text-shadow"
+           data-target="<%= target.to_s %>"
+           data-var="shadow-color"
+           data-color=""
+           data-color-format="rgba">
+        <input type="text"
+               class="span2 readonly"
+               value=""
+               readonly="readonly"
+               data-name="<%= name.to_s %>"
+               data-type="<%= type.to_s %>">
+        <span class="add-on"><i></i></span>
+      </div>
+    </div>
+  </div>
+</form>

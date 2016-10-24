@@ -1,0 +1,6 @@
+<% if @parent_stickers.try(:any?) %>
+<div class="parent-stickers">
+  <%= content_tag(:h4, title.html_safe) unless title.blank? %>
+  <ul class="nav"><%= render :partial => "parent_sticker", :collection => @parent_stickers, :as => :sticker %></ul>
+</div>
+<% end %>

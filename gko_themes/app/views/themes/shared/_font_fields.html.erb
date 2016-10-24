@@ -1,0 +1,35 @@
+<div class="control-group">
+  <label class="control-label" for="theme[:<%= name %>]"><%= tname.to_s %></label>
+
+  <div class="controls">
+    <div class="input-append"
+         data-name="<%= name.to_s %>"
+         data-type="font-size"
+         data-target="<%= target.to_s %>">
+      <input type="text"
+             class="span6 readonly"
+             value="<%= value %>"
+             readonly="readonly"
+             data-name="<%= name.to_s %>"
+             data-type="<%= type.to_s %>">
+      <span class="add-on"><i style="<%= type %>: <%= value %>;"></i></span>
+      <a class="btn more" href="#<%= name %>-more"><i class="icon-cog"></i></a>
+    </div>
+  </div>
+</div>
+<div id="<%= name %>-more" style="display:none;">
+  <%= render "color_field", :f => f,
+             :tname => "hover",
+             :name => "#{name.to_s}Hover",
+             :target => "#{target.to_s}:hover",
+             :type => "color",
+             :value => "#{@textColor}",
+             :format => "hex" %>
+  <%= render "color_field", :f => f,
+             :tname => "active",
+             :name => "#{name.to_s}Active",
+             :target => "#{target.to_s}.active",
+             :type => "color",
+             :value => "#{@textColor}",
+             :format => "hex" %>
+</div>

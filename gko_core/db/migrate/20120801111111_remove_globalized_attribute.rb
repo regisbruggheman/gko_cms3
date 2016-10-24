@@ -1,0 +1,13 @@
+class RemoveGlobalizedAttribute < ActiveRecord::Migration
+  def up
+    ActiveRecord::Base.connection.tables.map do |model|
+      if column_exists?(model.tableize, :globalized)
+        remove_column model.tableize, :globalized
+      end
+    end
+  end
+
+  def down
+
+  end
+end

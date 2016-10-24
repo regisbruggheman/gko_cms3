@@ -1,0 +1,2 @@
+class Newsletter < Content
+end

@@ -1,0 +1,14 @@
+en:
+  activerecord:
+    models:
+      image_bank: Image bank
+      image_bank_photo: Photo
+
+  image_bank_photos:
+    no_record_found: "Neither photo has not been found"
+    links:
+      previous: "Previous"
+      next: "Next"
+    titles:
+      in_categories: "Photos in category %{name}"
+      tagged: "Photos tagged with %{name}"

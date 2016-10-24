@@ -1,0 +1,254 @@
+<div id="properties_panel">
+<%= simple_form_for(:theme, :method => :get, :html => {:multipart => true, :class => "form-horizontal"}) do |form| %>
+    <%= form.error_notification %>
+    <%= hidden_field_tag :cl, @resource_locale.to_s if @resource_locale.present? %>
+    <% if params[:return_to].present? %>
+        <%= hidden_field_tag(:return_to, return_to) %>
+    <% elsif local_assigns[:return_here].present? %>
+        <%= hidden_field_tag(:return_to, request.url) %>
+    <% end %>
+    <div class="accordion" id="properties-accordion">
+    <!--GLOBAL
+         /////////////////////////////////////////////////////////// -->
+    <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#properties-accordion" href="#tab-global">
+          Global colors
+        </a>
+      </div>
+      <div id="tab-global" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <div class="well">
+            <%= render "themes/shared/color_field", :f => form,
+                       :tname => "background color",
+                       :name => "bodyBackgroundColor",
+                       :target => "body",
+                       :type => "background-color",
+                       :value => "#{@textColor}",
+                       :format => "rgba" %>
+            <%= render "themes/shared/color_field", :f => form,
+                       :tname => "text color",
+                       :name => "bodyColor",
+                       :target => "body",
+                       :type => "color",
+                       :value => "#{@textColor}",
+                       :format => "rgba" %>
+            <%= render "themes/shared/color_field", :f => form,
+                       :tname => "heading color",
+                       :name => "headingColor",
+                       :target => "h1,h2,h3,h4,h5,h6",
+                       :type => "color",
+                       :value => "#{@textColor}",
+                       :format => "rgba" %>
+            <%= render "themes/shared/link_fields", :f => form,
+                       :tname => "link color",
+                       :name => "linkColor",
+                       :target => "a",
+                       :type => "color",
+                       :value => "#{@textColor}",
+                       :format => "rgba" %>
+
+            <%= render "themes/shared/number_field", :f => form,
+                       :tname => "padding",
+                       :name => "bodyPadding",
+                       :target => "#wrapper-wide-body",
+                       :type => "padding",
+                       :value => "10",
+                       :unit => "px" %>
+            <%= render "themes/shared/number_field", :f => form,
+                       :tname => "margin",
+                       :name => "bodyMargin",
+                       :target => "#wrapper-wide-body",
+                       :type => "margin",
+                       :value => "10",
+                       :unit => "px" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/accordion-group-->
+    <!--HEADER
+         /////////////////////////////////////////////////////////// -->
+    <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#properties-accordion" href="#tab-header">
+          Header
+        </a>
+      </div>
+      <div id="tab-header" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <div class="well">
+            <%= render "themes/shared/gradient_field", :f => form,
+                       :tname => "background-image",
+                       :name => "navBackgroundColor",
+                       :target => ".navbar-inner",
+                       :type => "background-image",
+                       :value => "#{@textColor}",
+                       :format => "rgba" %>
+            <%= render "themes/shared/color_field", :f => form,
+                       :tname => "link color",
+                       :name => "navLinkColor",
+                       :target => ".navbar .nav > li > a",
+                       :type => "color",
+                       :value => "#{@textColor}",
+                       :format => "rgba" %>
+            <%= render "themes/shared/color_field", :f => form,
+                       :tname => "color",
+                       :name => "navLinkfontweight",
+                       :target => "#header",
+                       :type => "color",
+                       :value => "#{@textColor}",
+                       :format => "rgba" %>
+            <%= render "themes/shared/number_field", :f => form,
+                       :tname => "padding",
+                       :name => "navLinkPadding",
+                       :target => ".navbar",
+                       :type => "padding",
+                       :value => "10",
+                       :unit => "px" %>
+            <%= render "themes/shared/number_field", :f => form,
+                       :tname => "margin",
+                       :name => "navLinkMargin",
+                       :target => ".navbar",
+                       :type => "padding",
+                       :value => "10",
+                       :unit => "px" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/accordion-group-->
+    <!--BODY
+         /////////////////////////////////////////////////////////// -->
+    <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#properties-accordion" href="#tab-body">
+          Body
+        </a>
+      </div>
+      <div id="tab-body" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <div class="well">
+            <%= render "themes/shared/container_fields", :f => form, :prefix => "content" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/accordion-group-->
+    <!--FOOTER
+         /////////////////////////////////////////////////////////// -->
+    <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#properties-accordion" href="#tab-footer">
+          Footer
+        </a>
+      </div>
+      <div id="tab-footer" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <div class="well">
+            <%= render "themes/shared/container_fields", :f => form, :prefix => "footer" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/accordion-group-->
+    <!--COPYRIGHT
+         /////////////////////////////////////////////////////////// -->
+    <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#properties-accordion" href="#tab-copyright">
+          Copyright
+        </a>
+      </div>
+      <div id="tab-copyright" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <div class="well">
+            <%= render "themes/shared/container_fields", :f => form, :prefix => "copyright" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/accordion-group-->
+    <!--FORM
+         /////////////////////////////////////////////////////////// -->
+    <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#properties-accordion" href="#tab-form">
+          Form
+        </a>
+      </div>
+      <div id="tab-form" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <div class="well">
+            <%= render "themes/shared/color_field", :f => form,
+                       :tname => "background color",
+                       :name => "inputBackgroundColor",
+                       :target => "input,textarea,select,.uneditable-input",
+                       :type => "background-color",
+                       :value => "#{@textColor}",
+                       :format => "rgba" %>
+            <%= render "themes/shared/color_field", :f => form,
+                       :tname => "color",
+                       :name => "inputTextColor",
+                       :target => "input,textarea,select,.uneditable-input",
+                       :type => "color",
+                       :value => "#{@textColor}",
+                       :format => "rgba" %>
+            <%= render "themes/shared/color_field", :f => form,
+                       :tname => "border color",
+                       :name => "inputBorderColor",
+                       :target => "input,textarea,select,.uneditable-input",
+                       :type => "border-color",
+                       :value => "#{@textColor}",
+                       :format => "rgba" %>
+            <%= render "themes/shared/number_field", :f => form,
+                       :tname => "border radius",
+                       :name => "inputBorderRadius",
+                       :target => "input,textarea,select,.uneditable-input",
+                       :type => "radius",
+                       :value => "3",
+                       :unit => "px" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/accordion-group-->
+    <!--ALERT
+         /////////////////////////////////////////////////////////// -->
+    <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#properties-accordion" href="#tab-alert">
+          Alert
+        </a>
+      </div>
+      <div id="tab-alert" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <%= render "themes/shared/alert_fields", :f => form, :prefix => "warning" %>
+          <%= render "themes/shared/alert_fields", :f => form, :prefix => "error" %>
+          <%= render "themes/shared/alert_fields", :f => form, :prefix => "success" %>
+          <%= render "themes/shared/alert_fields", :f => form, :prefix => "info" %>
+        </div>
+      </div>
+    </div>
+    <!--/accordion-group-->
+    <!--BUTTONS
+         /////////////////////////////////////////////////////////// -->
+    <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#properties-accordion" href="#tab-buttons">
+          Buttons
+        </a>
+      </div>
+      <div id="tab-buttons" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <%= render "themes/shared/buttons", :f => form %>
+        </div>
+      </div>
+    </div>
+    <!--/accordion-group-->
+    <div class='form-actions'>
+      <%#= render "model_form_buttons", :f => form %>
+    </div>
+    </div>
+    <% end %><!--/form-->
+</div>

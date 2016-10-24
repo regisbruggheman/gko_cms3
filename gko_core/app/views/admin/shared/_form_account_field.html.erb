@@ -1,0 +1,6 @@
+<% if Account.count > 1 %>
+    <%= f.association :account, :label => t("simple_form.labels.shared.account"),
+                      :collection => Account.all, :label_method => :reference %>
+<% else %>
+    <%= f.input :account_id, :as => :integer, :value => Account.first.id %>
+<% end %>

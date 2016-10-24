@@ -1,0 +1,5 @@
+<%= simple_form_for User.new, :as => :user, :url => user_password_path, :html => {:class => "request-password-reset-form"} do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :email, :hint => false, :label => false, :placeholder => t("simple_form.labels.user.email") %>
+	<%= f.button :submit, t('devise.user_passwords.send_reset_password_instructions'), :class => 'btn-block btn-primary submit' %>
+<% end %>

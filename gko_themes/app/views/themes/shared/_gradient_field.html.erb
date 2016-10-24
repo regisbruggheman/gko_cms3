@@ -1,0 +1,23 @@
+<div class="control-group">
+  <label class="control-label" for="theme[:<%= name %>]"><%= tname.to_s %></label>
+
+  <div class="controls">
+    <div class="input-append gradient"
+         data-name="<%= name.to_s %>"
+         data-type="<%= type.to_s %>"
+         data-target="<%= target.to_s %>"
+         data-color="<%= value.to_s %>"
+         data-color-format="<%= format.to_s %>">
+      <input type="text"
+             class="span2 readonly"
+             value="<%= value %>"
+             readonly="readonly"
+             data-name="<%= name.to_s %>"
+             data-type="<%= type.to_s %>">
+      <span class="add-on"><i style="<%= type %>: <%= value %>;"></i></span>
+      <a class="btn plus"><i class="icon-cog"></i></a>
+    </div>
+  </div>
+
+
+</div>	

@@ -1,0 +1,10 @@
+fr:
+  comments:
+    title: "Commentaires"
+    none: "aucun commentaire"
+    by: 'Écrit par %{who}'
+    time_ago: 'il y a %{time} '
+    thank_you: 'Merci pour votre commentaire.'
+    thank_you_moderated: 'Merci pour votre commentaire. Votre message a été placé en attente de validation et apparaitra bientôt.'
+    actions:
+      add: "Ajouter un commentaire"

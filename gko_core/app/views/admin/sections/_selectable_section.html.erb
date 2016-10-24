@@ -1,0 +1,24 @@
+<% unless node.is_a?(Redirect) %>
+	<% cache("#{node.admin_cache_key}_selectable_section") do %>
+	    <li id="<%= dom_id(node) %>" data-type="<%= node.class.name %>">
+	      <%= link_to(node.labelize.try(:html_safe), node.public_url(@resource_locale), :class => 'btn selectable') %>
+	      <span class="actions">
+	          <% if node.categorizable? and node.categories.any? %>
+	              <%= btn_to("Catégories",
+	                         gurl_for([:selected, :admin, current_site, node, :categories]),
+	                         :icon => 'grid',
+	                         :remote => true,
+	                         :title => "Afficher les catégories de cette section") %>
+	          <% end %>
+			  <% if node.content_type and node.content_type.constantize.base_class.trackable? %>
+	            <%= btn_to("Pages",
+	                       gurl_for([:selected, :admin, current_site, node, node.content_type.pluralize.underscore.to_sym]),
+	                       :icon => 'grid',
+	                       :remote => true,
+	                       :title => "Afficher les pages de cette section") %>
+	          <% end %>
+			</span>
+			<%= child if local_assigns.key?(:child) %>
+	    </li>
+	<% end %>	
+<% end %>

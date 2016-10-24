@@ -1,0 +1,42 @@
+<%= f.input :menu_title,
+            :label => t('simple_form.labels.section.menu_title'),
+            :hint => t('simple_form.hints.section.menu_title') %>
+<%= f.input :show_title_in_page, :as => :boolean, 
+            :label => t('simple_form.labels.section.show_title_in_page'),
+            :hint => t('simple_form.hints.section.show_title_in_page') %>            
+<%= f.input :alt, :input_html => { :class => 'wysihtml5', :rows => '4' } %>              
+<%# if f.object.leaf? %>
+  <%= f.input :display_first_page, :as => :boolean,
+              :label => t('simple_form.labels.section.display_first_page'),
+              :hint => t('simple_form.hints.section.display_first_page').html_safe %>
+<%# end %>
+<%= f.input :hidden,
+            :as => :boolean,
+            :label => t('simple_form.labels.section.hidden'),
+            :hint => t('simple_form.hints.section.hidden').html_safe %>             
+<%= f.input :restricted %>
+<%= render("additional_option_fields", :f => f) %>
+<% if user_master? %>
+    <%= f.input :deletable, :as => :boolean,
+                :label => t('simple_form.labels.section.deletable'),
+                :hint => t('simple_form.hints.section.deletable').html_safe %>
+    <%= f.input :name %>
+    <%= f.input :layout %>
+    <%= f.input :template %>
+    <%= f.input :menu_css_class %>
+    <%= f.input :body_css_class %>
+    <% if f.object.content_type.presence %>
+        <%= f.input :accept_categories, :as => :boolean if f.object.site.has_plugin?(:categories) %>
+        <%= f.input :accept_stickers, :as => :boolean if f.object.site.has_plugin?(:stickers) %>
+        <% if f.object.site.has_plugin?(:comments) %>
+            <%= f.input :accept_comments,
+                        :as => :boolean,
+                        :label => t('simple_form.labels.section.accept_comments'),
+                        :hint => t('simple_form.hints.section.accept_comments').html_safe %>
+            <%= f.input :moderate_comments,
+                        :as => :boolean,
+                        :label => t('simple_form.labels.section.moderate_comments'),
+                        :hint => t('simple_form.hints.section.moderate_comments').html_safe %>
+        <% end %>
+    <% end %>
+<% end %>

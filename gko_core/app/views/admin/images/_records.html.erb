@@ -1,0 +1,9 @@
+<ul id='images-list' class="thumbnails" data-toggle="modal-gallery" data-target="#modal-gallery" data-selector="a.gallery-item">
+	<% if @images.any? %>
+		<%= render(@images) %>
+	<% else %>
+		<%= render("admin/shared/empty") %>
+	<% end %>
+</ul>
+<%= render_pagination(@images) %>
+

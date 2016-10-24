@@ -1,0 +1,26 @@
+<div id='insert_media'>
+  <div class='row-fluid'>
+    <aside class="span3 content-secondary">
+      <%= render "admin/image_folders/tree_navigator_panel", :insert => true %>
+    </aside>
+    <div class='span9'>
+      <div class='row-fluid'>
+        <div class='span12'>
+          <%= render 'admin/images/image_sizes' %>
+        </div>
+      </div>
+      <div class='row-fluid'>
+        <div class='span12'>
+          <div id="images-container" class="thumbnails-container">
+            <%= render 'admin/images/selectable_records' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% content_for(:jquery_ready) do %>
+  <%= raw("images_dialog.init();\n") %>
+<% end %> 
+
+

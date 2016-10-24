@@ -1,0 +1,8 @@
+<%
+   unless local_assigns[:label]
+     label = t("helpers.submit.#{f.object.persisted? ? 'update' : 'create' }")
+     label += t("with_locale.#{@resource_locale}") if resources_controller? && current_site && current_site.localized? && f.object.respond_to?(:globalize)
+   end
+%>
+
+<%= f.button 'submit', label, :class => " btn-large btn-primary btn-block #{'wymupdate wym_submit' if local_assigns[:wymeditor]}" %>

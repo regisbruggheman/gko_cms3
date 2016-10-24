@@ -1,0 +1,8 @@
+<% cache [action_name, album.site, I18n.locale, album.section, album] do %>
+	<%= grid_item_tag_for(album) do %>
+		<%= render_record_thumb(album) %>
+		<%= grid_item_caption_tag do %>
+			<%= render_record_title(album) %>
+		<% end %>
+	<% end %>
+<% end if album %>

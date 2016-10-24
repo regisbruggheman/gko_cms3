@@ -1,0 +1,6 @@
+require 'omniauth'
+#require 'oa-core'
+require 'omniauth-twitter'
+require 'omniauth-facebook'
+require 'omniauth-google-oauth2'
+require 'gko/socials'

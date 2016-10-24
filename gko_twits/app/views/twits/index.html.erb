@@ -1,0 +1,9 @@
+<%= render('secondary_menu') %>
+<% if collection.any? %>
+  <%= grid_tag(parent.column_count) do %>
+    <%= render_collection %>
+  <% end %>
+  <%= render_pagination %>
+<% else %>
+  <%= render "no_records_found" %>
+<% end %>

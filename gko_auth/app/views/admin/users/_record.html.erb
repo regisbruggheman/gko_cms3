@@ -1,0 +1,8 @@
+<td><%= link_to(record.email, url_for([:edit, :admin, record.site, record])) %></td>
+<% if user_master? %>
+	<td><%= list_roles(record) %></td>
+<% end %>
+<%= content_tag_for_actions do  %>
+	<%= icon_to_edit(url_for([:edit, :admin, record.site, record])) %>
+	<%= icon_to_destroy(url_for([:admin, record.site, record])) if current_user.can_delete?(record) %>
+<% end  %>                   

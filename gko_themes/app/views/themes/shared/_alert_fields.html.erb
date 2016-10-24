@@ -1,0 +1,25 @@
+<% target = prefix == "warning" ? ".alert" : ".alert-#{prefix}" %>
+<div class="well">
+  <h3><%= prefix.html_safe %></h3>
+  <%= render "themes/shared/color_field", :f => f,
+             :tname => "background color",
+             :name => "#{prefix}AlertBackground",
+             :target => "#{target}",
+             :type => "background-color",
+             :value => "#{@textColor}",
+             :format => "rgba" %>
+  <%= render "themes/shared/color_field", :f => f,
+             :tname => "color",
+             :name => "#{prefix}AlertColor",
+             :target => "#{target}",
+             :type => "color",
+             :value => "#{@textColor}",
+             :format => "rgba" %>
+  <%= render "themes/shared/color_field", :f => f,
+             :tname => "border color",
+             :name => "#{prefix}AlertBorderColor",
+             :target => "#{target}",
+             :type => "border-color",
+             :value => "#{@textColor}",
+             :format => "rgba" %>
+</div>

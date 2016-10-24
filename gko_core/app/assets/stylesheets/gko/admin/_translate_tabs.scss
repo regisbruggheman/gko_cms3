@@ -1,0 +1,41 @@
+/* LOCALES TABS PATCH
+   ================================================== */
+.nav-tabs.locales {
+  margin-bottom: 0;
+	border: none;
+}
+.nav-tabs.locales > li {
+  margin-bottom: 0;
+  > a {
+    text-transform: capitalize;
+  }
+}
+
+.nav-tabs.locales .active > a,
+.nav-tabs.locales .active > a:hover {
+  color: $white;
+  background: $blue;
+  @include gradient-vertical($blue, $blueDark);
+  border-color: rgba(0, 100, 205, 0.1) rgba(0, 100, 205, 0.1) rgba(0, 100, 205, 0.25);
+}
+
+.nav-tabs.locales > li.disabled > a,
+.nav-tabs.locales > li.disabled > a:hover {
+  color: $gray;
+  cursor: default;
+  background-image: none;
+  @include reset-filter();
+  @include opacity(65);
+  @include box-shadow(none);
+  background: none !important;
+  border: 0px !important;
+}
+
+.locales .tips {
+  background-color: $blueDark;
+  color: $white;
+  padding: 4px;
+  p {
+    margin: 0px;
+  }
+}

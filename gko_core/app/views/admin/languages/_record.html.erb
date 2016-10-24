@@ -1,0 +1,11 @@
+<% cache([current_site, @resource_locale.to_s, record]) do %> 
+	<td><%= record.name %></td>
+	<td><%= record.code %></td>
+	<td><%= record.presentation %></td>
+	<td><%= record.default %></td>
+	<td><%= record.public %></td>
+	<%= content_tag_for_actions do  %>
+		<%= icon_to_edit(edit_admin_site_language_path(current_site, record)) %>
+	  	<%= icon_to_destroy(admin_site_language_path(current_site, record)) if !record.default? && current_site.languages.count > 1 %>
+	<% end %>
+<% end %>

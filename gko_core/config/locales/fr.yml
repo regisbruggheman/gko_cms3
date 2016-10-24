@@ -1,0 +1,500 @@
+fr:
+  locales:
+    long:
+      fr: "Français"
+      en: "Anglais"
+      es: "Espagnol"
+      ru: "Russe"
+      it: "Italien"
+      de: "Allemand"
+      pt: "Portuguais"
+      br: "Brézilien"
+    short:
+      fr: FR
+      en: EN
+      es: ES
+      ru: RU
+      it: IT
+      de: DE
+      pt: PT
+      br: BR
+  with_locale:
+    fr: " en français"
+    en: " en anglais"
+    es: " en espagnol"
+    ru: " en russe"
+    it: " en italien"
+    de: " en allemand"
+    pt: " en portuguais"
+    br: " en brézilien"
+  add: "Ajouter"
+  continue: Lire
+  copyright: Copyright ©%{year} %{copyright_name}. Tous droits réservés
+  navigation_menu: Menu
+  more_infos: "Plus d'informations"
+  contact_us: Nous contacter
+  email_us: Nous écrire
+  follow_us: Nous suivre
+  a_or_b: '%{a} ou %{b}'
+  site_by: "Site par %{name}"
+  visit_joufdesign: "Visiter joufdesign.com"
+  request_password: "Demander un mot de passe"
+  request_password_subject: "Demande de mot de passe pour la page %{page_name}"
+  posted_by: "Posté par"
+  next: "Suivant"
+  previous: "Précédent"
+  search: "Rechercher"
+  logged_in_successfully: ""
+  price_on_request: "Prix sur demande"
+  from: Du
+  to: au
+  list_type:
+    grid: grille
+    table: liste
+  flash:
+    close: Fermer
+  will_paginate:
+    previous_label: "Précédent"
+    next_label: "Suivant"
+    page_gap: "Aller à"
+
+  # Active Record models configuration
+  activerecord:
+    errors:
+      messages:
+        taken: "est déjà utilisé"
+        record_invalid: "La validation a échouée: %{errors}"
+    models:
+      content: Page
+      faq_page: Liste de questions-réponses
+      fag_element: Question-Réponse
+      home: Page d'accueil
+      language: Langage
+      page: Page
+      partner_list: "Liste de liens"
+      partner: "Lien"
+      redirect: Redirection
+      section: Section
+      site: Site
+
+  helpers:
+    submit:
+      create: "Sauvegarder"
+      update: "Sauvegarder les changements"
+      search:
+        submit: "Rechercher"
+
+  flash:
+    create:
+      success: "%{resource_name} a été créé(e) avec succès."
+    update:
+      success: "%{resource_name} a été modifié(e) avec succès."
+    destroy:
+      success: "%{resource_name} a été supprimé(e) avec succès."
+      failure:  "%{resource_name} n'a pu être supprimé(e)."
+
+  confirmations:
+    destroy:
+      default: "Veuillez confirmer la suppression de cette ressource.<br/>Cette action est irréversible!"
+      section: "Voulez-vous réellement supprimer définitivement cette page ?<br/>Cette action est irréversible!"
+      partner: "Voulez-vous réellement supprimer définitivement ce partenaire ?<br/>Cette action est irréversible!"
+      site: "Voulez-vous réellement supprimer définitivement ce site ?<br/>Cette action est irréversible!"
+      language: "Voulez-vous réellement supprimer définitivement ce langae ?<br/>Cette action est irréversible!"
+
+  # Generic attributes
+  attributes:
+    title: "Titre"
+    published_at: "Publier le"
+    draft: "Brouillon"
+    slug: "Permalien"
+    defaults:
+      pages:
+        main:
+          title: main
+        404:
+          title: 404
+
+  shared:
+    next_previous:
+      links:
+        previous: "Précédent"
+        next: "Suivant"
+
+  simple_form:
+    yes: "Oui"
+    no: "Non"
+    required:
+      text: "obligatoire"
+      mark: "*"
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Des erreurs ont été rencontrées:"
+    labels:
+      defaults:
+        alt: Légende
+        body: Contenu
+        country: Pays
+        countries: Pays
+        currencies: Monnaies
+        currency: Monnaie
+        draft: Brouillon?
+        email: Email
+        end_date: Date de fin
+        images: Images
+        firstname: Prénom
+        id: id
+        lastname: Nom
+        message: Message
+        name: Nom
+        newsletter_registration: Recevoir la newsletter
+        phone: Téléphone
+        civility: Civilité
+        robot_follow: "Robot follow"
+        robot_index: "Robot index"
+        sender_email: Email
+        size: Taille
+        start_date: Date de début
+        title: "Titre"
+        user: Utilisateur
+        users: Utilisateurs
+
+      faq_element:
+        title: "Question"
+        body: "Reponse"
+
+      language:
+        name: "Référence privée"
+        code: "Code"
+        presentation: "Nom public"
+        public: "Ouverte au public?"
+        default: "Langue principale?"
+
+      partner:
+        title: "Nom"
+        body: "Description"
+        url: "Site Internet"
+        image: "Image"
+
+      page:
+        body: Contenu
+
+      preference:
+        flat_slug: "Permaliens chainés"
+        menu_level: "Niveau du menu prncipal"
+        navigation_columns: "Nb. items par colonne"
+        public_layout: "Design"
+        typekit_key: "Clé TypeKit"
+        contact_email: "Adresse email"
+        contact_address: "Adresse de contact"
+        facebook_account: "Compte facebook"
+        google_map_api_key: "Clé Google API"
+        currency: Monnaie
+
+      section:
+        title: "Titre de la page"
+        body: "Headline"
+        deletable: "Destructible"
+        hidden: "Caché du menu"
+        parent: "Page Parente"
+        redirect_url: "Lien"
+        display_first_page: "Afficher la page enfant"
+        menu_title: "Titre du menu"
+        display_contents_in_menu: "Afficher les pages dans le menu"
+        restricted: Accès privé
+        layout: Structure de page
+        template: Modèle de page
+        show_title_in_page: "Afficher le titre"
+
+      site:
+        host: Nom de domaine
+        google_analytics_key: Clé Google analytics
+        google_webmaster_tools_key: Clé Google webmaster tools
+        locales: Langues
+        public: Accessible au public
+        account: Compte
+        subtitle: Sous-titre
+        timezone: Fuseau horaire
+        subtitle: Sous-titre
+        drop_down_menu: Menu en cascade
+        display_images_in_background: Images en fond
+        default_image: Image par défaut
+        mobile_cache_enabled: Page cache mobile
+        homepage_cache_enabled: Cache page d'accueil
+        authenticity_token_on_frontend: Inclure une clé d'authenticité
+        include_alternate_links: Inclure les tags des liens alternatifs
+        use_image_folders: Organiser les images en dossier
+
+    hints:
+      defaults:
+        slug: "Le permalien sert à construire l'addresse Internet de la page. Ce champ obligatoire est rempli par le système si ce dernier est vide. <br/>Note: le système reformatte automatiquement le permalien afin qu'il soit conforme aux normes."
+        path: "Le chemin complet de la page est: <em>%{path}</em>."
+        meta_title: "Entrer 5 à 10 mots résumant le contenu de la page. Ce titre est affiché dans la barre du haut des navigateurs."
+        meta_description: "Entrer 2 ou 3 phrases concises décrivant précisemment le contenu de la page. Cette description est affichée par les moteurs de recherche dans leurs pages de résultats."
+        password: "No special characters, please."
+        draft: Cocher cette case si vous souhaitez que cette page ne soit pas visible par les internautes. Ceci est utile lorsque la rédaction de la page est en cours
+        robot_follow: "Indique aux moteurs de recherche de prendre en compte et de suivre les liens dans cette page."
+        robot_index: "Indique aux moteurs de recherche d'indexer la page."
+      account:
+        reference: Donner un code de référence unique à ce compte.
+        users: ""
+        type: ""
+        status: ""
+        nickname: ""
+        status: ""
+
+      language:
+        name: "Donner une référence à ce langage. Cette référence est à usage privé et ne sera pas visible par les internautes."
+        code: "Donner le code international du langage constitué de 2 lettres en minuscule (Par exemple 'fr' pour le français ou 'en' pour l'anglais.)"
+        presentation: "Indiquer comment le langage est désigné pour les internautes dans le widget servant à changer de langage."
+        public: "Indiquer si ce langage est visible par les internautes et exposé au référencement. Conserver ce langage privé si la traduction de votre site est en cours et que vous ne souhaitez mettre ce langage en ligne qu'une fois toutes les traductions effectuées. Noter que les pages non traduites dans ce langage ne s'afficheront pas."
+        default: "Indiquer si ce langage est le langage par défaut de votre site."
+
+      partner:
+        title: ""
+        body: ""
+        url: ""
+        image: "Choisissez une image à télécharger.La taille de l'image est de %{size}."
+
+      section:
+        name: "Give an unique name to this page. <br/>This is useful when you have more that one page of the same type and you want programtically retrieve one of this. <br/>WARN:: Changing the name can break the code."
+        hidden: "Choisissez <em>OUI</em> si vous souhaitez que cette page n'apparaisse dans le menu de votre site. Ceci peut être utile si vous voulez diriger les utilisateurs directement vers cette page."
+        deletable: Select this option if you want prevent destruction of this page by a NOT super adminstrator.
+        display_first_page: Rediriger les visiteurs vers la première page fille.
+        moderate_comments: Select this option if you want moderate comments. Moderate review is not published until an admistrator give manually a such permission.
+        deletable: "Si vous souhaitez protéger cette page de toute suppression, choisissez <em>Oui</em>. Si vous désirez ultérieurement supprimer cette page vous devrez contacter un administrateur de haut niveau habiliter à détruire cette page."
+        contents_per_page: "Indiquer le nombre de sous-page à montrer(comme un système de blog). Si le nombre total de page est supérieur à celui indiqué, un système de pagination est mis en place."
+        redirect_url: "Si vous souhaitez que cette page mène à un autre site internet ou redirige vers une autre page de votre site lorsque l'on clique dessus dans le menu, entrez une URL '(par exemple http://google.com)'. Sinon laissez ce champ vide."
+        menu_title: "Si vous voulez que le menu ait un titre différent de celui de la page, entrez-le ici."
+        parent: "Vous pouvez placer une page sous une autre page en la sélectionnant dans la liste. Si vous voulez que cette page soit un menu, laissez ce champ vide."
+        display_contents_in_menu: "Afficher les pages dans le menu"
+        show_title_in_page: "Afficher le titre dans la page"
+
+      site:
+        title: "Indiquer le nom de votre site (ex: my company name)."
+        host: "Entrer l'adresse Internet du site sans protocole. Ex: 'mondomaine.com'"
+        locales: "Indiquer des langages additonnels en les séparant par des virgules (ex: en,es). La langue par défaut de votre site est : %{default_locale}."
+        subtitle: "Donner un sous-titre (3-5 mots) détaillant le contenu de votre site."
+        public: "Indiquer si votre site est ouvert au public ou bien requiert un lot de passe. Il est conseillé de laisser votre site fermé au public tant que ce dernier n'est pas près au référencement."
+        timezone: "Set your time zone here. This will allow blog posts and comments to display the properly offset time for your website and will aid in other areas such as calendar entry where times are pre-populated for you."
+        enable_mobile_layout: "Activer la version mobile."
+        google_webmaster_tools_key: "Pour activer le service Google Webmaster Tools entrez votre code."
+        google_analytics_key: "Pour activer le service Google Analitics entrez votre code."
+        account: "Choisissez le compte pouvant administré ce site."
+        drop_down_menu: "Indiquer si vous souhaitez afficher dans le menu toutes les pages enfants si elles sont présentes. Dans le cas contraire les pages enfants seront affichées sous-forme de un sous menu dans le corps de la page."
+        meta_title: "Entrer 5 à 10 mots résumant le contenu de votre site."
+        display_images_in_background: "Indiquer si vous souhaitez que les images des pages se place en fond, créant un slideshow géant."
+        time_format: "Set your time format here. Wherever a time is displayed on your site, whether it be on a blog comment or an event detail page, the format you choose will control how those times are displayed. To make it easy, we use the same date and time formatting functions as Microsoft .NET. It is very flexible, so take a look at the official documentation if you need to put a special format together."
+        date_format: "Set your date format here. Wherever a date is displayed on your site, whether it be on a blog post, an event, or search results, the format you choose will control how those dates are displayed. To make it easy, we use the same date and time formatting functions as Microsoft .NET. It is very flexible, so take a look at the official documentation if you need to put a special format together."
+        default_template: "The template you choose here will become the default template for your website. New pages and those pages to which a specific template has not been applied (via the page settings) will use this template. It is a good idea to specify a template you will use frequently here. You can also set the default template by choosing to 'apply' a design from the Design Manager"
+        name: "This value sets the name of your website. It will help you identify it when viewed in 'My Account' and can be displayed on your website by using the 'Website Name' token in your templates."
+        logo: "By uploading your website logo here, your logo will automatically appear on your site if your website's template uses it. You can upload a JPG, GIF, or PNG file."
+
+  views:
+    pagination:
+      previous: "&lt; Previous"
+      next: "Next &gt;"
+      truncate: "..."
+  admin:
+    edit_with_locale: "Traduire la page en: "
+    list_with_locale: "Afficher la page en: "
+    create_with_locale: "Créer la page en: "
+    unpublished: Non publié(e)
+    published: publié(e)
+    menu_tab_settings: Réglagles
+
+    filters:
+      in_site: Site
+      per_page: Par page
+      order: Trier par
+      order_by:
+        created_at: "Date de création"
+        title: Titre
+        published_at: "Date de publication"
+
+    actions:
+      back: Retour
+      back_without_saving: Annuler
+      clear_filter: Effacer les filtres
+
+    columns:
+      actions: Actions
+
+    pages_dialogs:
+      links:
+        validate: Valider
+      pages:
+        help: "Sélectionner la page du site vers laquelle vous voulez créer un lien et valider votre sélection."
+        tab_name: Pages
+      web_address:
+        tab_name: Website
+        location: Location
+        new_window: Nouvelle fenêtre
+        new_window_label: "Cocher cette case si vous souhaitez que la destination du lien s'ouvre dans une nouvelle fenêtre."
+        not_sure: "Vous n'êtes pas certain de ce qu'il faut entrer dans le champ ci-dessus ?"
+        step1: "Trouvez sur le net la page vers laquelle vous voulez créer un lien."
+        step2: "Copiez l'adresse de cette page dans la barre d'adresse de votre navigateur, et collez-la dans ce champ."
+      email_address:
+        tab_name: Adresse e-mail
+        subject_line_optional: Sujet optionnel
+        body_optional: Corps de texte optionnel
+        not_sure: Vous n'êtes pas certain de ce qu'il faut entrer dans les champs ci-dessus ?
+        step1_html: "Ecrivez, ou copiez-collez (par exemple à partir de votre carnet d'adresses) l'adresse e-mail à mettre en lien dans le champ '<strong>Adresse e-mail</strong>'."
+        step2_html: Utilisez le champ '<strong>Sujet optionnel</strong>' si vous souhaitez que le message possède un <strong>sujet pré-défini</strong>.
+        step3_html: Utilisez le champ '<strong>Corps de texte optionnel</strong>' si vous souhaitez que le message possède un <strong>texte pré-défini</strong>.
+
+    pagination:
+      total_entry_with_count: "%{count} %{resource_name}"
+
+    shared:
+      form_publish_fields:
+        published_at: "Publié(e) le %{date}"
+        save_as_draft: Sauvegarder comme brouillon
+        save_as_draft_with_date: "Sauvegarder comme brouillon <em>(Publié(e) le %{date})</em>"
+
+    fieldset:
+      general_informations: "Basic"
+      options: "Options"
+      seo: "Référencement"
+      ahead: "Entête"
+      mailer_settings: "Configuration des emails"
+      services_settings: "Configuration des services"
+      plugins: "Plugins"
+      listing_options: "Présentation du listing"
+
+    locales:
+      fr: "Français"
+      en: "Anglais/US"
+
+    advanced:
+      menu_tab: Avancé
+
+    contents:
+      columns:
+        content: Titre
+      empty: "Aucune page n'a été trouvée."
+
+    languages:
+      menu_tab: "Langages"
+      collection:
+        empty: "Aucun template n'a été trouvé."
+      actions:
+        new: Ajouter un nouveau langage
+        destroy: Supprimer ce langage
+        edit: Modifier ce langage
+        index: Liste des langages
+      titles:
+        new: Ajout d'un nouveau langage
+        index: Liste des langages
+        edit: Modification d'un langage
+
+    pages:
+      help: "Créer une page simple"
+      untranslated_message:
+        one: "Attention: 1 page n'est pas traduite."
+        many: "Attention: %{count} pages ne sont pas traduites."
+      actions:
+        new: Ajouter une nouvelle page
+        destroy: Supprimer cette page
+        edit: Modifier cette page
+        index: Liste des pages
+        view: Voir la page publique
+      titles:
+        new: Ajout d'une nouvelle page
+        index: Liste des pages
+        edit: Modification d'une page
+    partner_lists:
+      help: "Une liste de liens est une collection de lien composé d'un titre, une description, une image et un lien. Ce type de page est idéal pour lister des partenaires."
+      actions:
+        edit: Configuration
+        new: Ajouter
+        index: Liste
+      tooltips:
+        edit: Modifier la page des liens
+      titles:
+        edit: Modification de la page des liens
+
+    partners:
+      untranslated_message:
+        one: "Attention: 1 lien n'est pas traduit."
+        many: "Attention: %{count} liens ne sont pas traduits."
+      select_blank: Sélectionner un lien
+      collection:
+        empty: "Aucun lien n'a été trouvé."
+      actions:
+        new: Ajouter un lien
+        destroy: Supprimer ce lien
+        edit: Modifier ce lien
+        index: Liens
+      tooltips:
+        index: Lister les liens
+      titles:
+        new: Ajout d'un lien
+        index: Liste des liens
+        edit: Modification d'un lien
+      columns:
+        title: Nom
+        actions: Actions
+    homes:
+      actions:
+        edit: Modifier la page d'accueil
+      titles:
+        edit: Modification de la page d'accueil
+
+    redirects:
+      help: "Créer un lien vers une page Internet extérieur à votre site ou une page de votre site."
+
+    sections:
+      untranslated_message:
+        one: "Attention: 1 page n'est pas traduite."
+        many: "Attention: %{count} pages ne sont pas traduites."
+      select_blank: Choisissez une page
+      menu_tab: Pages
+      collection:
+        empty: "Aucune page n'a été trouvée."
+      columns:
+        section: Title
+      actions:
+        cant_up: Ne peut pas monter
+        down: Descendre
+        up: Monter
+        cant_down: Ne peut pas descendre
+        new: Ajouter une nouvelle page
+        destroy: Supprimer cette page
+        edit: Modifier cette page
+        index: Liste des pages
+        reorder: Réordonner les pages
+        reorder_done: Réordonnancement des pages effectués
+        show: Afficher les contenus de cette page
+        view: Voir la page publique
+      help:
+        reorder: "Glisser-déposer les pages où vous le désirez, ou bien utiliser les boutons 'up/down'.<br/>Une fois terminé cliquer sur le bouton ci-dessous pour revenir à l'écran précédent."
+      titles:
+        new: Ajout d'une nouvelle page
+        index: Liste des pages
+        edit: Modification d'une page
+
+    sites:
+      untranslated_message:
+        one: "Attention: 1 site n'est pas traduit."
+        many: "Attention: %{count} sites ne sont pas traduits."
+      select_blank: Choisissez un site
+      menu_tab: Sites
+      menu_tab_description: ""
+      site_menu_tab: Généralités
+      collection:
+        empty: "Aucun site n'a été trouvé."
+      columns:
+        name: Nom
+        host: Host
+        actions: Actions
+      actions:
+        new: Ajouter un nouveau site
+        destroy: Supprimer ce site
+        edit: Modifier ce site
+        index: Liste des sites
+      titles:
+        new: Ajout d'un nouveau site
+        index: Liste des sites
+        edit: Modification d'un site

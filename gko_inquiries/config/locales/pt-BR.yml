@@ -1,0 +1,73 @@
+br:
+  send_inquiry: "Enviar pedido"
+  form:
+    inquiry:
+      title: "Fale Conosco"
+  activerecord:
+    models:
+      inquiry: "Pedido"
+    attributes:
+      inquiry:
+        name: Nome
+        email: Email
+        phone: Telefone
+        message: Mensagem
+
+  inquiry_mailer:
+    confirmation:
+      subject: "Confirmação"
+      title: "Obrigada pela sua aplicação %{name}"
+      body: "Nós responderemos assim que délais. Cordialement."
+    notification:
+      greeting: Olá
+      you_recieved_new_inquiry: Vous avez reçu une nouvelle demande sur votre site.
+      inquiry_starts: "--- Début de la demande --- "
+      inquiry_ends: "--- Fin de la demande --- "
+      subject: "Demande d'information"
+      from: De
+      email: E-mail
+      phone: Telefone
+      message: Message
+      closing_line: Cordialement
+      ps: "P.S. Toutes les emails sont stockées dans la section 'Requêtes' afin que vous puissiez les consulter ultérieurement."
+    
+  flash:
+    inquiries:
+      create:
+        notice: "O seu pedido foi enviado."
+        alert:  "Ocorreu um problema ao enviar o seu pedido."
+        alert_with_email: "Ocorreu um problema ao enviar o seu pedido. Obrigado a entrar em contato conosco diretamente no seguinte endereço %{email}"
+      
+  helpers:
+    submit:
+      inquiry:
+        create: "Envoyer la %{model}"
+        submit: "Enregistrer ce %{model}"
+        
+  inquiries:
+    new:
+      title: "Fale Conosco"
+    form:
+      privacy_policy: ""
+      
+  simple_form:
+    labels:
+      site:
+        inquiry_recipients: Email(s) de notification
+      inquiry:
+        name: Nome
+        email: Email
+        phone: Telefone
+        message: Mensagem
+        firstname: Primeiro nome
+        lastname: Sobrenome
+        country: País
+        civility: Civilidade
+
+    hints:
+      site:
+        inquiry_recipients: "Chaque fois qu'une demande de contact est émise depuis votre site, le système envoie un e-mail pour le signaler à toutes les adresses emails enumérées ci-dessus. Entrez votre/vos addresse(s) e-mail comme il suit: jack@work.com, jill@office.com"
+  
+  help:
+    inquiry:
+      general: "Chaque fois qu'une demande de contact est émise depuis un formulaire de votre site, le système enregistre cette demande et envoie un e-mail pour le signaler à toutes les adresses emails précisées dans la configuration du site."

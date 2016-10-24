@@ -1,0 +1,5 @@
+<% cache [request.format, I18n.locale, site, "sitemap"] do %>
+	<%= render_tree site.sections.nested_set.published.indexable.includes(:translations).arrange, :class => 'nav nav-sitemap' do |node, child| %>
+		<%= render("sitemap_entry", :node => node, :child => child) %>
+	<% end %>
+<% end %>

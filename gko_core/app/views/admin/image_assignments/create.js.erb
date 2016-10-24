@@ -1,0 +1,4 @@
+$('#<%= dom_id(@image_assignment.image) %>').fadeOut(500, function () { $(this).remove();});
+var imageAssignmentList = self.parent.$("#<%= @image_assignment.attachable.class.name.underscore %>-image-assignment-list");
+$("<%= escape_javascript(render 'image_assignment', :image_assignment => @image_assignment) %>").appendTo(imageAssignmentList);
+make_sortable(imageAssignmentList);

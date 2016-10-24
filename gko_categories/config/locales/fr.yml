@@ -1,0 +1,58 @@
+fr:
+  categories:
+    title: Catégories
+    meta_title: "Catégories"
+    all: Tous
+  
+  activerecord:
+    models:
+      category: Categorie
+      
+  helpers:
+    select:
+      prompt:
+        category: Type de bien
+    submit:
+      category:
+        create: "Ajouter cette catégorie"
+
+  confirmations:
+    destroy:
+      category: "Voulez-vous réellement supprimer définitivement cette catégorie ? <br/>Cette action est irréversible et supprimera cette catégorie de toutes les pages l'utilisant!"
+                   
+  simple_form:
+    labels:
+      defaults:
+        accept_categories: Catégorisable
+    hints:
+      defaults:
+        accept_categories: Indiquer si les pages filles peuvent être organisées en catégories.
+
+  admin:
+    fieldset: 
+      categories: Catégories
+    categories: 
+      untranslated_message: 
+        one: "Attention: 1 catégorie n'est pas traduite."
+        many: "Attention: %{count} catégories ne sont pas traduites."
+      select_blank: Sélectionner une categorie
+      menu_tab: Catégories
+      collection:
+        empty: "Aucune catégorie n'a été trouvée. %{link}"
+        create_item: "Ajouter une nouvelle catégorie maintenant."
+      actions:
+        new: Ajouter une nouvelle catégorie
+        destroy: Supprimer cette catégorie
+        edit: Modifier cette catégorie
+        index: Catégories
+        previous: Previous
+        next: Next
+        view: Voir la page publique
+      tooltips:
+        index: Liste des catégories
+      titles:
+        new: Ajout d'une nouvelle catégorie
+        index: Liste des catégories
+        edit: Modification d'une catégorie
+        
+        

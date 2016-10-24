@@ -1,0 +1,10 @@
+<%
+  slug_hint = t('simple_form.hints.defaults.slug')
+  slug_hint += "<br/\>#{t('simple_form.hints.defaults.path', :path => f.object.public_url)}" if f.object.public_url.present?
+%>
+<%# Mark slug NOT required as it is generate by the system if empty %>
+<%= f.input :slug, :required => false, :hint => slug_hint.html_safe %>
+<%= f.input :meta_title %>
+<%= f.input :meta_description, :input_html => {:rows => 6} %>
+<%= f.input :robot_follow, :as => :boolean if f.object.respond_to?(:robot_follow) %>   
+<%= f.input :robot_index, :as => :boolean if f.object.respond_to?(:robot_index) %>  

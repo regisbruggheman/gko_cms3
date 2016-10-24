@@ -1,0 +1,18 @@
+<%= render 'form_file_field', :f => f, :thumb_size => "x120" %>
+<%= f.input :title %>
+<%= render 'form_wymeditor_field', :f => f %>
+<div class="control-group">
+	<label class="url optional control-label" for="feature_url">Lien</label>
+	<div class="controls">
+		<div class='row-fluid'>
+			<div class='span5'>
+				<%= f.input :url, :label => "Indiquer l'adresse d'une page Internet" %>
+			</div>
+			<div class='span2' style='text-align:center;'>ou</div>
+			<div class='span5'>
+				<%= render 'form_pages_picker', :f => f, :owner_attribute => 'owner', :owner_title => f.object.owner_name %>
+			</div>
+		</div>
+	</div>
+</div>
+<%= render 'form_publish_fields', :f => f %>

@@ -1,0 +1,6 @@
+var modal_sections = $("<%= escape_javascript(render('admin/sections/modal_index')) %>").appendTo('body');
+pages_modal.init();
+$('html, body').animate({scrollTop:0}, 'slow');
+modal_sections.modal({backdrop:'static', show:true}).bind('hidden', function (e) {
+    $(this).remove();
+});

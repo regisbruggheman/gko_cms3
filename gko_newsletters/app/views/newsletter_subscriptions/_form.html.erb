@@ -1,0 +1,8 @@
+<%= simple_form_for(:newsletter_subscription, :url => newsletter_subscription_path, :method => :post, :remote => true,
+                    :html => {:class => [:'form-vertical', :newsletter_subscription]}) do |form| %>
+    <%= hidden_field_tag(:return_to, request.url) %>
+    <%= form.hidden_field :site_id, :value => site.id %>
+    <%= form.error_notification %>
+    <%= form.input_field :email, :placeholder => 'Email' %>
+	<%= form.submit '>' %>
+<% end %>

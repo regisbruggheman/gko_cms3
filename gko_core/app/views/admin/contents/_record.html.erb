@@ -1,0 +1,8 @@
+<%# cache(["admin", @resource_locale.to_s, record]) do %>
+	<td><%= record.id %></td>
+	<td><%= raw("#{published_status(record)}&nbsp;#{glink_to(record.labelize, url_for([:edit, :admin, current_site, parent, record]))}") %></td>
+	<%= content_tag_for_actions do  %>
+		<%= icons_to_actions([:destroy, :edit], record) %>
+	    <%= icon_to(record.public_url, "eye-open", :title => icon_tooltip(:view), :target => '_blank') if record.public_url.present? %>
+	<% end %>
+<%# end %>

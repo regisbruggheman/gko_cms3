@@ -1,0 +1,64 @@
+fr:
+  time:
+    formats:
+      post: "%a, %d %b %Y"
+      
+  activerecord:
+    models:
+      project: Projet
+      portfolio: Portfolio
+  helpers:
+    submit:
+      project:
+        create: "Créer le projet"
+
+  projects:
+    posted_at: "Posté le %{when}"
+    filed_in: "dans"
+    read_more: "Voir le projet"
+    posted_by: "par"
+    collection:
+      continue: Voir le projet
+    no_record_found: "Aucun projet n'a été trouvé"
+    links:
+      continue_reading: "Voir le projet"
+      feed_subscribe: "Souscrire au flux"
+      previous: "Précédent"
+      next: "Suivant"
+    titles:
+      in_categories: "Projets dans la catégorie %{name}"
+      tagged: "Projets étiquettées avec %{name}"
+    archives: Archives
+
+  admin:
+    portfolios:
+      help: "Le portfolio vous permet de présenter une liste de projets. Ces projets sont présentés dans l'ordre que vous souhaitez (par titre, date de publication...). Ils peuvent également être organisés en catégories et/ou marqués par des mots clés."   
+      no_stickers: "Aucun mot-clé n'a été trouvé pour ce porfolio."
+      no_categories: "Aucun type de project n'a été trouvé pour ce porfolio." 
+      actions:
+        edit: Portfolio 
+      tooltips:
+        edit: Modifier ce portfolio
+        show: Voir la page publique de ce portfolio
+      titles:
+        edit: Modifier le portfolio
+             
+    projects: 
+      untranslated_message: 
+        one: "Attention: 1 projet n'est pas traduit."
+        many: "Attention: %{count} projets ne sont pas traduits."
+      select_blank: Sélectionner un projet
+      collection:
+        empty: "Aucun projet n'a été trouvé pour ce porfolio."
+      actions:
+        new: Ajouter un projet
+        destroy: Supprimer ce projet
+        edit: Modifier ce projet
+        index: Projets
+        view: Voir la page publique de ce projet
+      tooltips:
+        index: Lister les projets
+      titles:
+        new: Ajout d'un projet
+        index: Liste des projets
+        edit: Modification d'un projet

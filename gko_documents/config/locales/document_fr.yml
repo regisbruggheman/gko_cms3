@@ -1,0 +1,143 @@
+fr:
+  download_file: "Télécharger le fichier"
+
+  activerecord:
+    models:
+      document: "Fichier"
+      document_assignment: "Lien vers un fichier"
+      document_list: "Liste de documents à télécharger" 
+      document_item: "Document"
+
+    errors:
+      models:
+        document:
+          blank: Vous devez choisir un fichier à télécharger.
+          too_long: "Le poids du fichier est top important. Il doit être plus petit que %{count}."
+          attributes:
+            document:
+              incorrect_document_type: "Le type du fichier est invalide. Il doit être de type PDF."
+  
+  confirmations:
+    destroy:
+      document: "Voulez-vous réellement supprimer définitivement ce document ? <br/>Cette action est irréversible et supprimera tous les liens vers ce document!"
+      document_assignment: "Voulez-vous réellement supprimer le lien vers ce document ? <br/>Cette action ne supprime pas document de la bibliothèque. Les autres pages utilisant ce document ne seront pas affectées."
+      document_item: "Voulez-vous réellement supprimer définitivement cet article de presse ?<br/>Cette action est irréversible!" 
+   
+  simple_form:
+    labels:
+      document:
+        title: "Nom"
+        body: "Description"
+        published_at: "Date de publication"
+        document: "Fichier PDF"
+        image: "Image"
+      document_item:
+        body: Description
+        document: Fichier
+        image: Vignette
+      preference:
+        use_country: Indiquer le pays pour les documents de la page
+        use_publication_date: Indiquer la date de publication pour les documents de la page 
+        thumbs_size: Dimension des vignettes pour les documents de la page 
+
+    hints:
+      document:
+        account: Choisissez un compte.
+        document: Choisissez un fichier à télécharger.
+        title: "Donner un titre au fichier. Si aucun titre n'est indiqué, le nom du fichier sera utilisé."
+        alt: "Donner une courte description au fichier. Si aucune description n'est indiqué, le nom du fichier sera utilisé."
+      document_item:
+        title: ""
+        body: "" 
+        image: Choisissez une image pour servir de prévisualisation du document.
+        document: "" 
+        published_at: "Indiquer la date de publication du document."
+  
+  admin:
+    fieldset:
+      documents: Documents
+    filters:
+      with_document_name: Nom de fichier
+    order_by:
+      document_name: Nom defichier
+    pages_dialogs:
+      documents:
+        tab_name: Documents
+        help: Sélectionnez le document désiré puis validez.
+    documents:
+      untranslated_message: "Attention: %{count} documents ne sont pas traduits."
+      replace_file: Remplacer le fichier
+      delete_file: Supprimer le fichier
+      cancel_replace_file: Annuler et conserver le fichier
+      maximum_document_size: "La taille maximum d'un document est de %{size} megabytes."
+      menu_tab: Documents
+      empty: "Aucune document n'a été trouvé %{link}"
+      create_item: "Ajouter un nouveau document maintenant."
+      save_before_attach: Vous devez sauvegarder la page avant de pouvoir attacher des documents à cette dernière.
+      infos:
+        name: Nom
+        size: Taille
+        type: Type
+      tabs:
+        search: Liste des documents
+        upload: Ajouter un nouveau document 
+      collection:
+        empty: "Aucun document n'a été trouvé."
+        create_item: "Créer un nouveau document maintenant %{link}"
+      actions:
+        back: Retourner à la liste des documents
+        new: Ajouter un nouveau document
+        destroy: Supprimer ce document
+        edit: Modifier ce document
+        index: Liste des documents
+        switch_to: "Afficher en %{what}"
+        new_batch: "Ajouter plusieurs documents"
+        browse_for_attach: Attacher un ou des documents
+        previous: Previous
+        next: Next
+        batch: Ajouter plusieurs documents en une fois.
+      titles:
+        new: Ajout d'un nouveau document
+        index: Liste des documents
+        edit: Modification d'un document
+      columns:
+        document_name: Nom du fichier
+        document_type: Type
+        assignments_count: Utilisation
+        actions: actions
+    document_assignments:
+      actions:
+        destroy: Supprimer
+    
+    document_lists:
+      help: "Ce type de page permet de lister des documents pdf à télécharger. Chaque document peut avoir une vignette de prévisualisation et un commentaire. Si votre site est en plusieurs langues vous pouvez fournir une version de chaque document pour chaque langue."
+      actions:
+        edit: Configuration 
+        new: Ajouter
+        index: Liste
+      tooltips:
+        edit: Modifier la liste de fichiers à télécharger
+      titles:
+        edit: Modifier la liste de fichiers à télécharger
+
+    document_items: 
+      untranslated_message: 
+        one: "Attention: 1 fichier à télécharger n'est pas traduit."
+        many: "Attention: %{count} fichiers à télécharger ne sont pas traduits."
+      select_blank: Sélectionner un fichier à télécharger
+      collection:
+        empty: "Aucun fichier à télécharger n'a été trouvé. %{link}"
+        create_item: "Créer un fichier à télécharger maintenant."
+      actions:
+        new: Ajouter un fichier à télécharger
+        destroy: Supprimer ce fichier à télécharger
+        edit: Modifier ce fichier à télécharger
+        index: Fichiers à télécharger
+      tooltips:
+        index: Lister les fichier à télécharger
+      titles:
+        new: Ajout d'un fichier à télécharger
+        index: Liste des fichiers à télécharger
+        edit: Modification d'un fichier à télécharger
+      columns:
+        title: Nom

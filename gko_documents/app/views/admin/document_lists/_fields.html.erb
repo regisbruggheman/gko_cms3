@@ -1,0 +1,27 @@
+<% if f.object.persisted? %>
+<ul class="nav nav-tabs">
+  <%= li_tab_for("#section-basic-tab", t(:'admin.fieldset.general_informations'), 'active') %>
+  <%= li_tab_for("#section-documents-tab", t(:'admin.fieldset.documents')) %>
+  <%= li_tab_for("#section-advanced-tab", t(:'admin.fieldset.options')) %>
+  <%= li_tab_for("#section-seo-tab", t(:'admin.fieldset.seo')) %>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="section-basic-tab">
+	<%= render('default_fields', :f => f) %>
+  </div>
+  <div class="tab-pane" id="section-documents-tab">
+	<%= render('form_image_assignments', :f => f) %>
+  </div>
+  <div class="tab-pane" id="section-advanced-tab">
+	<%= render('listing_fields', :f => f) if f.object.content_type.presence %>
+	<%= render('option_fields', :f => f) %>
+  </div>
+  <div class="tab-pane" id="section-seo-tab">
+	<%= render('form_seo_fields', :f => f) %>
+  </div>
+</div>
+<% else %>
+    <%= render('admin/sections/default_fields', :f => f) %>
+<% end %>
+

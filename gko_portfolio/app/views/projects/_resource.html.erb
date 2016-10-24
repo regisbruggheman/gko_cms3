@@ -1,0 +1,11 @@
+<% resource_cache(resource) do %>
+	<article class='project'>
+		<%= page_title(resource.title) %>
+		<%= render_slideshow_for(resource) %>
+		<%= render_html_text(resource.body) %>
+		<%= link_to("Visiter le site Internet".html_safe, resource.website, :target => "_blank", :class => "gallery-link") unless resource.website.blank? %>
+		<%= render_resource_categories %>
+		<%= render_resource_stickers %>
+		<%= render_next_previous %>
+	</article>
+<% end %>

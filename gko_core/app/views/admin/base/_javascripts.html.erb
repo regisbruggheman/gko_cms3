@@ -1,0 +1,19 @@
+<%= javascript_tag do -%>
+  var AUTH_TOKEN = <%= form_authenticity_token.inspect.html_safe %>;
+<% end if protect_against_forgery? %>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<%= javascript_include_tag("gko_admin_all") -%>
+<%= javascript_tag do -%>
+    $(document).ready(function(){
+    $.datepicker._defaults.dateFormat = "yy-mm-d";
+    $.datepicker.setDefaults($.datepicker.regional["<%= I18n.locale.to_s %>"]);
+    });
+<% end -%>
+<%= yield :before_javascript_libraries -%>
+<%= javascript_include_tag("gko/admin/admin.js") -%>
+<%= yield :after_javascript_libraries -%>
+<%= javascript_tag do -%>
+    $(document).ready(function() {
+    <%= yield :jquery_ready -%>
+    });
+<% end -%>

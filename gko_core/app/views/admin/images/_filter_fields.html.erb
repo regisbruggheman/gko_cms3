@@ -1,0 +1,30 @@
+<%
+   @image_folders ||= current_site.image_folders.order('name').nested_set.all
+   if @image_folders.try(:any?)
+     folders = [["Sans", "none"], ["---------------", ""]]
+     @image_folders.each do |s|
+       folders << ["#{"..." * s.level} #{s.name} (#{s.images.count})".chomp, s.id]
+     end
+     @image_folder_options = folders.compact
+   end
+%>
+
+<%# Set up the model owner when filtering from dialog %>
+<% if @attachable %>
+    <%= hidden_field_tag :attachable_id, @attachable.id %>
+    <%= hidden_field_tag :attachable_type, @attachable.class.name.underscore.downcase %>
+<% end %>
+<%= hidden_field_tag :dialog, params[:dialog] %>
+<%= hidden_field_tag :insert, params[:insert] %>
+<%# TODO : remove inage callback %>
+<%= hidden_field_tag :callback, @callback %>
+<%= form.input :unused, :as => :boolean %>
+<% if @image_folder_options.try(:any?) %>
+    <%= form.input :in_folder,
+                   :collection => @image_folder_options,
+                   :as => :select,
+                   :required => false,
+                   :label => t("admin.filters.in_folder"),
+                   :prompt => "Avec et sans".html_safe %>
+<% end %>
+ 

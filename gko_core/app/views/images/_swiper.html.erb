@@ -1,0 +1,9 @@
+<div id="swiper" class="swiper-container">
+  <div class="swiper-wrapper">
+    <% images.each_with_index do |img, index| %>
+    <div class="swiper-slide">
+      <%= image_fu(img, "900x600#", :rel => "external") %>
+    </div>
+    <% end %>
+  </div>
+</div>

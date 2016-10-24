@@ -1,0 +1,71 @@
+<div class="modal hide fade" id="booking-table-modal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">&#215;</a>
+    <h3><%= t("form.hotel.title")%></h3>
+  </div>
+  <%= simple_form_for(:table_inquiry, :url => table_inquiries_path, :novalidate => :validate,
+    :html => {:data => { :remote => true, :type => :json }, 
+    :method => :post, 
+    :class => [:table_inquiry] }) do |f| %>
+	  <%= f.error_notification %>
+	  <%= display_base_errors f.object %>
+    <div class="modal-body">
+      <div class='row-fluid'>
+        <div class='span6'>
+          <%= f.input :name, :hint => '', :input_html => { :class => 'span12' } %>
+          <%= f.input :email, :hint => false, :input_html => { :class => 'span12' } %>
+          <%= f.input :phone, :hint => false, :required => false, :input_html => { :class => 'span12' } %>
+        </div>
+        <div class='span6'>
+          <%= f.input :person_count, 
+            :as => :integer, 
+            :hint => false, 
+            :value => 2,
+            :input_html => {:class => 'span12', :maxlength => 2, :min => 1, :max => 20} %>
+          <%= f.input :date, :wrapper => :append, :hint => false do %>
+            <%= f.text_field :date, :class => 'date', :maxLength => 10, :value => Time.now %>
+            <%= content_tag :span, :class => "add-on" do %>
+              <i class="icon-calendar"></i>
+            <% end %>
+          <% end %>
+          <div class="control-group select required table_inquiry_service">
+            <label class="select required control-label" for="table_inquiry_service">
+            <abbr title="obligatoire">*</abbr> <%= t(:"simple_form.labels.table_inquiry.service")  %></label>
+            <div class="controls">
+              <select class="select required span12" id="table_inquiry_service" name="table_inquiry[service]">
+                <optgroup label="<%= t(:"simple_form.labels.table_inquiry.lunch")  %>">
+                  <option value="12"><%= Time.zone.local(2011,4,12,12,0).strftime("%H:%M") %></option>
+                  <option value="12.30"><%= Time.zone.local(2011,4,12,12,30).strftime("%H:%M") %></option>
+                  <option value="13"><%= Time.zone.local(2011,4,12,13,0).strftime("%H:%M") %></option>
+                  <option value="13.30"><%= Time.zone.local(2011,4,12,13,30).strftime("%H:%M") %></option>
+                  <option value="14"><%= Time.zone.local(2011,4,12,14,0).strftime("%H:%M") %></option>
+                  <option value="14.30"><%= Time.zone.local(2011,4,12,14,30).strftime("%H:%M") %></option>
+                </optgroup>
+                <optgroup label="<%= t(:"simple_form.labels.table_inquiry.dinner")  %>">
+                  <option value="19"><%= Time.zone.local(2011,4,12,19,0).strftime("%H:%M") %></option>
+                  <option value="19.30"><%= Time.zone.local(2011,4,12,19,30).strftime("%H:%M") %></option>
+                  <option value="20"><%= Time.zone.local(2011,4,12,20,0).strftime("%H:%M") %></option>
+                  <option value="20.30"><%= Time.zone.local(2011,4,12,20,30).strftime("%H:%M") %></option>
+                  <option value="21"><%= Time.zone.local(2011,4,12,21,0).strftime("%H:%M") %></option>
+                  <option value="21.30"><%= Time.zone.local(2011,4,12,21,30).strftime("%H:%M") %></option>
+                </optgroup> 
+              </select>
+            </div>
+          </div>  
+        </div>
+      </div>
+      <div class='row-fluid'>
+        <div class='span12'>
+          <%= f.input :message, :as => :text, :hint => false, :required => false, :input_html => { :class => 'span12', :rows => 6 } %>
+        </div>
+      </div>
+    </div>
+    <div class='row-fluid'>
+      <div class='span12'>
+        <div class='modal-footer'>
+          <%= f.button :submit, t("send_inquiry"), :disable_with => "Saving...", :class => "btn btn-block btn-primary" %>
+        </div>
+      </div>
+    </div>
+<% end %>
+</div> 

@@ -1,0 +1,3 @@
+Feature: Newsletter
+
+  Scenario:

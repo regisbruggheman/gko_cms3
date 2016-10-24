@@ -1,0 +1,21 @@
+<% content_for :after_javascript_libraries do -%>
+<%= javascript_include_tag("gko/admin/tree-reorder") %>
+<script type="text/javascript">
+	$(document).ready(function() {
+		list_reorder.init($(".nav-tree"), "<%= restructure_admin_site_sections_path %>", "<%= current_site.preferred_menu_level %>");
+	});
+</script>
+<% end -%>
+
+<%= render "actions" %>
+<% cache [controller_name, action_name, @resource_locale, site, "pages-index"] do -%>
+<div id="sections-container" class='list-container'>
+	<%= render_tree @sections, :id => "sections_tree", 
+		:class => 'nav nav-list nav-tree nav-tree-pages root-protected' do |node, child| %>
+		<%= render("admin/sections/section", :node => node, :child => child) %>
+	<% end -%>
+</div>
+<% end -%>
+
+
+

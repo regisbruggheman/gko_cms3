@@ -1,0 +1,14 @@
+<% cache [action_name, image_bank_photo.site, I18n.locale, image_bank_photo.section, image_bank_photo] do %>
+	<%= content_tag_for(:li, image_bank_photo) do %>
+	  <div class="thumbnail">
+		<%= content_tag(:div, :class => 'image') do %>
+			<%= link_to(image_tag(image_bank_photo.source.url(:thumb), :class => "thumb"), image_bank_photo.source.url, :target => :blank) %>
+		<% end %>
+		<%= grid_item_caption_tag do %>
+			<p><%= "ref: #{image_bank_photo.id} / #{number_to_human_size(image_bank_photo.size)}" %></p>
+			<p><%= image_bank_photo.author if image_bank_photo.author.presence %></p>
+		<% end %>
+	  </div>
+	<% end %>
+<% end %>
+

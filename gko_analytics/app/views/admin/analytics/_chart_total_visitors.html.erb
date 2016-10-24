@@ -1,0 +1,6 @@
+<%
+   new_visitors = (@visits.new_visits.to_f/@visits.visits.to_f)*100
+   old_visitors = 100 - new_visitors
+   pie_chart = Gchart.pie_3d(:size => '500x200', :labels => ["Nouveaux", 'Récurrents'], :data => [new_visitors, old_visitors])
+%>
+<img src="<%= pie_chart %>"/>

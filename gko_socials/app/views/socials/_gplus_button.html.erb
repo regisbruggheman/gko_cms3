@@ -1,0 +1,17 @@
+<g:plusone size="medium"></g:plusone>
+
+<!-- Place this render call where appropriate -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+
+or
+
+<a title="Add '<%= title %>' to Google Bookmarks" href="http://www.google.com/bookmarks/mark?op=edit&bkmk=<%= url %>&title=<%= title %>" target="_blank" rel="nofollow">
+   <img alt="Google Bookmarks" src="<%=Spree::SocialBookmarks::Config[:image_path]%>googlebookmarks.png" />
+</a>

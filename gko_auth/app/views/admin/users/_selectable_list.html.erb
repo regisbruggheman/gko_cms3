@@ -1,0 +1,29 @@
+<table class="<%= Gko::Core.admin_table_css %>">
+  <%= render_collection_head([:email, :firstname, :lastname]) %>
+  <tbody>
+  <% if @users.empty? %>
+      <tr>
+        <td colspan="4"><%= t("admin.users.collection.empty", :link => '').html_safe %></td>
+      </tr>
+  <% else %>
+      <% @users.each do |user| %>
+          <tr>
+            <td><%= user.email %></td>
+            <td><%= user.firstname %></td>
+            <td><%= user.lastname %></td>
+            <td class="actions">
+              <p>
+                <%= icon_to("#",
+                            'plus icon-white',
+                            :class => "btn-success select_user_btn",
+                            :remote => true,
+                            :method => :post,
+                            :data => {:type => 'script', :'params' => "line_item[variant_id]=#{variant.id}&line_item[quantity]=1"},
+                            :title => t(:select)) %>
+              </p>
+            </td>
+          </tr>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>

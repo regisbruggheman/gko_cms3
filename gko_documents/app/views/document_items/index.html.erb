@@ -1,0 +1,5 @@
+<%= render('secondary_menu') %>
+<% cache [action_name, I18n.locale, site, parent] do %>
+	<%= render_collection_header %>
+	<%= render_collection %>
+<% end %>

@@ -1,0 +1,5 @@
+<td><%= record.email %></td>
+<td><%= l(record.created_at, :format => :short) %></td>
+<%= content_tag_for_actions do  %>
+	<%= icons_to_actions([:edit, :destroy], record) %>
+<% end  %>

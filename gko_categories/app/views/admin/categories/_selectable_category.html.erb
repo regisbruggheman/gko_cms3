@@ -1,0 +1,3 @@
+<li id="<%= dom_id(node) %>" data-type="<%= node.class.name %>">
+  <%= link_to(node.title || "!(#{node.read_attribute(:title, default_locale)})".html_safe, "#", :class => "btn selectable") %>
+</li>

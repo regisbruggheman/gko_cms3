@@ -1,0 +1,39 @@
+<%= simple_form_for(:search, :method => :get, :remote => true, :html => { :class => 'form-advanced-search' }) do |f| %>
+<%# Set up the model owner when filtering from dialog %>
+<% if @attachable %>
+    <%= hidden_field_tag :attachable_id, @attachable.id %>
+    <%= hidden_field_tag :attachable_type, @attachable.class.name.underscore.downcase %>
+<% end %>
+  <%= hidden_field_tag :dialog, params[:dialog] %>
+  <%= hidden_field_tag :insert, params[:insert] %>
+
+	<div class='row-fluid'>
+		<div class='span3'>
+		<%= f.input :unused, :as => :boolean %>
+		</div>
+		<div class='span3'>
+		<%= f.input :with_size_over, :label => false, :placeholder => t("admin.filters.images_with_size_over"), :required => false %>
+		<%= f.input :with_size_under, :label => false, :placeholder => t("admin.filters.images_with_size_under"), :required => false %>
+		</div>
+		<div class='span3'>
+		<%= f.input :with_width_under, :label => false, :placeholder => t("admin.filters.images_with_width_under"), :required => false %>
+		<%= f.input :with_width_over, :label => false, :placeholder => t("admin.filters.images_with_width_over"), :required => false %>
+		</div>
+		<div class='span3'>
+			<%= f.input :with_height_over, :label => false, :placeholder => t("admin.filters.images_with_height_over"), :required => false %>
+			<%= f.input :with_height_under, :label => false, :placeholder => t("admin.filters.images_with_height_under"), :required => false %>
+		</div>
+	</div>
+	<%= f.button :submit, :class => 'btn-large btn-block' %>
+<% end %>
+	
+         
+		  
+
+
+
+    <%#= render "admin/shared/filter",
+               :fields_path => 'admin/images/filter_fields',
+               :advanced_fields_path => 'admin/images/advanced_filter_fields',
+               :order_by => [:created_at, :title, :image_name],
+               :scopes => [:with_filename, :with_title] %>

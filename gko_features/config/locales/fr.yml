@@ -1,0 +1,35 @@
+fr:
+  activerecord:
+    models:
+      feature: Mise en avant
+      
+  features:
+    view_more: Plus
+    
+  simple_form:
+    labels:
+      feature:
+        image: Image
+        url: Lien
+  admin:
+    fieldset: 
+      features: "Mises en avant"
+    features: 
+      menu_tab: "Bannières" 
+      select_blank: Sélectionner une mise en avant
+      collection:
+        empty: "Aucune mise en avant n'a été trouvée."
+      actions:
+        new: Ajouter une mise en avant
+        destroy: Supprimer cette mise en avant
+        edit: Modifier cette mise en avant
+        index: Liste des mises en avant
+      tooltips:
+        index: Lister les mises en avant
+      titles:
+        new: Ajout d'une mise en avant
+        index: Liste des mises en avant
+        edit: Modification d'une mise en avant
+      columns:
+        title: Titre
+        url: Url

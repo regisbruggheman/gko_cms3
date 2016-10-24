@@ -1,0 +1,18 @@
+<div class='row-fluid'>
+  <div class='span12'>
+    <div class='list-container' id='documents-container'>
+      <ul id='documents-list' class="thumbnails js-selectable">
+        <% if @documents.try(:any?) %>
+          <%= render :partial => "admin/documents/selectable_record", :collection => @documents, :as => :record %>
+        <% else %>
+          <%= render "admin/shared/empty" %>
+        <% end %>
+      </ul>
+      <%= render_pagination(@documents) %>
+    </div>
+  </div>
+</div>
+<%= render "admin/document_assignments/form", :attachable => @attachable %>
+<% content_for(:jquery_ready) do %>
+  <%= raw("documents_dialog.init();\n") %>
+<% end %>

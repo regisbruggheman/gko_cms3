@@ -1,0 +1,9 @@
+<% @categories = f.object.section.categories.nested_set %>
+<%- if @categories.empty? -%>
+  <%= render "admin/shared/empty" %>
+<%- else -%>
+  <%= f.association :categories,
+    :collection => @categories,
+    :label_method => :labelize_with_indent,
+    :as => :check_boxes %>
+<%- end -%>

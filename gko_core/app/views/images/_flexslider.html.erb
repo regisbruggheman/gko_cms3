@@ -1,0 +1,14 @@
+<% if images.try(:any?) %>
+<%
+   image_geometry = local_assigns.has_key?(:image_style) ? image_style : "980x654#"
+   thumb_geometry = local_assigns.has_key?(:thumb_style) ? thumb_style : "125x83#"
+%>
+<div id="slider" class="flexslider slider-flexslider">
+  <ul class="slides">
+	<% images.each do |img| %>
+		<li><%= image_fu(img, image_geometry) %></li>
+	<% end %>
+  </ul>
+</div>
+<% end %>
+

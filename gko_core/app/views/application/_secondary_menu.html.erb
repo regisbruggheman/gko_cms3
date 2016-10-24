@@ -1,0 +1,18 @@
+<%
+   if !site.drop_down_menu && @section
+     if (@section.root? || @section.parent.root?)
+       sections = @section.children.in_menu
+     elsif @section.children.in_menu.any?
+       sections = @section.children.in_menu
+     else
+       sections = @section.self_and_siblings.in_menu
+     end
+   end
+%>
+<% if sections.try(:any?) %>
+  <% content_for(:left_sidebar) do %>
+	<nav id="secondary-menu" class="secondary-menu-container">
+    <%= render 'menu', :sections => sections %>
+	</nav>
+  <% end %>
+<% end %>

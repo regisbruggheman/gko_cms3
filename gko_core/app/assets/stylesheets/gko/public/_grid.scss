@@ -1,0 +1,114 @@
+/*--------------------------------------------------
+:: Block grids
+
+These are 2-up, 3-up, 4-up and 5-up ULs, suited
+for repeating blocks of content. Add 'mobile' to
+them to switch them just like the layout grid
+(one item per line) on phones
+
+For IE7/8 compatibility grid items need to be
+the same height. You can optionally uncomment the
+lines below to support arbitrary height, but know
+that IE7/8 do not support :nth-child.
+-------------------------------------------------- */
+/*-----------------------------------------
+ Thumbnails Grids of images, videos, text, and more
+----------------------------------------- */
+.grid {
+  display: block;
+  overflow: hidden;
+  @include clearfix();
+  margin: 0;
+  padding: 0;
+}
+
+.grid > li {
+  display: block;
+  height: auto;
+  float: left;
+  position: relative;
+  margin: 0 0 $baseLineHeight 0;
+  list-style: none;
+  @include box-sizing(border-box);
+}
+
+.grid > li {
+  .thumbnail {
+    .image {
+      overflow: hidden;
+	  text-align: center;
+    }
+	.caption {
+      display: block;
+    }
+    .caption-inner {
+      padding: 9px;
+    }
+  }
+}
+.grid.grid1 {
+  margin-left: 0
+}
+
+.grid.grid1 > li {
+  margin-left: 0;
+  width: 100%;
+}
+
+.grid.grid1>li:nth-child(1n+1) {
+  clear: left;
+}
+
+.grid.grid2 {
+  margin-left: -4%
+}
+
+.grid.grid2 > li {
+  margin-left: 4%;
+  width: 46%;
+}
+
+.grid.grid2 > li:nth-child(2n+1) {
+  clear: left;
+}
+
+.grid.grid3 {
+  margin-left: -2%
+}
+
+.grid.grid3 > li {
+  margin-left: 2%;
+  width: 31.3%;
+}
+
+.grid.grid3 > li:nth-child(3n+1) {
+  clear: left;
+}
+
+.grid.grid4 {
+  margin-left: -2%
+}
+
+.grid.grid4 > li {
+  margin-left: 2%;
+  width: 23%;
+}
+
+.grid.grid4 > li:nth-child(4n+1) {
+  clear: left;
+}
+
+.grid.grid5 {
+  margin-left: -1.5%
+}
+
+.grid.grid5 > li {
+  margin-left: 1.5%;
+  width: 18.5%;
+}
+
+.grid.grid5 > li:nth-child(5n+1) {
+  clear: left;
+}
+
+

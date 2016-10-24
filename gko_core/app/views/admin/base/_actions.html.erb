@@ -1,0 +1,39 @@
+<%
+   if local_assigns[:section].nil?
+     if resource.is_a?(Section)
+       section = resource
+     elsif parent.is_a?(Section)
+       section = parent
+     end
+   end
+%>
+<% content_for :actions do %>
+<%
+	if section && section.content_type.presence
+	content_scope = "admin.#{section.content_type.pluralize.underscore}"
+	section_scope = "admin.#{section.class.name.pluralize.underscore.downcase}"
+	instance_name = resource.is_a?(Section) ? content_scope : resource_instance_name
+%>
+
+	<% if section.persisted? %>
+		<% unless (resource == section) %>
+			<%= btn_to(t("#{section_scope}.actions.edit"), gurl_for([:edit, :admin, current_site, section])) %>
+		<% end %>
+		<% unless (action_name =~ /^(index)$/) %>
+			<%= btn_to(t("#{content_scope}.actions.index"), gurl_for([:admin, current_site, section, section.content_type.tableize.to_sym])) %>
+		<% end %>
+		<% if section.categorizable? %>
+			<%= btn_to(t(:'admin.categories.actions.index'), gurl_for([:admin, current_site, section, :categories])) %>
+		<% end %>
+		<% if section.stickable? %>
+			<%= btn_to(t(:'admin.stickers.actions.index'), gurl_for([:admin, current_site, section, :stickers])) %>
+		<% end %>
+		<%= btn_to(t("admin.#{resource_collection_name}.actions.new"), gurl_for([:new, :admin, current_site, section, resource_instance_name.to_sym]), :class => 'btn-primary', :icon => 'plus icon-white', :title => t("admin.#{resource_collection_name}.titles.new")) %>
+		<% end %>
+	<% else %>
+		<% if !(action_name =~ /^(index)$/) %>
+    		<%= button_to_index(:class => 'btn-inverse', :icon => 'th-list icon-white') %>
+		<% end %>
+		<%= button_to_new(:class => 'btn-primary', :icon => 'plus icon-white') %>
+	<% end %>
+<% end %>

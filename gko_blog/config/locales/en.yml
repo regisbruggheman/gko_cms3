@@ -1,0 +1,30 @@
+en:
+  time:
+    formats:
+      post: "%a, %d %b %Y"
+      
+  activerecord:
+    models:
+      blog: Blog
+      post: Article
+
+  posts:
+    posted_at: "Posted on %{when}"
+    filed_in: "in"
+    read_more: "Read more"
+    posted_by: "by"
+    no_record_found: "Neither product has not been found"
+    no_archives_found_in_month: "Neither product has not been found for the month of %{month} in %{year}"
+    no_archives_found_in_year: "Neither product has not been found for the year %{year}" 
+    collection:
+      continue: "Read"
+    links:
+      continue_reading: "Read the article"
+      feed_subscribe: "Subscribe to feed"
+      next: Next post
+      previous: Previous post
+    titles:
+      in_categories: "Articles in category %{name}"
+      tagged: "Articles tagged with %{name}"
+    archived: Archived posts
+    recent: Recent posts

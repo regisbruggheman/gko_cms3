@@ -1,0 +1,61 @@
+// copyright
+#copyright-container {
+  min-height: $copyrightHeight;
+  background-color: $copyrightBackground;
+  color: $copyrightText;
+  font-size: $copyrightFontSize;
+	a {
+		color: $copyrightLinkColor;
+		background-color:$copyrightLinkBackground;
+		&:hover {
+			color: $copyrightLinkColorHover;
+			background-color:$copyrightLinkBackgroundHover;
+			text-decoration: none;
+		};
+	}
+	
+	a.copyright-author {
+	  float: right;
+	  // Vertically center the text given @copyrightHeight
+	  $elementHeight: 20px;
+	  padding: (($copyrightHeight - $elementHeight) / 2 - 1) 10px (($copyrightHeight - $elementHeight) / 2 + 1);
+	  line-height: 19px;
+	  color: $copyrightLinkColor;
+	  text-decoration: none;
+	  font-size: $baseFontSize - 2;
+	}
+	// NAVIGATION
+	// ----------
+	.nav {
+	  position: relative;
+	  left: 0;
+	  display: block;
+	  float: left;
+	  margin: 0 10px 0 0;
+	}
+	.nav > li {
+	  display: block;
+	  float: left;
+	}
+
+	// Links
+	.nav > li > a {
+	  float: none;
+	  // Vertically center the text given @copyrightHeight
+	  $elementHeight: 20px;
+	  padding: (($copyrightHeight - $elementHeight) / 2 - 1) 10px (($copyrightHeight - $elementHeight) / 2 + 1);
+	  line-height: 19px;
+	  color: $copyrightLinkColor;
+	  text-decoration: none;
+	  background-color: $copyrightLinkBackground;
+	  font-size: $baseFontSize - 2;
+	}
+
+	// Hover
+	.nav > li > a:hover {
+	  background-color: $copyrightLinkBackgroundHover;
+	  color: $copyrightLinkColorHover;
+	  text-decoration: none;
+	}
+
+}

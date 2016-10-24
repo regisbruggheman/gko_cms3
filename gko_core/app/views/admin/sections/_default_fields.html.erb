@@ -1,0 +1,30 @@
+<%= f.association :parent,
+      :label => t('simple_form.labels.section.parent'),
+      :hint => t('simple_form.hints.section.parent').html_safe,
+      :collection => build_node(@sections, lambda(&:level)) {|record, level| "#{'–' * level} #{record.labelize} #{"(n'accepte pas de sous pages)" unless accept_child_section?(record)}".html_safe },
+      :selected => f.object.parent_id,
+      :disabled => lambda{|node| !accept_child_section?(Section.find(node[1])) },
+      :include_blank => true %>
+<%= f.input :title %>
+<%= render("additional_default_fields", :f => f) %>
+<%= render('form_wymeditor_field', :f => f) %>
+<div id="text-elements">
+<%= f.simple_fields_for :text_elements do |te_form| %>
+  <%= render :partial => 'admin/text_elements/fields', :locals => { :f => te_form } %>
+<% end %>
+</div>
+<% if user_master? -%> 
+<div class="control-group">
+  <label class="control-label" for="portfolio_title"> </label>
+  <div class="controls">
+    <%= link_to_add_fields "Ajouter un champ", "#text-elements", f, :text_elements, :path => 'admin/text_elements/', :partial => 'fields' %>
+  </div>
+</div>
+<% end -%> 
+<%= render('form_publish_fields', :f => f) %>
+
+
+
+
+
+ 

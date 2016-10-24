@@ -1,0 +1,70 @@
+fr:
+  activerecord:
+    models:
+      service: Service
+      service_list: "Liste de services"
+  helpers:
+    submit:
+      service:
+        create: "Ajouter le service"
+
+  services:
+    price: Tarifs
+    duration: Durée
+    collection:
+      continue: Voir le projet
+    no_record_found: "Aucun service n'a été trouvée"
+    links:
+      continue_reading: "Voir le service"
+      previous: "Précédent"
+      next: "Suivant"
+    titles:
+      in_categories: "Services dans la catégorie %{name}"
+      tagged: "Services étiquettées avec %{name}"
+
+  confirmations:
+    destroy:
+      service: "Voulez-vous réellement supprimer définitivement ce service ? <br/>Cette action est irréversible."
+
+  simple_form:
+    labels:
+      service:
+        price: Tarif
+        duration: Durée
+    hints:
+      service:
+        price: "Indiquer le tarif de la prestation (ex: 100.00$/heure)."
+        duration: "Indiquer la durée de la prestation."
+
+  admin:
+    service_lists:
+      actions:
+        edit: Configuration 
+      tooltips:
+        edit: Modifier l'index des services
+        show: Voir le service
+      titles:
+        edit: Modifier l'index des services
+             
+    services: 
+      untranslated_message: 
+        one: "Attention: 1 service n'est pas traduit."
+        many: "Attention: %{count} services ne sont pas traduits."
+      select_blank: Sélectionner un service
+      collection:
+        empty: "Aucun service n'a été trouvé. %{link}"
+        create_item: "Créer un nouveau service maintenant."
+      actions:
+        new: Ajouter un service
+        destroy: Supprimer ce service
+        edit: Modifier ce service
+        index: Services
+        view: Voir la page publique de ce service
+      tooltips:
+        index: Lister les services
+      titles:
+        new: Ajout d'un service
+        index: Liste des services
+        edit: Modification d'un service
+      columns:
+        post: Service

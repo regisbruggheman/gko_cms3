@@ -1,0 +1,90 @@
+<% if  @resource_locale.to_s != site.default_locale.to_s %>
+	<%= f.input :title %>
+	<%= f.input :subtitle %>
+  <%= f.input :meta_title %>
+<% else %>
+<div class="tabbable tabs-left">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#site-basic-tab" data-toggle="tab"><%= t(:'gko.admin.site.fieldset.basic') %></a></li>
+    <li><a href="#site-options-tab" data-toggle="tab"><%= t(:'gko.admin.site.fieldset.options') %></a></li>
+    <li><a href="#site-design-tab" data-toggle="tab"><%= t(:'gko.admin.site.fieldset.design') %></a></li>
+    <li><a href="#site-code-injection-tab" data-toggle="tab"><%= t(:'gko.admin.site.fieldset.code_injection') %></a></li>
+    <li><a href="#site-advanced-tab" data-toggle="tab"><%= t(:'gko.admin.site.fieldset.advanced') %></a></li>
+    <li><a href="#site-plugins-tab" data-toggle="tab"><%= t(:'gko.admin.site.fieldset.plugins') %></a></li>
+    <!-- <li><a href="#site-page_types-tab" data-toggle="tab"><%= t(:'gko.admin.site.fieldset.page_types') %></a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="site-basic-tab">
+    <%= render 'default_fields', :f => f %>
+    <%= preference_fields_for_array([:currency], f.object, f) %>
+    <%= f.input :subtitle %>
+    <%= f.input :meta_title %>
+    <%#= render 'form_file_field', :f => f, :accessor => 'logo', :thumb_size => "80x", :hint => t("simple_form.hints.site.logo", :size => Site.max_thumbnail_size), :deletable => true %>
+    <%#= render 'form_file_field', :f => f, :accessor => 'default_image', :deletable => true %>
+  </div>
+  <div class="tab-pane" id="site-options-tab">
+    <%= f.input :google_analytics_key %>
+    <%= f.input :google_webmaster_tools_key %>
+    <%= preference_fields_for_array([:google_map_api_key, :facebook_account], f.object, f) %>
+    <%= f.input :timezone, :as => :time_zone %>
+  </div>
+  <div class="tab-pane" id="site-design-tab">
+    <%= f.association :theme, :include_blank => "Aucun" if current_site.has_plugin?(:themes) %>
+    <%= f.input :slideshow %>
+	<%#TODO remove it f.input :copyright_name %>
+    <%= preference_fields_for_array([:features_image_size, :image_thumb_size, :image_carousel_size, :typekit_key, :global_slideshow, :public_layout, :primary_menu_style, :navigation_columns], f.object, f) %>
+    <%= f.input :drop_down_menu,
+                :as => :boolean,
+                :label => t('simple_form.labels.site.drop_down_menu'),
+                :hint => t('simple_form.hints.site.drop_down_menu').html_safe %>
+  </div>
+  <div class="tab-pane" id="site-code-injection-tab">
+    <%= f.input :stylesheet %>
+	  <%= f.input :javascript %>
+	  <% content_for :after_javascript_libraries, javascript_include_tag("gko-codemirror-all") %>
+    <% content_for :stylesheets, stylesheet_link_tag("gko-codemirror-all") %>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var site_stylesheet_editor = CodeMirror.fromTextArea(document.getElementById('site_stylesheet'), {
+          'mode': 'text/css', 'lineNumbers': 'true', 'lineWrapping': 'true'
+        });
+        var site_javascript_editor = CodeMirror.fromTextArea(document.getElementById('site_javascript'), {
+          'mode': 'text/javascript', 'lineNumbers': 'true', 'lineWrapping': 'true'
+        });
+        $('a[data-toggle="tab"]').on('shown', function (e) {
+          site_stylesheet_editor.refresh();
+          site_javascript_editor.refresh();
+        });
+      });
+    </script>
+  </div>
+  <div class="tab-pane" id="site-advanced-tab">
+  	<%= f.input :authenticity_token_on_frontend, :as => :boolean %>
+  	<%= f.input :include_alternate_links, :as => :boolean %>
+  	<%= f.input :front_page_cached, :as => :boolean %>
+  	<%#TODO remove it = f.input :mobile_cache_enabled, :as => :boolean %>
+  	<%= f.input :site_title_on_all_pages, :as => :boolean %>
+  	<%= f.input :use_image_folders, :as => :boolean %>
+		<%= f.input :images_author_enabled, :as => :boolean %>
+    <%= preference_fields_for_array([:homepage_cache_enabled, :menu_level, :admin_cache_enabled, :flat_slug], f.object, f) %>
+    <% if current_site.has_plugin?(:hotel) %>
+      <%= f.input :table_inquiry_recipients %>
+      <%= f.input :hotel_inquiry_recipients %>
+     <% end %>
+     <% if current_site.has_plugin?(:newsletters) %>
+        <%= preference_fields_for_array([:campaign_monitor_api_key, :campaign_monitor_list_id], f.object, f) %>
+      <% end %>
+    <% if current_site.has_plugin?(:realty) %>
+      <%= preference_fields_for_array([:use_realty_agent, :use_statutes, :use_realty_beachfront, :use_realty_pool], f.object, f) %>
+    <% end %>
+  </div>
+  <!-- <div class="tab-pane" id="site-page_types-tab"> -->
+    <%#= f.input :page_types, :collection => Gko::Core.page_types.names, :as => :check_boxes %>
+  <!-- </div> -->
+  <div class="tab-pane" id="site-plugins-tab">
+    <%= f.input :plugins, :collection => Gko.engine_names, :as => :check_boxes %>
+  </div>
+</div>
+</div>
+<% end %>

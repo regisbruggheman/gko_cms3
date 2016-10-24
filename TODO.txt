@@ -1,0 +1,13 @@
+debug site creation (homepage must be created at least)
+database backup before each migration
+task to retrieve current production database and assets on local machine 
+updgrade to rails 3.2.8
+replace all preferences by options
+check menu redirect
+check http://rails-bestpractices.com/
+do not enable cache and destroy cached paged when site is not public
+how to solve partial with js when called by xhr (@see inquiry form)
+
+Referencement images
+http://www.youtube.com/user/GoogleWebmasterHelp?v=pFmUyJLJ-ro&lr=1
+http://www.google.com/support/webmasters/bin/answer.py?answer=114016

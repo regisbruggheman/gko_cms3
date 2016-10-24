@@ -1,0 +1,15 @@
+<%= f.input :environment %>
+<%= f.input :enable_mail_delivery %>
+<%= f.input :smtp_username %>
+<%= f.input :smtp_password %>
+<%= f.input :mails_from %>
+<%= f.input :mail_bcc %>
+<%= f.input :mail_domain %>
+<%= f.input :mail_host %>
+<%= f.input :mail_port %>
+<%= f.input :secure_connection_type,
+            :collection => MailMethod::SECURE_CONNECTION_TYPES,
+            :as => :radio_buttons %>
+<%= f.input :mail_auth_type,
+            :collection => MailMethod::MAIL_AUTH,
+            :as => :radio_buttons %>

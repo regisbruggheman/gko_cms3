@@ -1,0 +1,4 @@
+<%= f.input :start_date, :required => true, :wrapper => :append do %>
+    <%= f.input_field :start_date, :class => :mini  %>
+    <%= content_tag :span, "<i class='icon-calendar'></i>", :class => "add-on" %>
+<% end %>

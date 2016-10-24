@@ -1,0 +1,12 @@
+<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+  <% sections.each do |section| %>
+    <% if section.children.in_menu.try(:any?) %>
+    <li class="dropdown-submenu">
+      <%= menu_link(section) -%>
+      <%= render("dropdown_menu", :sections => section.children.in_menu ) %>
+    </li>
+    <% else %>
+    <li><%= menu_link(section) -%></li>
+    <% end %>
+  <% end %>
+</ul>

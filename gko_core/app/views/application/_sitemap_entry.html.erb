@@ -1,0 +1,10 @@
+<%# cache [I18n.locale, node, "sitemap_entry"] do %>
+<% if node.root? %>   
+  <%= child if local_assigns.key?(:child) %>
+<% else %>
+<li id="<%= node.id %>_page" <%= 'no-nest' unless accept_child_section?(node) %>">
+  <a href="<%= @base_url %><%= node.public_url %>"><%= node.title %></a>
+	<%= child if local_assigns.key?(:child) %>
+</li>
+<% end %>
+<%# end %>

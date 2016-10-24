@@ -1,0 +1,11 @@
+<% content_for :actions do %>
+	<% if (action_name =~ /^(index)$/) %>
+	<div  class='pull-right'>
+    	<%= button_to_new %>
+    	<%= btn_to("Ajouter plusieurs images", new_admin_site_image_path(current_site, :multiple => true), 
+         :remote => true, :class => "btn-primary", :icon => :batch) %>
+	</div>
+	<% else %>
+    	<%= btn_to(t("admin.images.titles.index"), admin_site_images_path(current_site)) %>
+	<% end %>
+<% end %>  

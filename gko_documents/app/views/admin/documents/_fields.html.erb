@@ -1,0 +1,19 @@
+<%= f.input :site_id, :as => :hidden %>
+<%# Use in dialog to attach image to polymorphic resource like Page %>
+<% if @attachable %>
+  <%= hidden_field_tag :attachable_id, @attachable.id %>
+  <%= hidden_field_tag :attachable_type, @attachable.class.name %>
+<% end %>
+<% if from_dialog? %>
+  <%= hidden_field_tag :dialog, true %>
+  <%= hidden_field_tag :insert, true %>
+  <%= hidden_field_tag :callback, @callback %>
+<% end %>
+
+<%= render :partial => 'form_document_field',
+           :locals => {
+             :f => f,
+             :hint => t(:'admin.documents.maximum_document_size', :size => Document::MAX_SIZE_IN_MB) }
+%>
+<%= f.input :title %>
+<%= f.input :alt %>

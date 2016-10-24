@@ -1,0 +1,10 @@
+<div class='description <%= resource_instance_name %>'>
+  <div class='container description-container'>
+    <%= render :partial => 'hotel_inquiries/form' %>
+  </div>
+</div>
+<% content_for :sidebar do %>
+    <p><b><%= t("tollfree_address").html_safe %></b></p>
+    <p><%= t("full_hotel_address").html_safe %></p>
+<% end %> 
+

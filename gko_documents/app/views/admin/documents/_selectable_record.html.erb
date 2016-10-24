@@ -1,0 +1,12 @@
+<%# cache(["admin", current_site, record, 'selectable-record']) do %>
+<li id="<%= dom_id(record) %>" class="span3">
+	<div class="thumbnail">
+		<%= link_to(record.url, :class=> "preview") do %>
+		  <i class="icon-file-alt icon-3x"></i><%= raw record.name %>
+		<% end %>
+		<a href="#" title="<%= document_infos(record) %>" rel='tooltip' class="info-tooltip" data-html="true">
+			<i class="icon-info-sign"></i>
+		</a>
+	</div>
+</li>
+<%# end %>

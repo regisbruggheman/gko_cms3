@@ -1,0 +1,17 @@
+<% session_key_name = Rails.application.config.session_options[:key] %>
+init_plupload = function () {
+  $('input.uk-input[type="file"]').each(function(index, element) {
+    new UploadKit(element, {
+      '_http_accept':'text/javascript',
+      <% if @attachable %>
+        'attachable_type':$('input#attachable_type').val(),
+        'attachable_id':$('input#attachable_id').val(),
+      <% end %>
+      'multipart': true,
+      'authenticity_token': $('meta[name=csrf-token]').attr('content'),
+      '<%= session_key_name %>':encodeURIComponent('<%= u cookies[session_key_name] %>')})
+    });
+  $('.uk-input').bind(UKEventType.FileUploaded, function(e) {
+    eval(e.response.response);
+  });
+}

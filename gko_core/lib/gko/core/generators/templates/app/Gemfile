@@ -1,0 +1,10 @@
+source :rubygems
+
+group :development do
+  gem "gko_core", :path => File.expand_path('../../gko_cms/gko_core', __FILE__)
+  gem "gko-auth", :path => File.expand_path('../../gko_cms/gko_auth', __FILE__)
+  gem "gko-images", :path => File.expand_path('../../gko_cms/gko_images', __FILE__)
+  gem "gko_inquiries", :path => File.expand_path('../../gko_cms/gko_inquiry', __FILE__)
+  gem "exception_notification", :git => "http://github.com/rails/exception_notification.git", :require => 'exception_notifier'
+  gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
+end

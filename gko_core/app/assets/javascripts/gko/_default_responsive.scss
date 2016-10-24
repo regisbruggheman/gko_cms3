@@ -1,0 +1,57 @@
+                                                                         /* --------------------------------------------------
+:: Block Grids
+-------------------------------------------------- */
+
+@media only screen and (max-width: 767px) {
+  .grid.mobile {
+    margin-left: 0;
+  }
+
+  .grid.mobile > li {
+    //float: none; empeche le remplissage de la couleur du background
+	clear: none !important;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+
+// TABLETS AND BELOW
+// -----------------
+@media (max-width: 979px) {
+
+ .navbar {
+
+	.nav-collapse {
+		.nav > li {
+			float: none;
+			display: block;
+		}
+		.nav > li > a, 
+		.dropdown-menu a {
+			text-align: center;
+			font-weight: normal;
+		}
+		 .dropdown-menu {
+			padding-bottom: 8px;
+			a {
+				color: $navbarLinkColor;
+				@include border-radius(none);
+				&:hover {
+					color: $navbarLinkColorHover;
+				};
+			}
+		}
+	}
+ }
+
+  #footer {
+    text-align: center;
+  }
+
+  #copyright {
+    text-align: center;
+  }
+}
+
+

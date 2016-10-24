@@ -1,0 +1,12 @@
+<div class='control-group'>
+  <label class="string control-label"><%= "Image".html_safe %></label>
+  <div class='controls upload_file_preview'>
+    <%= image_tag(f.object.source_url(:thumb)) if f.object.source? %>
+    <div class='file-field' style="display:<%= f.object.source? ? 'none' : 'block' %>">
+      <%= f.file_field :source, :class => 'file' %>
+    </div>
+  </div>
+</div>
+
+<%= f.input :author %>
+<%= render('form_categories_checkboxes', :f => f) if f.object.image_bank.categorizable? %>

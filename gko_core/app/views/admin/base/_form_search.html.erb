@@ -1,0 +1,24 @@
+<%
+  field_name = local_assigns.has_key?(:field_name) ? local_assigns[:field_name] : 'with_query'
+  has_advanced_fields = local_assigns.has_key?(:advanced_partial)
+%>
+<% content_for(:search_form) do %>
+	<%= simple_form_for(:search, :method => :get, :remote => true, :html => { :class => 'form-search' }) do |f| %>
+	    <div class="controls">
+	      <div class="input-append">
+	        <input class="string" id="search_<%= field_name %>" name="search[<%= field_name %>]" size="50" type="text" placeholder="Nom du fichier...">
+			<div class="btn-group">
+		       	<button class="btn" name="commit" type="commit" title="Lancer la recherche" tabindex="-1"><i class="icon-search"></i></button>
+				<% if has_advanced_fields %>
+				<button class="btn toggle" type="button" href="#advanced-search-toggle" title="Voir plus de critères de recherche" tabindex="-1"><span class="caret"></span></button>
+				<% end %>
+			</div>
+		</div>
+	 </div>
+	<% end %>
+<% end %>
+<% if has_advanced_fields %>
+	<% content_for(:advanced_search_form) do %>
+		<%= render advanced_partial %>
+	<% end %>
+<% end %>

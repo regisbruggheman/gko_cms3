@@ -1,0 +1,9 @@
+<% @stickers = f.object.section.stickers.with_globalize.order("sticker_translations.name") %>
+<% if @stickers.empty? %>
+  <%= render "admin/shared/empty" %>
+<% else %>
+  <%= f.association :stickers,
+    :collection => @stickers,
+    :label_method => :labelize,
+    :as => :check_boxes %>
+<% end %>

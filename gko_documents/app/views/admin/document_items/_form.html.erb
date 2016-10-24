@@ -1,0 +1,10 @@
+<%= simple_form_for(:document_assignment, {:url => [:admin, :document_assignments],
+                                        :html => {:remote => true, :id => "document_assignments_form", :style => "display:none;"}}) do |f| %>
+    <%= hidden_field_tag :cl, @resource_locale.to_s if @resource_locale.present? %>
+    <%= f.text_field :document_id %> <%#set by js %>
+    <%= f.text_field :attachable_id, :value => attachable.id %>
+    <%= f.text_field :attachable_type, :value => attachable.class.name.underscore.downcase %>
+    <div class='input buttons'>
+      <%= f.button 'submit', :label => 'Envoyer', :class => "button", :'data-theme' => 'b' %>
+    </div>
+<% end %>

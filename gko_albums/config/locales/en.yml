@@ -1,0 +1,59 @@
+en:
+  time:
+    formats:
+      post: "%a, %d %b %Y"
+      
+  activerecord:
+    models:
+      gallery: Galer"ie
+      portfolio: Liste de galeries"
+
+  galleries:
+    collection:
+      continue: Voir le projet
+    no_record_found: "Aucune galerie n'a été trouvée"
+    links:
+      continue_reading: "Voir la galerie"
+      feed_subscribe: "Souscrire au flux"
+      previous: "Suivant"
+      next: "Précédent"
+    titles:
+      in_categories: "Galeries dans la catégorie %{name}"
+      tagged: "Galeries étiquettées avec %{name}"
+    archives: Archives
+
+  admin:
+    portfolios:
+      actions:
+        edit: Configuration 
+      tooltips:
+        edit: Modifier la page d'index des galeries
+        show: Voir la
+      titles:
+        edit: Modifier la page d'index des galeries
+             
+    galleries: 
+      untranslated_message: 
+        one: "Attention: 1 galerie n'est pas traduite."
+        many: "Attention: %{count} galeries ne sont pas traduites."
+      select_blank: Sélectionner une galerie
+      menu_tab: Galeries
+      collection:
+        empty: "Aucune galerie n'a été trouvée. %{link}"
+        create_item: "Créer une nouvelle galerie maintenant."
+      actions:
+        new: Ajouter une galerie
+        destroy: Supprimer cette galerie
+        edit: Modifier cette galerie
+        index: Galeries
+        view: Voir la page publique de cette galerie
+        previous: Previous
+        next: Next
+      tooltips:
+        index: Lister les galeries
+      titles:
+        new: Ajout d'une galerie
+        index: Liste des galeries
+        edit: Modification d'une galerie
+      columns:
+        post: Galerie

@@ -1,0 +1,18 @@
+<ul class='nav nav-tabs locales'>
+  <% current_site.cached_languages_all.each do |language| %>
+    <% if @resource_locale.to_sym == language.code.to_sym %>
+      <li class="active">
+        <%= link_to(language.presentation, '#') %>
+      </li>
+    <% elsif (action_name == 'new') %>
+      <li class="disabled">
+        <%= link_to(language.presentation, '#',
+          :title => "Vous devez créer le nouvel objet avant de pouvoir le traduire !",
+          :rel => 'tooltip',
+          :data => {:placement => "below"}) %>
+      </li>
+    <% else %>
+      <li><%= link_to(language.presentation, add_url_param("cl", language.code)) %></li>
+    <% end %>
+  <% end %>
+</ul>

@@ -1,0 +1,99 @@
+// Usage ul { @include center-nav }
+@mixin center-nav {
+	@include clearfix();
+	text-align:center;
+	margin: 0;
+	width: 100%;
+	> li {
+		text-align:left;
+		float:none;
+		display:inline-block;
+		@include ie7-inline-block();
+	}
+	li > a {
+	  padding-top: 8px;
+	  padding-bottom: 8px;
+	  margin-top: 2px;
+	  margin-bottom: 2px;
+  	  padding-right: 12px;
+  	  padding-left: 12px;
+  	  margin-right: 2px;
+  	  line-height: 14px; // keeps the overall height an even number
+	}
+}
+// Usage .nav { @include hide-nav-dropdown-caret }
+@mixin hide-nav-dropdown-caret(){
+  li.dropdown ul.dropdown-menu:before, 
+  li.dropdown ul.dropdown-menu:after {
+    display: none;
+  }
+}
+
+
+@mixin transform-style($style){
+  transform-style: $style;
+  -moz-transform-style: $style;
+  -webkit-transform-style: $style;
+  -o-transform-style: $style;
+}
+
+@mixin circle($size){
+	@include square($size);
+	@include border-radius($size / 2);
+}
+
+// hide caret and dropdown - javascript must be disabled 
+@mixin hidden-dropdown {
+	li.dropdown > .dropdown-toggle .caret,
+	li.dropdown.open > .dropdown-menu,
+	li.dropdown.open > .dropdown-toggle .caret, 
+	li.dropdown.active > .dropdown-toggle .caret, 
+	li.dropdown.open.active > .dropdown-toggle .caret {
+		display:none;
+	}
+	.nav > li > .dropdown-menu:before,
+	.nav > li > .dropdown-menu:after{
+		display:none;
+	}
+}
+
+
+// 
+@mixin clear-dropdown() {
+	position: static;
+	top: auto;
+	left: auto;
+	display: block;
+	margin-left: 0;
+	margin-bottom: 20px;
+	list-style: none;
+	@include border-radius(0);
+	border: none;
+	@include box-shadow(none);
+	padding: 0;
+	margin: 0;
+	min-width: auto;
+	float: none;
+	background: none;
+	li > a {
+		color: $linkColor;
+	}
+	li > a:hover,
+	li > a:focus, 
+	.dropdown-submenu:hover > a {
+		background: none;
+		color: $linkColorHover;
+	}
+}
+
+@mixin fixed-footer() {
+	position: fixed;
+	right: 0;
+	left: 0;
+	bottom: 0px;
+	z-index: $zindexFixedNavbar;
+}
+
+@mixin container-fixed-footer() {
+	padding-bottom: $footerHeight;
+}

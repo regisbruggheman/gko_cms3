@@ -1,0 +1,5 @@
+<% if from_dialog? %>
+$("#images-container").html("<%= escape_javascript(render('admin/images/selectable_records')) %>");
+<% else %>
+$("#images-container").html("<%= escape_javascript(render('admin/images/records')) %>");
+<% end %>

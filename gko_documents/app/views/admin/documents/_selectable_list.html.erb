@@ -1,0 +1,11 @@
+<% if @documents.try(:any?) %>
+    <div class='list-container' id='documents-container'>
+      <ul class='list-view documents'>
+        <% @documents.each do |record| %>
+            <li id="<%= dom_id(record) %>">
+              <%= link_to(record.name, record.url) %>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>

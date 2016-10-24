@@ -1,0 +1,19 @@
+<% collection_row_cache(project) do %>
+	<%
+		options = {}
+		if parent_has_categories?
+			categories = project.available_categories.map(&:title)
+			options['data-type'] = categories.map {|c| c.parameterize }
+			options['data-id'] = project.id	
+		end
+	%>
+
+	<%= grid_item_tag_for(project, options) do %>
+		<%= render_record_thumb(project) %>
+		<%= grid_item_caption_tag do %>
+			<%= render_record_title(project) %>
+			<%= render_record_description(project) %>
+			<%= render_record_link(project) %>
+		<% end %>
+	<% end %>
+<% end if project %>

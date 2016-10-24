@@ -1,0 +1,15 @@
+<% if f.object.persisted? -%>
+  <% if f.object.value_type.to_s == 'html' %> 
+    <%= f.input :value,
+      :label => f.object.key,
+      :input_html => {:class => 'wymeditor'},
+      :wrapper_html => {:class => 'field'} %>
+  <% else -%>
+    <%= f.input :value, :label => f.object.key, :as => :string %>
+  <% end -%>
+<% else -%>
+<%= f.input :value_type,
+            :collection => TextElement::VALUE_TYPES,
+            :as => :radio_buttons %>
+<%= f.input :key %>
+<% end -%>

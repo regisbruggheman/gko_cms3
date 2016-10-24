@@ -1,0 +1,41 @@
+<%= simple_form_for :query, :url => url_for([:admin, current_site, :analytics]), :html => {:method => :get, :class => "form-horizontal"} do |f| %>
+    <%= f.input :id,
+                :collection => @profiles.map { |r| [r.title, r.id] },
+                :as => :select %>
+    <%= f.input :start_date,
+                :value => @start_date || Date.today - 30,
+                :input_html => {:class => 'date'} %>
+    <%= f.input :end_date,
+                :value => @end_date || Date.today,
+                :input_html => {:class => 'date'} %>
+    <%= f.input :metrics,
+                :collection => metrics_list,
+                :as => :check_boxes %>
+
+    <%= f.input :dimensions,
+                :collection => dimensions_list,
+                :value => @stuff[:dimensions],
+                :as => :select %>
+    <%= f.input :metrics,
+                :collection => metrics_list,
+                :value => @stuff[:metrics],
+                :as => :select %>
+    <%= f.input :limit,
+                :collection => %w[1 10 25 50 100 500 1000],
+                :as => :radio_buttons,
+                :item_wrapper_class => 'inline', :label => 'Limit' %>
+    <%= f.input :offset,
+                :collection => %w[1 10 25 50 100 500 1000],
+                :as => :radio_buttons,
+                :item_wrapper_class => 'inline', :label => 'Offset' %>
+    <%= f.input :sort,
+                :collection => %w[asc desc],
+                :as => :radio_buttons,
+                :item_wrapper_class => 'inline', :label => 'Sort' %>
+    <div class="form-actions">
+      <%= f.button :submit, "Envoyer" %>
+    </div>
+
+    </div>
+
+<% end %>

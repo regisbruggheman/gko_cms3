@@ -1,0 +1,21 @@
+<%= grid_item_tag_for(partner) do %>
+    <% if partner.image.present? %>
+        <div class="thumbnail-image">
+          <% if partner.thumbnail -%>
+              <%= link_to(image_tag(partner.thumbnail.url), partner.link, :target => :blank, :rel => 'external') %>
+          <% else -%>
+              <%= image_tag(partner.thumbnail.url) %>
+          <% end -%>
+        </div>
+    <% end -%>
+	<%= grid_item_caption_tag do %>
+	    <h2 class="thumbnail-title">
+	      <% if partner.link.present? -%>
+	          <%= link_to(partner.title, partner.link, :target => :blank, :rel => 'external') %>
+	      <% else -%>
+	          <%= partner.title %>
+	      <% end -%>
+	    </h2>
+	    <%= render_html_text(partner.body) %>
+	<% end %>
+<% end if partner %>

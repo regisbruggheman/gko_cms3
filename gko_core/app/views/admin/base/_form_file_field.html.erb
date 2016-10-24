@@ -1,0 +1,26 @@
+<%
+   thumb_size = "x120" unless local_assigns.has_key?(:thumb_size)
+   help = local_assigns.has_key?(:hint) ? hint : t("simple_form.hints.image.image")
+   accessor_name = local_assigns.has_key?(:accessor) ? accessor.to_sym : :image
+   image = f.object.send(accessor_name)
+   can_remove = local_assigns.key?(:deletable) ? (image.present? && deletable) : false
+%>
+
+<div class='control-group'>
+    <label class="string control-label"><%= "Image".html_safe %></label>
+    <div class='controls upload_file_preview'>
+      <%= image_tag(image.thumb(thumb_size).url, :class => 'js-file-preview') if image.present? %>
+      <div class='file-field' style="display:<%= image.present? ? 'none' : 'block' %>">
+        <%= f.file_field accessor_name, :class => 'file' %>
+        <div class="help-block"><%= help.html_safe %></div>
+      </div>
+	
+      <br class='clearfix'\>
+      <div class="btn-group">
+        <%= btn_to(t(:"admin.images.replace_file"), "",
+                   :class => "change-upload-file-btn",
+                   :data => {:toggle => "toggle", :text => t(:'admin.images.cancel_replace_file')}) if image.present? %>
+	   <%= f.input "remove_#{accessor_name}", :as => :boolean if can_remove %>	
+      </div>
+    </div>
+</div>

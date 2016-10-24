@@ -1,0 +1,42 @@
+en:
+  activerecord:
+    models:
+      theme: "Thème"  
+      
+  simple_form:
+    labels:
+      theme:
+        name: "Nom"
+        uri: "uri"
+    hints:
+      theme:
+        name: "" 
+        uri: ""
+        
+  confirmations:
+    destroy:
+      theme: "Voulez-vous réellement supprimer définitivement ce thème ?<br/>ce action est irréversible!" 
+       
+  admin:
+    themes:
+      untranslated_message: 
+        one: "Attention: 1 thème n'est pas traduit."
+        many: "Attention: %{count} thèmes ne sont pas traduits."
+      select_blank: Sélectionner un thème
+      collection:
+        empty: "Aucun thème n'a été trouvé. %{link}"
+        create_item: "Créer un nouveau thème maintenant."
+      actions:
+        new: Ajouter un thème
+        destroy: Supprimer ce thème
+        edit: Modifier ce thème
+        index: Thèmes
+      tooltips:
+        index: Lister les thèmes
+      titles:
+        new: Ajout d'un thème
+        index: Liste des thèmes
+        edit: Modification d'un thème
+      columns:
+        name: Nom
+        actions: Actions

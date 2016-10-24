@@ -1,0 +1,54 @@
+/*
+ *= require_self 
+*/
+@import 'gko/admin/variables';
+@import 'gko/admin/jqueryui.bootstrap';
+@import "twitter.bootstrap.2.2.1/bootstrap-awesome";
+@import 'twitter.bootstrap.2.2.1/bootstrap-wysihtml5';
+@import 'twitter.bootstrap.2.2.1/bootstrap-image-gallery';
+@import 'twbs/bootstrap-colorpicker'; 
+@import 'gko/admin/layout';
+@import 'gko/admin/table';
+@import 'gko/admin/form';
+@import 'gko/admin/search_form';
+@import 'gko/admin/loader';
+@import 'gko/admin/navbar';
+@import 'gko/admin/tree';
+@import 'gko/admin/dialog';
+@import 'gko/admin/media';
+@import 'gko/admin/dnd';
+@import 'gko/admin/translate_tabs';
+@import 'gko/admin/plupload';
+@import 'wym_skin';
+@import 'gko/admin/patches';
+@import 'gko/admin/jqueryui';
+
+@import 'gko/admin/menu_left';
+
+// RESPONSIVE CLASSES
+// ------------------
+@import "twitter.bootstrap.2.2.1/bootstrap/responsive-utilities";
+
+// Phones to portrait tablets and narrow desktops
+@import "twitter.bootstrap.2.2.1/bootstrap/responsive-767px-max";
+
+// Tablets to regular desktops
+@import "twitter.bootstrap.2.2.1/bootstrap/responsive-768px-979px";
+
+// Large desktops
+//@import "twitter/responsive-1200px-min";
+
+
+// RESPONSIVE NAVBAR
+// ------------------
+
+// From 979px and below, show a button to toggle navbar contents
+@import "twitter.bootstrap.2.2.1/bootstrap/responsive-navbar";
+
+[class^="icon-"] {
+  font-size: 14px;
+}
+p.empty-collection {
+	font-size: 24px;
+	text-shadow: -1px -1px 0 $grayLighter;
+}

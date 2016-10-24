@@ -1,0 +1,3 @@
+<%= bootstrap_render_tree current_site.image_folders.arrange, :sort => lambda{|x| x.name}, :id => "image-folders-tree", :class => 'nav nav-list tree' do |node, child| %>
+	<%= render "admin/image_folders/record", :record => node, :child => child %>
+<% end %>

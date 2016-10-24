@@ -1,0 +1,334 @@
+en:
+  locales:
+    long:
+      fr: "Français"
+      en: "Anglais"
+      es: "Espagnol"
+      ru: "Russe"
+      it: "Italien"
+      de: "Allemand"
+      pt: "Portuguais"
+      br: "Brézilien"
+    short:
+      fr: FR
+      en: EN
+      es: ES
+      ru: RU
+      it: IT
+      de: DE
+      pt: PT
+      br: BR
+  with_locale:
+      fr: " en français"
+      en: " en anglais"
+      es: " en espagnol"
+      ru: " en russe"
+      it: " en italien"
+      de: " en allemand"
+      pt: " en portuguais"
+      br: " en brézilien"
+  continue: Continuer 
+  copyright: Copyright ©%{year} %{copyright_name}. All rights reserved
+  navigation_menu: Menu
+  more_infos: "Plus d'informations"
+  contact_us: Contact us
+  informations: Information
+  email_us: Email us
+  follow_us: Follow us
+  a_or_b: '%{a} ou %{b}'
+  site_by: "Site by %{name}"
+  visit_joufdesign: "Visit joufdesign.com"
+  request_password: "Ask password"
+  posted_by: "Post by"
+  next: "Next"
+  previous: "Previous"
+  search: "Search"
+  logged_in_successfully: ""
+  price_on_request: "Price on request"
+  from: From
+  to: to
+  list_type:
+    grid: grille
+    table: liste
+  will_paginate:
+    previous_label: Previous
+    next_label: Next
+  # Active Record models configuration
+  activerecord:
+    errors:
+      messages:
+        taken: "has already been taken"
+        record_invalid: "Validation failed: %{errors}"
+    models:
+      account: Account
+      content: Page
+      page: Page
+      section: Section
+      setting: Setting
+      site: Site
+  helpers:
+    submit:
+      create: "Add %{model}"
+      update: "Save Changes"
+      search: "Search"
+  flash:
+    close: Close
+    create:
+      notice: '%{resource_name} successfully created.'
+      alert:  '%{resource_name} could not be created.'
+    update:
+      notice: '%{resource_name} successfully updated.'
+      alert:  '%{resource_name} could not be updated.'
+    destroy:
+      notice: '%{resource_name} successfully deleted.'
+      alert:  '%{resource_name} could not be deleted.'
+    installation:
+      protected: "Installation for %{host} is already complete. Please log in with your admin account."
+
+    #update your I18n under the key: “flash.posts.create.notice”.
+  confirmations:
+    destroy: 'Do you really want to delete this %{model_name}?'
+
+  
+  # Generic attributes
+  attributes:
+    title: "Title"
+    published_at: "Publish at"
+    draft: "Draft"
+    slug: "Permalink"
+    defaults:
+      pages:
+        main:
+          title: main
+        404: 
+          title: 404
+
+  simple_form:
+    yes: "Yes"
+    no: "No"
+    required:
+      text: "required"
+      mark: "*"
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Some errors were found, please take a look:"
+    # Labels and hints examples
+    # labels:
+    #   password: 'Password'
+    #   user:
+    #     new:
+    #       email: 'E-mail para efetuar o sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # hints:
+    #   username: 'User name to sign in.'
+    #   password: 'No special characters, please.'
+
+    labels:
+      images: Images
+      name: Name
+      sender_email: Email
+      firstname: Firstname
+      lastname: Lastname
+      newsletter_registration: Receive our newsletter
+      message: Message
+      subtitle: Sous-titre
+      timezone: Timezone
+      username: Username
+      accounts:
+        users: Users
+      page:
+        body: "Headline"
+      site:
+        host: Host
+        google_analytics_key: Google analytics key
+        google_webmaster_tools_key: Google webmaster tools key
+        locales: Languages
+        public: Public free access
+        
+    hints:
+      slug: "Full path is %{path}.<br/>You can use normal letters and special letters like scandinavian letters but avoid special characters like $%&!"
+      meta_title: "Enter a 5-10 word title that summarizes the contents of this page."
+      meta_description: Enter a concise two or three sentences describing what this page is about so a search engine can tell users what they can find here.
+      username: "User name to sign in."
+      password: "No special characters, please."
+      name: "Give an unique name to this page. <br/>This is useful when you have more that one page of the same type and you want programtically retrieve one of this. <br/>WARN:: Changing the name can break the code."
+      hidden: "Check this box if you want to hide a page from the page. This can be handy if you have a page you want to link people to directly but don&apos;t want to show the page in the menu."
+      deletable: Select this option if you want prevent destruction of this page by a NOT super adminstrator.
+      display_first_page: Redirect visitors to the first sub-level page instead of displaying the list of all its content (like a blog system).
+      moderate_comments: "Select this option if you want moderate comments. Moderate review is not published until an admistrator give manually a such permission."
+      body: "Give an introduction to this page. Event a short description is usefull for search engine optimization.<br/>This text won't be displayed if you select the 'display first page' option."
+      deletable: Indicate if an administrator can delete this page. If not only a super-adminstrator can delete this page.
+      contents_per_page: "Indicate the number of pages to show on the list page (like a blog system).<br />This parameter has no effect if you select the 'display first page' option."
+      account:
+        reference: Give an unique reference to this account.
+        
+      site:
+        title: "This is the name for your website and will display in the header and in the Gko backend."
+        host: "This is the url address of your website (ex: mycompany.com)"
+        locales: "Define additionnal languages for the public website by separating each language by a comma. eg(en,fr,de). Default language for your website is: %{default_locale}."
+        subtitle: ""
+        inquiry_recipients: ""
+        public: "Indicate if your website is public or if it requires a password."
+        timezone: ""
+        google_webmaster_tools_key: ""
+        google_analytics_key: ""
+      
+      
+  installations:
+    new:
+      title: gko-cms installation
+      welcome: |
+        Welcome to the gko-cms less-than-one-minute installation process:
+        Just fill in a name for your site below and you're done.
+        Don't worry. You can always change everything later.
+      section_name: Section Name
+    show:
+      title: Success!
+      confirm: You have successfully created your site. Enjoy!
+      link_to_admin: "Manage your new site &raquo;"
+
+       
+  admin:
+    edit_with_locale: "tarduire la page en"
+    list_with_locale: "Afficher la page en"
+    list_in: "Switch to %{lang}"
+    
+    actions:
+      back: Cancel
+      back_without_saving: Back Without Saving
+      
+    menu:
+      separators:
+        shorcuts: Raccourcis
+        actions: Actions
+
+    pages_dialogs:
+      link_to:
+        pages: Pages
+        web_address: Web address
+        email_address: Email address
+          
+    pagination:
+      total_entry_with_count: "%{count} %{resource_name}"
+      
+    
+    published: published
+    
+    shared:
+      form_publish_fields:
+        published_at: "Published at %{date}"
+        save_as_draft: Save as draft?
+    
+    fieldset:
+      general_informations: "General informations"
+      options: "Options"
+      seo: "Search engines optimization"
+   
+    languages:
+      fr: "French"
+      en: "Englih/US"
+      
+    my_accounts:
+      edit:
+        title: Edit my account
+    
+    accounts:
+      select_blank: Choisissez un compte
+      menu_tab: Comptes
+      collection:
+        empty: "Aucun compte n'a été trouvé. %{link}"
+        create_item: "Ajouter un nouveau compte maintenant."
+      actions:
+        new: Ajouter un nouveau compte
+        destroy: Supprimer ce compte
+        edit: Modifier ce compte
+        index: Liste des comptes
+      titles:
+        new: Ajout d'un nouveau compte
+        index: Liste des comptes
+        edit: Modification d'un compte
+        
+    advanced:
+      menu_tab: Avancé
+      
+    contents:
+      columns:
+        content: Title
+      collection:
+        empty: "No pages was found %{link}"
+        create_item: "Create one now &raquo;"
+    
+    pages:
+      confirmations:
+        destroy: Do you really want to delete permanently this page ?
+      actions:
+        new: Ajouter une nouvelle page
+        destroy: Supprimer cette page
+        edit: Modifier cette page
+        index: Liste des pages
+      titles:
+        new: Ajout d'une nouvelle page
+        index: Liste des pages
+        edit: Modification d'une page
+
+    sections:
+      select_blank: Choisissez une page
+      menu_tab: Pages
+      collection:
+        empty: "Aucune page n'a été trouvée. %{link}"
+        create_item: Ajouter une nouvelle page maintenant.
+      columns:
+        section: Title
+      actions:
+        new: Ajouter une nouvelle page
+        destroy: Supprimer cette page
+        edit: Modifier cette page
+        index: Liste des pages
+      titles:
+        new: Ajout d'une nouvelle page
+        index: Liste des pages
+        edit: Modification d'une page
+    
+    settings:
+      confirmations:
+        destroy: Do you really want to delete permanently this setting ?
+      menu_tab: Configuration
+      
+    sites:
+      confirmations:
+        destroy: Do you really want to delete permanently this site ?
+      select_blank: Choisissez un site
+      menu_tab: Sites
+      collection:
+        empty: "Aucun site n'a été trouvé. %{link}"
+        create_item: "Ajouter un nouveau site maintenant."
+      actions:
+        new: Ajouter un nouveau site
+        destroy: Supprimer ce site
+        edit: Modifier ce site
+        index: Liste des sites
+      titles:
+        new: Ajout d'un nouveau site
+        index: Liste des sites
+        edit: Modification d'un site
+        
+    templates:
+      confirmations:
+        destroy: Do you really want to delete permanently this template ?
+      select_blank: Choisissez un modèle de page
+      menu_tab: Modèle de page
+      collection:
+        empty: "Aucun modèle de page n'a été trouvé. %{link}"
+        create_item: "Ajouter un nouveau modèle de page maintenant."
+      actions:
+        new: Ajouter un nouveau modèle de page
+        destroy: Supprimer ce modèle de page
+        edit: Modifier ce modèle de page
+        index: Liste des modèles de page
+      titles:
+        new: Ajout d'un nouveau modèle de page
+        index: Liste des modèle de pages
+        edit: Modification d'un modèle de page

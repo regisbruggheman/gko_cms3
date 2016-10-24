@@ -1,0 +1,8 @@
+$('#<%= dom_id(resource) %>').fadeOut(500, function () {
+    $(this).remove();
+});
+<% if @image_folders.any? %>
+	<% @image_folders.each do | folder | %>
+		$('#<%= dom_id(folder) %> a:first').html('<i class="icon-folder-open"></i>&nbsp;<%= folder.name %>&nbsp;(<%= folder.images.count %>)')
+	<% end %>
+<% end %>

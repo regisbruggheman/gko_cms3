@@ -1,0 +1,9 @@
+<% cache([current_site, @resource_locale.to_s, record]) do %> 
+	<td><%= record.environment %></td>
+	<td><%= record.enable_mail_delivery %></td>
+	<td><%= record.mail_domain %></td>
+	<td><%= record.smtp_username %></td>
+	<%= content_tag_for_actions do  %>
+		<%= icons_to_actions([:edit, :destroy], record) %>
+	<% end %>
+<% end %>

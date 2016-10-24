@@ -1,0 +1,7 @@
+<% if from_dialog? %>
+$("#images-container").html("<%= escape_javascript(render(:partial => 'admin/images/selectable_records')) %>");
+<% else %>
+$("#images-container").html("<%= escape_javascript(render(:partial => 'admin/images/records')) %>");
+<% end %>
+$('ul#image-folders-tree').find(".active").removeClass("active");
+$('li#<%= dom_id(@image_folder) %>').addClass("active"); 

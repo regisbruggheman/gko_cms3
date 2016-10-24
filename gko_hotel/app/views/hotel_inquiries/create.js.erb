@@ -1,0 +1,3 @@
+<% if @hotel_inquiry.newsletter_registration %>
+$("body").append('<img src="http://app.bronto.com/public/?q=direct_add&fn=Public_DirectAddForm&id=ajxwyhlmsdoqtqrxcnqhcvdxmslabha&email=<%= @hotel_inquiry.email %>" width="0" height="0" border="0" alt=""/>');
+<% end %>

@@ -1,0 +1,9 @@
+<% content_for :actions do %>
+	<% if !(action_name =~ /^(index)$/) %>
+		<%= button_to_index(url_for([:admin, current_site, :users]),:class => 'btn-inverse', :icon => 'th-list icon-white') %>
+	<% end %>
+	<% if (action_name =~ /^(edit)$/) %>
+		<%= btn_to_change_password(@user) if (action_name =~ /^(edit)$/) %>
+	<% end %>
+	<%= button_to_new(url_for([:new, :admin, current_site, :user]), :class => 'btn-primary', :icon => 'plus icon-white') %>
+<% end %>

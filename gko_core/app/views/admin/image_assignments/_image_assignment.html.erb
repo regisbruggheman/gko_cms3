@@ -1,0 +1,19 @@
+<%# cache(["admin", image_assignment.image, image_assignment]) do %>
+	<%= content_tag_for(:li, image_assignment, :class => "span3") do %>
+	  <div class="thumbnail <%= image_assignment.position %>">
+	      <%= image_fu(image_assignment.image, '160x120',
+	                   :title => image_assignment.image.title,
+	                   :class => "thumb") %>
+	    <a href="#" title="<%= image_infos(image_assignment.image) %>" rel='tooltip' class="info-tooltip"><i class="icon-info-sign"></i></a>
+
+	    <div class='btn-group actions'>
+	      <%= icon_to_view("#{image_assignment.image.image.url}", :class => 'gallery-item', :title => "Voir en grand", :rel => "images_list") %>
+	      <%= icon_to_destroy(url_for([:admin, image_assignment]),
+	                          :remote => true,
+	                          :rel => 'tooltip',
+	                          :title => t("admin.image_assignments.actions.destroy"),
+	                          :confirm => t("confirmations.destroy.image_assignment")) %>
+	    </div>
+	  </div>
+	<% end %>  
+<%# end %> 

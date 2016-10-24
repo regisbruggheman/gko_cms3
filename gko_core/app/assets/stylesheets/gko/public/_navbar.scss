@@ -1,0 +1,16 @@
+.navbar .btn-navbar {
+	clear: both;
+	float: none;
+	width: 100%;
+	margin: 0;
+	padding: 7px 0;
+	color: $navbarLinkColor;
+}
+.navbar .btn-navbar:hover {
+	color: $navbarLinkColorHover;	
+}
+// Active state
+.navbar .btn-navbar.active,
+.navbar .btn-navbar:active {
+  color: $navbarLinkColorActive;
+}

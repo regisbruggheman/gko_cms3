@@ -1,0 +1,116 @@
+
+/* BOOTSTRAP OVERWRITE V 2.0.0                                      
+   ================================================== */
+.form-horizontal {
+	input[type="text"], 
+	input[type="password"], 
+	input[type="datetime"], 
+	input[type="datetime-local"], 
+	input[type="date"], 
+	input[type="month"], 
+	input[type="time"], 
+	input[type="week"], 
+	input[type="number"], 
+	input[type="email"], 
+	input[type="url"], 
+	input[type="search"], 
+	input[type="tel"], 
+	input[type="color"], 
+	textarea,
+	select,
+	.help-block,
+	.uneditable-input {
+	  width: 90%;
+	  //padding: 0.688em; ie9 and firefox bugs
+	}
+	.input-append {
+		input[type="text"], 
+		input[type="password"], 
+		input[type="datetime"], 
+		input[type="datetime-local"], 
+		input[type="date"], 
+		input[type="month"], 
+		input[type="time"], 
+		input[type="week"], 
+		input[type="number"], 
+		input[type="email"], 
+		input[type="url"], 
+		input[type="search"], 
+		input[type="tel"], 
+		input[type="color"], 
+		textarea,
+		select,
+		.help-block,
+		.uneditable-input {
+		  width: auto;
+		}
+	}
+}
+/* ADD-ONS
+   ================================================== */
+.form-horizontal {
+	margin: $baseLineHeight / 2 0 0 0 !important;
+
+	legend {
+		padding-left: 216px;
+		margin-bottom: 0;
+		border: none;
+		background: #f5f5f5;
+	}
+	legend + .control-group {
+		margin-top: 0;
+	}
+
+	h3 {
+		padding-left: 160px;
+		margin-bottom: $baseLineHeight / 2;
+	}
+	.controls {
+		background: $white;
+		padding: 36px;
+		.wym_skin_gko,
+		.CodeMirror,
+		table,
+		.well  {
+			width: 90%;
+		}
+  }
+	.control-label {
+ 		padding-top: 41px;
+		text-shadow: 1px 1px 0 white;
+	}
+	.control-group {
+		margin-bottom: 0;
+		border-top: 1px solid $grayLighter;
+		background: #f5f5f5;
+		.control-group {
+			background: none;// the default
+			border: none;// the default
+			.controls {
+				background: none;// the default
+				padding: 0;// the default
+				margin-left: 0;
+			}
+			.control-label {
+			 	padding-top: 5px;// the default
+				float: left;
+				width: auto;
+			}
+		}
+	}
+}
+.help-block {
+  font-size: 12px;
+  line-height: 18px; 
+  color: $grayLight;
+}
+
+/* Mark translatable input field
+   ================================================== */
+.translating {
+  .wym_skin_gko,
+  input.translated,
+  textarea.translated {
+    border-color: $blue;
+  }
+}

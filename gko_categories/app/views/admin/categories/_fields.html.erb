@@ -1,0 +1,26 @@
+<%
+   parent_categories = resource.section.categories.nested_set.map do |s|
+     s == resource ? nil : [s.labelize_with_indent, s.id]
+   end.compact
+%>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#section-basic-tab" data-toggle="tab"><%= t(:'admin.fieldset.general_informations') %></a></li>
+  <li><a href="#section-advanced-tab" data-toggle="tab"><%= t(:'admin.fieldset.options') %></a></li>
+  <li><a href="#section-seo-tab" data-toggle="tab"><%= t(:'admin.fieldset.seo') %></a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="section-basic-tab">
+	<% if parent_categories.length > 0 %>
+		<%= f.association :parent, :collection => parent_categories %>
+	<% end %>
+	<%= f.input :title %>
+  </div>
+  <div class="tab-pane" id="section-advanced-tab">
+	<%= f.input :name %>
+	<%= f.input :body, :input_html => { :class => 'wysihtml5' } %>
+  </div>
+  <div class="tab-pane" id="section-seo-tab">
+	<%= render 'form_seo_fields', :f => f %>
+  </div>  
+</div> 

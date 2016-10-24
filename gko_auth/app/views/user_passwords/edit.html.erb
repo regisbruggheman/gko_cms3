@@ -1,0 +1,7 @@
+<%= simple_form_for @user, :url => user_password_path, :html => {:method => :put, :class => "password-reset-form"} do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :password, :required => true, :hint => false, :input_html => {:autocomplete => "off"}, :label => false, :placeholder => t("devise.passwords.new_password") %>
+    <%= f.input :password_confirmation, :required => true, :hint => false, :label => false, :placeholder => t("devise.passwords.confirm_new_password") %>
+    <%= f.input :reset_password_token, :as => :hidden %>
+	<%= f.button :submit, t('devise.passwords.change_my_password'), :class => 'btn-block btn-large btn-primary submit' %>
+<% end %>

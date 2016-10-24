@@ -1,0 +1,40 @@
+en:
+  categories:
+    title: Categories
+    meta_title: "Categories"
+    all: All
+  
+  helpers:
+    select:
+      prompt:
+        category: "Type"
+    submit:
+      category:
+        create: "Add this category"
+
+  admin:
+    fieldset: 
+      categories: Select one or more category
+    categories:
+      select_blank: Select a category
+      menu_tab: Categories
+      collection:
+        empty: "No categories was found %{link}"
+        create_item: "Create one now."
+      confirmations:
+        destroy: 'Do you really want to delete permanently this category?'
+      actions:
+        new: Add a new category
+        destroy: Delete this category
+        edit: Edit this category
+        index: Categories
+        previous: Previous
+        next: Next
+      tooltips:
+        index: Categories list
+      titles:
+        new: Add a new category
+        index: Categories list
+        edit: Edit this category
+      columns:
+        category: category

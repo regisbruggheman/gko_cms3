@@ -1,0 +1,137 @@
+fr:
+  gko:
+    plugins:
+      gko_images:
+        title: "Images"
+  activerecord:
+    models:
+      image: image
+      image_assignment: Image Assignment
+    errors:
+      models:
+        image:
+          blank: Vous devez choisir un fichier image à télécharger.
+          too_long: "Le poids du fichier image est top important. Il doit être plus petit que %{count}."
+          incorrect_dimensions: "Le fichier image a une largeur trop importante. Elle doit être comprise entre %{min}px et %{max}px."
+          attributes:
+            image:
+              incorrect_file_type: "Le type du fichier image est invalide. Il doit être de type JPG, JPEG, PNG ou GIF"
+              incorrect_dimensions: "Le fichier image a une largeur trop importante. Elle doit être comprise entre %{min}px et %{max}px."
+  confirmations:
+    destroy:
+      image: "Voulez-vous réellement supprimer définitivement cette image ? <br/>Cette action est irréversible et supprimera tous les liens vers cette image!"
+      image_assignment: "Voulez-vous réellement supprimer le lien vers cette image ? <br/>Cette action ne supprime pas l'image de la bibliothèque. Les autres pages utilisant cette image ne seront pas affectées."
+ 
+  helpers:
+    submit:
+      image:
+        create: "Ajouter cette image"
+      image_folder:
+        create: "Ajouter ce dossier"
+              
+  simple_form:
+    labels:
+      image:
+        account: Compte
+        image: Fichier
+        title: Titre
+        alt: Légende
+        image_folders: Dossiers
+        unused: Non utilisée
+      image_folder:
+        name: Nom
+        parent: Parent
+    hints:
+      image:
+        account: Choisissez un compte.
+        image: Choisissez une image à télécharger.
+        title: "Donner un titre à l'image. Si aucun titre n'est indiqué, le nom du fichier sera utilisé."
+        alt: "Donner une légende à l'image. Si aucune légende n'est indiquée, le nom du fichier sera utilisé."
+        image_folders: "Choisissez un ou des dossiers dans lequel ranger cette image."
+        
+  admin:
+    fieldset:
+      images: Images
+    
+    filters:
+      in_folder: "Dossier"
+      with_filename: "Nom du fichier"
+      with_title: "Titre"
+      images_with_size_over: "Poids > (?) ko"
+      images_with_size_under: "Poids <  (?) ko"
+      images_with_width_over: "Largeur > (?) pixels"
+      images_with_width_under: "Largeur <  (?) pixels"
+      images_with_height_over: "Hauteur >  (?) pixels"
+      images_with_height_under: "Hauteur <  (?) pixels"
+      order_by:
+        image_name: "Titre"
+    
+    images:
+      select_image_size: "Choisissez une taille d'image: " 
+      untranslated_message: 
+        one: "Attention: 1 image n'est pas traduite."
+        many: "Attention: %{count} images ne sont pas traduites."
+      replace_file: Remplacer le fichier
+      delete_file: Supprimer le fichier
+      cancel_replace_file: Annuler et conserver le fichier
+      maximum_image_size: "La taille maximum d'une image est de %{size} megabytes."
+      menu_tab: Images
+      empty: "Aucune image n'a été trouvée %{link}"
+      create_item: "Ajouter une nouvelle image maintenant."
+      save_before_attach: Vous devez sauvegarder la resource avant de pouvoir attacher des images à cette dernière.
+      tabs:
+        search: Liste des images
+        upload: Ajouter une nouvelle image
+      actions:
+        back: Retourner à la liste des images
+        new: Ajouter une image
+        destroy: Supprimer cette image
+        edit: Modifier cette image
+        index: Liste des images
+        switch_to: "Afficher en %{what}"
+        new_batch: "Ajouter plusieurs images"
+        browse_for_attach: Bibliothèque
+        create_and_attach: Télécharger
+        previous: Previous
+        next: Next
+        batch: Ajouter plusieurs images en une fois.
+        download: Télécharger
+      titles:
+        new: Ajout d'une image
+        index: Liste des images
+        edit: Modification d'une image
+      columns:
+        image: Prévisualisation
+        filename: Nom du fichier
+        filetype: Type
+        assignments_count: Utilisation
+      infos: 
+        name: Nom du fichier
+        url: url
+        size: Poids du fichier
+        type: Type de fichier
+        dimensions: Dimensions du fichier
+
+    image_assignments:
+      actions:
+        destroy: Supprimer cette image de la page
+        
+    image_folders:
+      actions:
+        new: Ajouter un dossier
+        edit: Modifier ce dossier
+        destroy: Supprimer ce dossier
+        index: Lister les dossiers
+      titles:
+        new: "Ajout d'un dossier "
+        edit: "Modification d'un dossier"
+        index: Liste des dossiers
+      tooltips:
+        index: Lister les dossiers
+      collection:
+        create_item: "Créer un nouveau dossier maintenant"
+        empty: "Aucun dossier n'a été trouvé."
+      columns:
+        name: Nom
+        images_count: Nb. images
+        actions: Actions

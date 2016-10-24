@@ -1,0 +1,7 @@
+$("<div id='images-upload-dialog' class='modal fade'><%= escape_javascript(render(:partial => 'admin/images/multiple_form_upload')) %></div>").appendTo('body');
+//init_plupload();
+$('html, body').animate({scrollTop:0}, 'slow');
+$("#images-upload-dialog").modal({backdrop:'static', show:true}).bind('hidden', function (e) {
+    $(this).remove();
+});
+

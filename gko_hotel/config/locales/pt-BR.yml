@@ -1,0 +1,41 @@
+br:
+  form:
+    hotel:
+      title: Reserve sua Mesa
+  inquiry_sent: O seu pedido foi enviado. 
+  simple_form:
+    labels:
+      table_inquiry:
+        dinner: Jantar
+        lunch: Almoço
+        name: Nome
+        email: Email
+        message: Mensagem
+        date: Data
+        person_count: Numero de Pessoas 
+        service: Horários
+        phone: Telefone
+      hotel_inquiry:
+        name: Nome
+        email: Email
+        message: Mensagem
+        start_date: Checkin
+        end_date: Checkout 
+        person_count: Numero de Pessoas
+  helpers:
+    submit: 
+      table_inquiry:
+        create: "Enviar pedido"
+      hotel_inquiry:
+        create: "Enviar pedido"
+  inquiry_mailer:
+    hotel_notification:
+      subject: Hotel Booking Request 
+      start_date: Check-in date 
+      end_date: Check-out date 
+      person_count: Numero de Pessoas 
+    table_notification:
+      subject: Table Booking Request
+      person_count: Numero de Pessoas
+      date: Data
+      service: Horários

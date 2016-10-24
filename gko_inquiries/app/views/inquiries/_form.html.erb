@@ -1,0 +1,13 @@
+<%= simple_form_for(:inquiry, :url => inquiries_path, :html => {:data => { :remote => true, :type => :json }, :method => :post, :class => [:inquiry]}) do |f| %>
+  <%= f.hidden_field :site_id, :value => site.id %>
+  <%= f.error_notification %>
+<%= display_base_errors f.object %>
+  <%= f.input :name, :hint => false, :input_html => { :class => 'span12' } %>
+  <%= f.input :email, :hint => false, :input_html => { :class => 'span12' } %>
+  <%= f.input :phone, :hint => false, :required => false, :input_html => { :class => 'span12' } %>
+  <%= f.input :message, :as => :text, :hint => false, :input_html => { :rows => 6, :class => 'span12' } %>
+	<%= f.input :ghost, :label => false, :hint => false, :required => false, :wrapper_html => {:class => 'hide'} %>
+  <div class='controls'>
+    <%= f.button :submit, t("send_inquiry"), :class => 'btn btn-block btn-primary', :disable_with => "Submitting..." %>
+  </div>
+<% end %>

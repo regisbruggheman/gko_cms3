@@ -1,0 +1,78 @@
+/* MEDIA GRID
+================================================== */
+.thumbnails {
+  li {
+    position: relative;
+    .thumbnail {
+      overflow: hidden;
+      height: 108px;
+    }
+    a.info-tooltip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 1px 3px;
+      font-size: 12px;
+      font-weight: bold;
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      color: $gray;
+      @include border-radius(4px 0 4px 0);
+      &:hover {
+        text-decoration: none;
+      };
+    }
+    .actions {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      z-index: 2;
+      display: none;
+      background-color: #eee;
+      a {
+        width: 25%;
+        padding: 4px;
+        @include box-sizing(border-box); 
+      }
+    }
+    &:hover {
+      .actions {
+        display: block;
+      }
+    }
+  }
+  li.span3:nth-child(4n+1) { margin-left: 0px; }
+}
+.thumbnails.sortable {
+  li {
+    cursor: move;
+  }  
+}
+.thumbnails.vertical {
+  li {
+    float: none;
+    margin-bottom: 2px;
+    margin-left: 0;
+    .thumbnail {
+      height: auto;
+      padding: 0 0 0 20px;
+    }
+    .actions {
+      position: relative;
+      float: right;
+      left: auto;
+      right: auto;
+      display: block;
+      a {
+        width: 30px;
+        padding: 4px;
+        @include box-sizing(border-box); 
+      }
+    }
+  }
+}
+.form-horizontal .controls .thumbnails.vertical {
+  width: 90%;
+  margin: 0;
+}

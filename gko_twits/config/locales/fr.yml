@@ -1,0 +1,58 @@
+fr:
+  activerecord:
+    models:
+      twit_list: "Liste des annonces" 
+      twit: "Annonces"  
+      
+  simple_form:
+    labels:
+      twit:
+        body: "Description"
+        published_at: "Date de publication"
+        expire_at: "Date d'expiration"  
+    hints:
+      twit:
+        body: "" 
+        expire_at: "" 
+        published_at: ""  
+        
+  confirmations:
+    destroy:
+      twit: "Voulez-vous réellement supprimer définitivement cette annonce ?<br/>Cette action est irréversible!" 
+
+  twits:
+    no_record_found: "Aucune news n'a été trouvée"
+
+  admin:
+    twit_lists:
+      actions:
+        edit: Configuration 
+        new: Ajouter
+        index: Liste
+      tooltips:
+        edit: Modifier la liste des annonces
+      titles:
+        edit: Modifier la liste des annonces
+
+    twits:
+      untranslated_message: 
+        one: "Attention: 1 annonce n'est pas traduite."
+        many: "Attention: %{count} annonces ne sont pas traduites."
+      select_blank: Sélectionner une annonce
+      collection:
+        empty: "Aucune annonce n'a été trouvé. %{link}"
+        create_item: "Créer une nouvelle annonce maintenant."
+      actions:
+        new: Ajouter une annonce
+        destroy: Supprimer cette annonce
+        edit: Modifier cette annonce
+        index: Annonces
+      tooltips:
+        index: Lister les annonces
+      titles:
+        new: Ajout d'une annonce
+        index: Liste des annonces
+        edit: Modification d'une annonce
+      columns:
+        twit: Nom
+        actions: Actions

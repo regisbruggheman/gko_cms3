@@ -1,0 +1,3 @@
+<li id="<%= dom_id(category) %>" class="<%= 'active' if (@category && @category == category) %>">
+<%= link_to(category.title, category.public_url, :data => { :tag => category.id }) %>
+</li>

@@ -1,0 +1,9 @@
+<%= render('secondary_menu') %>
+<% cache [action_name, I18n.locale, parent.site, parent] do %>
+	<%= render_collection_header %>
+	<%= render_parent_categories(:title => '') %>
+<% end %>
+<% cache [action_name, I18n.locale, site, "albums", "page", params[:page] || 1, parent.albums_cached_key] do %>
+	<%= render_collection %>
+<% end %>
+
